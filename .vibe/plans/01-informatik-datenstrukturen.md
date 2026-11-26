@@ -43,6 +43,7 @@ Leitfrage der Galerie der Datenstrukturen: Wie finde ich ein Element?
 - Geschichte als Klassenchat 7b in einer `note`-Box, Zeilen „**Selin:** …“, keine Chat-Komponente.
 - `tasks: { start: first }` (guess): die Klasse bespricht dieselbe Aufgabe Nr. 1.
 - Ted Nelson 1965 weggelassen: Volltext nicht prüfbar (Orchestrator).
+- Kein `scope`: die App hat kein `open-task` und folgt keinem Material des Auftraggebers.
 
 ## Notes
 
@@ -269,12 +270,12 @@ hellblau #e8f0fb)
       `npx --no -- lernapps create --archetype explainer`.
 - [x] Fill the content guide `.agents/skills/app-content/SKILL.md` from "Notes" and "Content method": every heading,
       no "FILL IN" left. Commit it before any content.
-- [ ] Load skill `lernapps-explainer`.
-- [ ] Load skill `lernapps-content-questions`. Read whole, with your file tool:
+- [x] Load skill `lernapps-explainer`.
+- [x] Load skill `lernapps-content-questions`. Read whole, with your file tool:
       `.agents/skills/lernapps-explainer/references/blocks.md` and
       `.agents/skills/lernapps-explainer/references/exercises.md`. A foreign language: also
       `references/language-tasks.md` in the same folder. A component in the plan: also `references/components.md`.
-- [ ] Decide whether the app needs `scope`, as "`scope`" in
+- [x] Decide whether the app needs `scope`, as "`scope`" in
       `.agents/skills/lernapps-explainer/references/structure.md` says. Write the choice under "Key decisions".
 - [ ] Musterseite netze/graph in de und en: Klassenchat, Busnetz-Bild, Fäden-Anleitung, Graph/Weg/Kreis, Galerie Stand 2, Komponente Netzbauer (ungerichtet) mit Netz.ts und Test, alle Übungen
 <!-- tasks: pattern (1 added): the one page or screen that is the pattern for the others -->

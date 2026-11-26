@@ -1,10 +1,20 @@
 # yaml-language-server: $schema=../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
 format: 2
-# The strand of the learning map the app stays in, <subject>/<strand> (e.g. mathematik/stochastik); then each page
-# names its competencies. none: the app is on no strand, and no page names competencies. A unit app across the strands
-# of a subject whose map allows it names subject: <subject> (e.g. franzoesisch) instead of strand.
-strand: none
-title: Platzhalter
-intro: Dieses Kapitel hält den Platz frei, bis der geplante Inhalt da ist.
-languages: [de]
-chapters: [thema]
+strand: informatik/daten
+title:
+  de: Netze und Reihen von Daten
+  en: Networks and rows of data
+intro:
+  de: |
+    Die Klasse 7b plant im Klassenchat: Wie kommt man mit dem Bus zum Schwimmbad? Wer kennt wen? Und wie baut man
+    einen Stadtführer, in dem man von Seite zu Seite klickt? Dafür lernst du Netze aus Knoten und Kanten kennen: den
+    Graphen und den Hypertext. Du legst sie erst mit Fäden und Karten und baust sie dann am Rechner. Für die Klassen 7
+    und 8.
+  en: |
+    Class 7b is making plans in the class chat: how do you get to the swimming pool by bus? Who knows whom? And how do
+    you build a town guide where you click from page to page? For this you will get to know networks made of nodes
+    and edges: the graph and the hypertext. First you lay them out with string and cards, then you build them on the
+    computer. For ages 12 to 14.
+languages: [de, en]
+tasks: { start: first }
+chapters: [netze]
