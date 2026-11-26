@@ -59,20 +59,20 @@ Bild: Sechs Kästchen für Haltestellen: Markt oben, darunter Bahnhof, Schule un
 
 Auf dieser Seite lernst du, Netze wie das Busnetz als **Graph** darzustellen. Den Baum kennst du schon: Er
 hat Knoten und Kanten, und von der Wurzel führt genau ein Weg zu jedem Blatt. Im Busnetz gibt es keine
-Wurzel, und ein Weg darf zurückführen.
+Wurzel, und manche Fahrten führen im Kreis.
 
 - **Graph**: Ein Graph besteht aus Knoten und Kanten. Eine Kante verbindet zwei Knoten. Jeder Knoten darf mit jedem anderen verbunden sein.
 
-- **Weg**: Ein Weg führt über Kanten von einem Knoten zu einem anderen. Die Länge eines Weges ist die Anzahl seiner Kanten.
+- **Weg**: Ein Weg ist eine Folge von Kanten, die aneinanderhängen. Er beginnt an einem Knoten und endet an einem Knoten. Die Länge eines Weges ist die Anzahl seiner Kanten.
 
 - Aufgabe `kuerzester-weg` (unten)
 
-- **Kreis**: Ein Kreis ist ein Weg, der zu seinem Startknoten zurückführt, ohne eine Kante zweimal zu nutzen.
+- **Kreis**: Ein Kreis ist ein Weg, der an demselben Knoten endet, an dem er beginnt. Dabei nutzt er keine Kante zweimal.
 
 **Merke: Merke**
 
 Ein Baum ist ein Graph **ohne Kreis**. Darum führt im Baum genau ein Weg zu jedem Knoten, im Graphen oft
-mehrere. Ein Graph in der Informatik ist kein Diagramm mit Achsen, sondern ein Netz.
+mehrere. Achtung: Das Wort Graph meint hier kein Diagramm wie in Mathe, sondern ein Netz.
 
 ### Ein Freundesnetz aus Fäden
 
@@ -82,13 +82,14 @@ Legt in der Klasse ein Netz, ohne Rechner. Ihr braucht Karten, einen Stift und e
 2. Wer mit jemandem befreundet ist, spannt einen Faden zu dieser Person. Jeder Faden ist eine Kante.
 3. Sucht einen Kreis: Folgt den Fäden, bis ihr wieder bei der ersten Karte ankommt.
 
-Bild: Sechs Namen: Jona, Selin, Mia, Tom, Lea und Ben. Linien verbinden Jona mit Selin, Mia und Tom, Selin mit Mia, Mia mit Lea und Tom mit Ben. Bildunterschrift: So kann ein Teil eures Netzes aussehen. Jona, Selin und Mia bilden einen Kreis.
+Bild: Sechs Namen: Jona, Selin, Mia, Tom, Lea und Ben. Linien verbinden Jona mit Selin, Mia und Tom, Selin mit Mia, Mia mit Lea und Tom mit Ben. Bildunterschrift: So kann ein Teil eures Netzes aussehen. Jeder Faden ist hier eine Linie.
+
+- Aufgabe `kreis-freunde` (unten)
 
 ### Das Freundesnetz am Rechner
 
-Jetzt baust du ein Freundesnetz am Rechner. Tippe einen Namen an und dann einen zweiten: Schon spannst du
-eine Kante zwischen den beiden. Tippst du dieselben zwei Namen noch einmal an, verschwindet die Kante. Unter
-dem Bild stehen alle deine Kanten, jede mit einem Knopf zum Entfernen.
+Jetzt baust du ein Freundesnetz am Rechner, nach einer Liste. Für eine Kante tippst du zwei Namen nacheinander
+an. Wo sich zwei Linien kreuzen, ist kein Knoten: Knoten sind nur die Namen.
 
 - Aufgabe `freundesnetz-bauen` (unten)
 
@@ -96,27 +97,30 @@ dem Bild stehen alle deine Kanten, jede mit einem Knopf zum Entfernen.
 
 - Aufgabe `kanten-busnetz` (unten)
 
-- Aufgabe `baum-ist-graph` (unten)
+- Aufgabe `fuenf-kanten` (unten)
 
 - Aufgabe `kein-baum` (unten)
 
 ### Die Galerie wächst
 
-Bild: Vier Bilderrahmen. Im ersten ein Baum, im zweiten ein Graph mit Kreisen. Der dritte und der vierte Rahmen sind leer, mit einem Fragezeichen. Bildunterschrift: Die Galerie der Datenstrukturen. Neu ist der Graph im zweiten Rahmen.
+In der Galerie der Datenstrukturen sammelst du jede Struktur dieser App. Zu jeder fragst du: Wie finde ich ein
+Element, also einen bestimmten Knoten, zum Beispiel eine Haltestelle?
+
+Bild: Vier Bilderrahmen. Im ersten ein Baum, im zweiten ein Graph mit Kreisen. Der dritte und der vierte Rahmen sind leer, mit einem Fragezeichen. Bildunterschrift: Die Galerie der Datenstrukturen. Neu ist der Graph im zweiten Rahmen. Die leeren Rahmen füllst du später.
 
 Wie finde ich ein Element?:
 - Struktur | So findest du ein Element
 - Baum | Von der Wurzel aus nach unten: Es gibt genau einen Weg.
-- Graph | Von einem Knoten aus den Kanten folgen: Oft gibt es mehrere Wege. Wähle einen kurzen.
+- Graph | Von einem Knoten aus den Kanten folgen. Oft gibt es mehrere Wege: Nimm den mit den wenigsten Kanten.
 
-Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Dabei zeigt jede Kante in eine Richtung.
+Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis führt nur in eine Richtung, wie eine Einbahnstraße.
 
 ### Aufgabe busnetz-baum
 
 - Aufgabe: Mia hat recht. Das Busnetz ist ein Baum.
 - Antwortformat: „Stimmt“ oder „Stimmt nicht“ wählen
 - Lösung: Die Aussage stimmt nicht.
-- Erklärung: Bahnhof, Markt, Schule, Park und wieder Bahnhof: Diese Fahrt führt im Kreis zurück. In einem Baum geht das nicht, denn dort hängt jeder Knoten an genau einem Knoten darüber.
+- Erklärung: Bahnhof, Markt, Schule, Park und wieder Bahnhof: Diese Fahrt führt im Kreis zurück. In einem Baum geht das nicht: Dort führt von der Wurzel genau ein Weg zu jedem Knoten.
 - Tipp der App: Fahre vom Bahnhof zum Markt, dann weiter. Kommst du zum Bahnhof zurück, ohne eine Linie zweimal zu fahren?
 - Link: [../?via=tutor#busnetz-baum](../?via=tutor#busnetz-baum)
 
@@ -130,6 +134,20 @@ Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Dabei zeigt jede Kante 
   - 3: Du hast die Haltestellen auf dem Weg gezählt. Die Länge eines Weges ist die Anzahl der Kanten.
   - 4: Das ist ein Umweg über Park oder Schule. Es gibt einen Weg mit weniger Kanten.
 - Link: [../?via=tutor#kuerzester-weg](../?via=tutor#kuerzester-weg)
+
+### Aufgabe kreis-freunde
+
+- Aufgabe: Im Bild gibt es genau einen Kreis. Wer liegt darauf?
+- Antwortformat: alle richtigen Antworten wählen
+- Antworten zur Wahl (✓ richtig, ✗ falsch, mit der Meldung der App):
+  - ✓ Jona – Von Jona führt ein Faden zu Selin und einer zu Mia.
+  - ✓ Selin – Selin hängt an Jona und an Mia.
+  - ✓ Mia – Von Mia geht es zurück zu Jona. So schließt sich der Kreis.
+  - ✗ Tom – Von Tom kommst du nur über Jona zurück. Dann nutzt du die Kante Jona – Tom zweimal.
+  - ✗ Lea – Lea hat nur eine Kante, zu Mia. Ein Kreis braucht an jedem Knoten zwei Kanten.
+- Lösung: Jona; Selin; Mia
+- Erklärung: Jona – Selin – Mia – Jona endet dort, wo der Weg beginnt, und nutzt keine Kante zweimal.
+- Link: [../?via=tutor#kreis-freunde](../?via=tutor#kreis-freunde)
 
 ### Aufgabe freundesnetz-bauen
 
@@ -147,7 +165,7 @@ Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Dabei zeigt jede Kante 
 ```
 Nr. | Liste | Lösung | F1 | F2
 1 | Jona ist mit Mia befreundet. Jona ist mit Tom befreundet. Jona ist mit Lea befreundet. Selin ist mit Tom befreundet. Mia ist mit Tom befreundet. Mia ist mit Lea befreundet. | Jona – Mia, Jona – Tom, Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea | Jona – Tom, Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea | Jona – Mia, Jona – Tom, Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea, Jona – Selin
-2 | Jona ist mit Selin befreundet. Jona ist mit Mia befreundet. Selin ist mit Mia befreundet. Tom ist mit Lea befreundet. | Jona – Selin, Jona – Mia, Selin – Mia, Tom – Lea | Jona – Mia, Selin – Mia, Tom – Lea | Jona – Selin, Jona – Mia, Selin – Mia, Tom – Lea, Jona – Tom
+2 | Jona ist mit Mia befreundet. Jona ist mit Tom befreundet. Selin ist mit Tom befreundet. Selin ist mit Lea befreundet. Mia ist mit Tom befreundet. Tom ist mit Lea befreundet. | Jona – Mia, Jona – Tom, Selin – Tom, Selin – Lea, Mia – Tom, Tom – Lea | Jona – Tom, Selin – Tom, Selin – Lea, Mia – Tom, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Tom, Selin – Lea, Mia – Tom, Tom – Lea, Jona – Selin
 3 | Jona ist mit Mia befreundet. Jona ist mit Tom befreundet. Selin ist mit Tom befreundet. Selin ist mit Lea befreundet. Tom ist mit Lea befreundet. | Jona – Mia, Jona – Tom, Selin – Tom, Selin – Lea, Tom – Lea | Jona – Tom, Selin – Tom, Selin – Lea, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Tom, Selin – Lea, Tom – Lea, Jona – Selin
 4 | Jona ist mit Lea befreundet. Selin ist mit Mia befreundet. Selin ist mit Tom befreundet. Selin ist mit Lea befreundet. Mia ist mit Tom befreundet. Mia ist mit Lea befreundet. | Jona – Lea, Selin – Mia, Selin – Tom, Selin – Lea, Mia – Tom, Mia – Lea | Selin – Mia, Selin – Tom, Selin – Lea, Mia – Tom, Mia – Lea | Jona – Lea, Selin – Mia, Selin – Tom, Selin – Lea, Mia – Tom, Mia – Lea, Jona – Selin
 5 | Jona ist mit Lea befreundet. Selin ist mit Tom befreundet. Mia ist mit Tom befreundet. Mia ist mit Lea befreundet. | Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea | Selin – Tom, Mia – Tom, Mia – Lea | Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea, Jona – Selin
@@ -181,7 +199,7 @@ Nr. | Liste | Lösung | F1 | F2
 33 | Jona ist mit Selin befreundet. Jona ist mit Tom befreundet. Selin ist mit Mia befreundet. Mia ist mit Lea befreundet. | Jona – Selin, Jona – Tom, Selin – Mia, Mia – Lea | Jona – Tom, Selin – Mia, Mia – Lea | Jona – Selin, Jona – Tom, Selin – Mia, Mia – Lea, Jona – Mia
 34 | Jona ist mit Mia befreundet. Selin ist mit Mia befreundet. Selin ist mit Tom befreundet. Tom ist mit Lea befreundet. | Jona – Mia, Selin – Mia, Selin – Tom, Tom – Lea | Selin – Mia, Selin – Tom, Tom – Lea | Jona – Mia, Selin – Mia, Selin – Tom, Tom – Lea, Jona – Selin
 35 | Jona ist mit Mia befreundet. Jona ist mit Tom befreundet. Selin ist mit Tom befreundet. Mia ist mit Lea befreundet. Tom ist mit Lea befreundet. | Jona – Mia, Jona – Tom, Selin – Tom, Mia – Lea, Tom – Lea | Jona – Tom, Selin – Tom, Mia – Lea, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Tom, Mia – Lea, Tom – Lea, Jona – Selin
-36 | Jona ist mit Selin befreundet. Jona ist mit Lea befreundet. Selin ist mit Lea befreundet. Mia ist mit Tom befreundet. | Jona – Selin, Jona – Lea, Selin – Lea, Mia – Tom | Jona – Lea, Selin – Lea, Mia – Tom | Jona – Selin, Jona – Lea, Selin – Lea, Mia – Tom, Jona – Mia
+36 | Jona ist mit Mia befreundet. Jona ist mit Tom befreundet. Selin ist mit Mia befreundet. Mia ist mit Tom befreundet. Mia ist mit Lea befreundet. Tom ist mit Lea befreundet. | Jona – Mia, Jona – Tom, Selin – Mia, Mia – Tom, Mia – Lea, Tom – Lea | Jona – Tom, Selin – Mia, Mia – Tom, Mia – Lea, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Mia, Mia – Tom, Mia – Lea, Tom – Lea, Jona – Selin
 37 | Jona ist mit Tom befreundet. Jona ist mit Lea befreundet. Selin ist mit Mia befreundet. Selin ist mit Lea befreundet. Mia ist mit Tom befreundet. | Jona – Tom, Jona – Lea, Selin – Mia, Selin – Lea, Mia – Tom | Jona – Lea, Selin – Mia, Selin – Lea, Mia – Tom | Jona – Tom, Jona – Lea, Selin – Mia, Selin – Lea, Mia – Tom, Jona – Selin
 38 | Jona ist mit Mia befreundet. Jona ist mit Tom befreundet. Jona ist mit Lea befreundet. Selin ist mit Tom befreundet. Mia ist mit Lea befreundet. Tom ist mit Lea befreundet. | Jona – Mia, Jona – Tom, Jona – Lea, Selin – Tom, Mia – Lea, Tom – Lea | Jona – Tom, Jona – Lea, Selin – Tom, Mia – Lea, Tom – Lea | Jona – Mia, Jona – Tom, Jona – Lea, Selin – Tom, Mia – Lea, Tom – Lea, Jona – Selin
 39 | Jona ist mit Selin befreundet. Jona ist mit Mia befreundet. Jona ist mit Tom befreundet. Selin ist mit Lea befreundet. Mia ist mit Tom befreundet. Tom ist mit Lea befreundet. | Jona – Selin, Jona – Mia, Jona – Tom, Selin – Lea, Mia – Tom, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Lea, Mia – Tom, Tom – Lea | Jona – Selin, Jona – Mia, Jona – Tom, Selin – Lea, Mia – Tom, Tom – Lea, Jona – Lea
@@ -227,22 +245,23 @@ Nr. | Liste | Lösung | F1 | F2
   - 8: Du hast eine Linie doppelt gezählt. Hake jede Linie ab, wenn du sie gezählt hast.
 - Link: [../?via=tutor#kanten-busnetz](../?via=tutor#kanten-busnetz)
 
-### Aufgabe baum-ist-graph
+### Aufgabe fuenf-kanten
 
-- Aufgabe: Jeder Baum ist auch ein Graph.
+- Aufgabe: Ein Netz mit 5 Knoten und 5 Kanten kann kein Baum sein.
 - Antwortformat: „Stimmt“ oder „Stimmt nicht“ wählen
 - Lösung: Die Aussage stimmt.
-- Erklärung: Ein Baum besteht aus Knoten und Kanten, also ist er ein Graph. Er ist ein besonderer Graph, denn er hat keinen Kreis.
-- Link: [../?via=tutor#baum-ist-graph](../?via=tutor#baum-ist-graph)
+- Erklärung: Ein Baum hat immer eine Kante weniger als Knoten, bei 5 Knoten also 4 Kanten. Mit einer fünften Kante entsteht ein Kreis.
+- Tipp der App: Erinnere dich an den Zimmerbaum: Wie viele Kanten hat ein Baum im Vergleich zu seinen Knoten?
+- Link: [../?via=tutor#fuenf-kanten](../?via=tutor#fuenf-kanten)
 
 ### Aufgabe kein-baum
 
 - Aufgabe: Welches Netz ist kein Baum?
 - Antwortformat: eine Antwort wählen
 - Antworten zur Wahl (✓ richtig, ✗ falsch, mit der Meldung der App):
-  - ✓ C – In C führt ein Weg um das Viereck herum zum Start zurück. Das ist ein Kreis.
+  - ✗ A – A verzweigt sich von oben nach unten und hat keinen Kreis.
   - ✗ B – B sieht anders aus als ein Baum im Bild, hat aber keinen Kreis. Eine Kette ist ein Baum ohne Verzweigung.
-  - ✗ A – A verzweigt sich wie der Zimmerbaum und hat keinen Kreis.
+  - ✓ C – In C führt ein Weg um das Viereck herum zum Start zurück. Das ist ein Kreis.
 - Lösung: C
-- Erklärung: Ein Baum ist ein Graph ohne Kreis. Wie das Netz gezeichnet ist, spielt keine Rolle. Nur C hat einen Kreis.
+- Erklärung: Wie ein Netz gezeichnet ist, spielt keine Rolle. Es kommt auf die Kanten an. Nur in C führt ein Weg zum Start zurück.
 - Link: [../?via=tutor#kein-baum](../?via=tutor#kein-baum)

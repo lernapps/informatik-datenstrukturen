@@ -1,8 +1,8 @@
 <!-- Galerie der Datenstrukturen, Stand 2: Baum, Graph, Hypertext, Feld (noch leer). Eigene Zeichnung, Oliver Jägle, CC-BY-4.0. Stil wie der Baum von lernapps/informatik-daten-codieren (images/baum-zimmer.svg). -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 200" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 240" role="img">
 <defs><marker id="pfeil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#333"/></marker></defs>
 <title>Galerie der Datenstrukturen, Stand 2</title>
-<rect width="690" height="200" fill="#fff"/>
+<rect width="690" height="240" fill="#fff"/>
 <rect x="10" y="10" width="150" height="150" rx="4" fill="#fff" stroke="#9c6b30" stroke-width="8"/>
 <line x1="78.8" y1="48.0" x2="56.2" y2="77.0" stroke="#333" stroke-width="2"/>
 <line x1="91.2" y1="48.0" x2="113.8" y2="77.0" stroke="#333" stroke-width="2"/>

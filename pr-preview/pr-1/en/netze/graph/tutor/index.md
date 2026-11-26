@@ -59,20 +59,20 @@ Picture: Six boxes for stops: Market at the top, below it Station, School and Po
 
 On this page you will learn to show networks like the bus network as a **graph**. You already know the
 tree: it has nodes and edges, and exactly one path leads from the root to each leaf. In the bus network
-there is no root, and a path may lead back.
+there is no root, and some rides go round in a loop.
 
 - **graph**: A graph is made of nodes and edges. An edge connects two nodes. Any node may be connected to any other node.
 
-- **path**: A path leads along edges from one node to another. The length of a path is the number of its edges.
+- **path**: A path is a sequence of edges that hang together. It starts at one node and ends at a node. The length of a path is the number of its edges.
 
 - Exercise `kuerzester-weg` (below)
 
-- **cycle**: A cycle is a path that leads back to the node it started from without using any edge twice.
+- **cycle**: A cycle is a path that ends at the same node where it starts. It uses no edge twice.
 
 **Remember: Remember**
 
 A tree is a graph **with no cycle**. That is why in a tree exactly one path leads to each node, and in a
-graph there are often several. A graph in computer science is not a chart with axes, but a network.
+graph there are often several. Careful: the word graph here does not mean a chart like in maths, but a network.
 
 ### A friendship network made of string
 
@@ -82,13 +82,14 @@ Lay out a network in class, without a computer. You need cards, a pen and a ball
 2. If you are friends with someone, stretch a piece of string to that person. Each piece of string is an edge.
 3. Look for a cycle: follow the strings until you get back to the first card.
 
-Picture: Six names: Jona, Selin, Mia, Tom, Lea and Ben. Lines connect Jona with Selin, Mia and Tom, Selin with Mia, Mia with Lea and Tom with Ben. Caption: This is what part of your network might look like. Jona, Selin and Mia form a cycle.
+Picture: Six names: Jona, Selin, Mia, Tom, Lea and Ben. Lines connect Jona with Selin, Mia and Tom, Selin with Mia, Mia with Lea and Tom with Ben. Caption: This is what part of your network might look like. Each piece of string is a line here.
+
+- Exercise `kreis-freunde` (below)
 
 ### The friendship network on the computer
 
-Now you build a friendship network on the computer. Tap one name and then a second one: this puts an edge
-between the two. If you tap the same two names again, the edge disappears. Below the picture you can see all
-your edges, each with a button to remove it.
+Now you build a friendship network on the computer, from a list. For an edge, you tap two names one after
+the other. Where two lines cross there is no node: only the names are nodes.
 
 - Exercise `freundesnetz-bauen` (below)
 
@@ -96,27 +97,30 @@ your edges, each with a button to remove it.
 
 - Exercise `kanten-busnetz` (below)
 
-- Exercise `baum-ist-graph` (below)
+- Exercise `fuenf-kanten` (below)
 
 - Exercise `kein-baum` (below)
 
 ### The gallery grows
 
-Picture: Four picture frames. The first holds a tree, the second a graph with cycles. The third and fourth frames are empty, with a question mark. Caption: The gallery of data structures. The graph in the second frame is new.
+In the gallery of data structures you collect every structure of this app. For each one you ask: how do I
+find an element, that is, a certain node, for example a stop?
+
+Picture: Four picture frames. The first holds a tree, the second a graph with cycles. The third and fourth frames are empty, with a question mark. Caption: The gallery of data structures. The graph in the second frame is new. You will fill the empty frames later.
 
 How do I find an element?:
 - Structure | How you find an element
 - tree | From the root downwards: there is exactly one path.
-- graph | Follow the edges from a node: there are often several paths. Choose a short one.
+- graph | Follow the edges from a node. There are often several paths: take the one with the fewest edges.
 
-Next, Jona, Selin and Mia link their pages. Here every edge points in one direction.
+Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one-way street.
 
 ### Exercise busnetz-baum
 
 - Task: Mia is right. The bus network is a tree.
 - Answer format: choose “true” or “false”
 - Solution: The statement is false.
-- Explanation: Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree, because there every node hangs from exactly one node above it.
+- Explanation: Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree: there, exactly one path leads from the root to each node.
 - The app's hint: Ride from the station to the market, then on. Can you get back to the station without using a line twice?
 - Link: [../?via=tutor#busnetz-baum](../?via=tutor#busnetz-baum)
 
@@ -130,6 +134,20 @@ Next, Jona, Selin and Mia link their pages. Here every edge points in one direct
   - 3: You counted the stops on the path. The length of a path is the number of edges.
   - 4: That is a detour via the park or the school. There is a path with fewer edges.
 - Link: [../?via=tutor#kuerzester-weg](../?via=tutor#kuerzester-weg)
+
+### Exercise kreis-freunde
+
+- Task: There is exactly one cycle in the picture. Who is on it?
+- Answer format: choose all right answers
+- Choices (✓ right, ✗ wrong, with the app's message):
+  - ✓ Jona – One string leads from Jona to Selin and one to Mia.
+  - ✓ Selin – Selin is joined to Jona and to Mia.
+  - ✓ Mia – From Mia the way leads back to Jona. That closes the cycle.
+  - ✗ Tom – From Tom you can only get back via Jona. Then you use the edge Jona – Tom twice.
+  - ✗ Lea – Lea has only one edge, to Mia. A cycle needs two edges at each of its nodes.
+- Solution: Jona; Selin; Mia
+- Explanation: Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice.
+- Link: [../?via=tutor#kreis-freunde](../?via=tutor#kreis-freunde)
 
 ### Exercise freundesnetz-bauen
 
@@ -147,7 +165,7 @@ Next, Jona, Selin and Mia link their pages. Here every edge points in one direct
 ```
 No. | Liste | Solution | F1 | F2
 1 | Jona and Mia are friends. Jona and Tom are friends. Jona and Lea are friends. Selin and Tom are friends. Mia and Tom are friends. Mia and Lea are friends. | Jona – Mia, Jona – Tom, Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea | Jona – Tom, Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea | Jona – Mia, Jona – Tom, Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea, Jona – Selin
-2 | Jona and Selin are friends. Jona and Mia are friends. Selin and Mia are friends. Tom and Lea are friends. | Jona – Selin, Jona – Mia, Selin – Mia, Tom – Lea | Jona – Mia, Selin – Mia, Tom – Lea | Jona – Selin, Jona – Mia, Selin – Mia, Tom – Lea, Jona – Tom
+2 | Jona and Mia are friends. Jona and Tom are friends. Selin and Tom are friends. Selin and Lea are friends. Mia and Tom are friends. Tom and Lea are friends. | Jona – Mia, Jona – Tom, Selin – Tom, Selin – Lea, Mia – Tom, Tom – Lea | Jona – Tom, Selin – Tom, Selin – Lea, Mia – Tom, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Tom, Selin – Lea, Mia – Tom, Tom – Lea, Jona – Selin
 3 | Jona and Mia are friends. Jona and Tom are friends. Selin and Tom are friends. Selin and Lea are friends. Tom and Lea are friends. | Jona – Mia, Jona – Tom, Selin – Tom, Selin – Lea, Tom – Lea | Jona – Tom, Selin – Tom, Selin – Lea, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Tom, Selin – Lea, Tom – Lea, Jona – Selin
 4 | Jona and Lea are friends. Selin and Mia are friends. Selin and Tom are friends. Selin and Lea are friends. Mia and Tom are friends. Mia and Lea are friends. | Jona – Lea, Selin – Mia, Selin – Tom, Selin – Lea, Mia – Tom, Mia – Lea | Selin – Mia, Selin – Tom, Selin – Lea, Mia – Tom, Mia – Lea | Jona – Lea, Selin – Mia, Selin – Tom, Selin – Lea, Mia – Tom, Mia – Lea, Jona – Selin
 5 | Jona and Lea are friends. Selin and Tom are friends. Mia and Tom are friends. Mia and Lea are friends. | Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea | Selin – Tom, Mia – Tom, Mia – Lea | Jona – Lea, Selin – Tom, Mia – Tom, Mia – Lea, Jona – Selin
@@ -181,7 +199,7 @@ No. | Liste | Solution | F1 | F2
 33 | Jona and Selin are friends. Jona and Tom are friends. Selin and Mia are friends. Mia and Lea are friends. | Jona – Selin, Jona – Tom, Selin – Mia, Mia – Lea | Jona – Tom, Selin – Mia, Mia – Lea | Jona – Selin, Jona – Tom, Selin – Mia, Mia – Lea, Jona – Mia
 34 | Jona and Mia are friends. Selin and Mia are friends. Selin and Tom are friends. Tom and Lea are friends. | Jona – Mia, Selin – Mia, Selin – Tom, Tom – Lea | Selin – Mia, Selin – Tom, Tom – Lea | Jona – Mia, Selin – Mia, Selin – Tom, Tom – Lea, Jona – Selin
 35 | Jona and Mia are friends. Jona and Tom are friends. Selin and Tom are friends. Mia and Lea are friends. Tom and Lea are friends. | Jona – Mia, Jona – Tom, Selin – Tom, Mia – Lea, Tom – Lea | Jona – Tom, Selin – Tom, Mia – Lea, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Tom, Mia – Lea, Tom – Lea, Jona – Selin
-36 | Jona and Selin are friends. Jona and Lea are friends. Selin and Lea are friends. Mia and Tom are friends. | Jona – Selin, Jona – Lea, Selin – Lea, Mia – Tom | Jona – Lea, Selin – Lea, Mia – Tom | Jona – Selin, Jona – Lea, Selin – Lea, Mia – Tom, Jona – Mia
+36 | Jona and Mia are friends. Jona and Tom are friends. Selin and Mia are friends. Mia and Tom are friends. Mia and Lea are friends. Tom and Lea are friends. | Jona – Mia, Jona – Tom, Selin – Mia, Mia – Tom, Mia – Lea, Tom – Lea | Jona – Tom, Selin – Mia, Mia – Tom, Mia – Lea, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Mia, Mia – Tom, Mia – Lea, Tom – Lea, Jona – Selin
 37 | Jona and Tom are friends. Jona and Lea are friends. Selin and Mia are friends. Selin and Lea are friends. Mia and Tom are friends. | Jona – Tom, Jona – Lea, Selin – Mia, Selin – Lea, Mia – Tom | Jona – Lea, Selin – Mia, Selin – Lea, Mia – Tom | Jona – Tom, Jona – Lea, Selin – Mia, Selin – Lea, Mia – Tom, Jona – Selin
 38 | Jona and Mia are friends. Jona and Tom are friends. Jona and Lea are friends. Selin and Tom are friends. Mia and Lea are friends. Tom and Lea are friends. | Jona – Mia, Jona – Tom, Jona – Lea, Selin – Tom, Mia – Lea, Tom – Lea | Jona – Tom, Jona – Lea, Selin – Tom, Mia – Lea, Tom – Lea | Jona – Mia, Jona – Tom, Jona – Lea, Selin – Tom, Mia – Lea, Tom – Lea, Jona – Selin
 39 | Jona and Selin are friends. Jona and Mia are friends. Jona and Tom are friends. Selin and Lea are friends. Mia and Tom are friends. Tom and Lea are friends. | Jona – Selin, Jona – Mia, Jona – Tom, Selin – Lea, Mia – Tom, Tom – Lea | Jona – Mia, Jona – Tom, Selin – Lea, Mia – Tom, Tom – Lea | Jona – Selin, Jona – Mia, Jona – Tom, Selin – Lea, Mia – Tom, Tom – Lea, Jona – Lea
@@ -227,22 +245,23 @@ No. | Liste | Solution | F1 | F2
   - 8: You counted one line twice. Tick off each line once you have counted it.
 - Link: [../?via=tutor#kanten-busnetz](../?via=tutor#kanten-busnetz)
 
-### Exercise baum-ist-graph
+### Exercise fuenf-kanten
 
-- Task: Every tree is also a graph.
+- Task: A network with 5 nodes and 5 edges cannot be a tree.
 - Answer format: choose “true” or “false”
 - Solution: The statement is true.
-- Explanation: A tree is made of nodes and edges, so it is a graph. It is a special graph, because it has no cycle.
-- Link: [../?via=tutor#baum-ist-graph](../?via=tutor#baum-ist-graph)
+- Explanation: A tree always has one edge fewer than nodes, so 4 edges for 5 nodes. A fifth edge makes a cycle.
+- The app's hint: Remember the room tree: how many edges does a tree have compared with its nodes?
+- Link: [../?via=tutor#fuenf-kanten](../?via=tutor#fuenf-kanten)
 
 ### Exercise kein-baum
 
 - Task: Which network is not a tree?
 - Answer format: choose one answer
 - Choices (✓ right, ✗ wrong, with the app's message):
-  - ✓ C – In C, a path leads round the square back to the start. That is a cycle.
+  - ✗ A – A branches out from top to bottom and has no cycle.
   - ✗ B – B looks different from the usual tree picture, but it has no cycle. A chain is a tree without branches.
-  - ✗ A – A branches out like the room tree and has no cycle.
+  - ✓ C – In C, a path leads round the square back to the start. That is a cycle.
 - Solution: C
-- Explanation: A tree is a graph with no cycle. How the network is drawn does not matter. Only C has a cycle.
+- Explanation: How a network is drawn does not matter. What counts are the edges. Only in C does a path lead back to the start.
 - Link: [../?via=tutor#kein-baum](../?via=tutor#kein-baum)
