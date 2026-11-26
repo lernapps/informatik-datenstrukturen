@@ -1,0 +1,16 @@
+{
+  "format": 1,
+  "strand": "informatik/daten",
+  "pages": [
+    {
+      "path": "netze/graph/",
+      "title": {
+        "de": "Vom Baum zum Graphen",
+        "en": "From tree to graph"
+      },
+      "competencies": [
+        "graph"
+      ]
+    }
+  ]
+}
