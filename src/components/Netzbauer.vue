@@ -4,7 +4,7 @@
 // adds the edge between them, or removes it if it is there; with direction the arrow points from the first to the
 // second. Below the figure the edges stand as text, each with a button to remove it, so that everything works with
 // the keyboard and a screen reader. The logic is in Netzbauer.ts and Netz.ts; the explainer draws "Prüfen".
-import { computed, ref } from "vue";
+import { computed, nextTick, ref } from "vue";
 import { BOX_H, BOX_W, HEIGHT, WIDTH, border, circle, fill, toggle, type Edge } from "./Netz.ts";
 import { generate, lines } from "./Netzbauer.ts";
 
@@ -23,8 +23,10 @@ const props = defineProps<{
   drawn: string;
   /** Shown while no edge is drawn. */
   empty: string;
-  /** The label of the button that removes an edge, with {a} and {b}. */
+  /** The visible label of the button that removes an edge. */
   remove: string;
+  /** The name of that button for screen readers, with {a} and {b}. */
+  removeLabel: string;
   /** The app's messages for the typical mistakes, in the order of about.mistakes. */
   mistakes: string[];
   /** The task number, which the explainer gives. */
@@ -63,9 +65,18 @@ function choose(index: number): void {
   first.value = undefined;
 }
 
-function drop(edge: Edge): void {
+const list = ref<HTMLElement | null>(null);
+const heading = ref<HTMLElement | null>(null);
+
+/** Removes an edge and keeps the keyboard focus in the list: on the next button to remove, else on its heading. */
+function drop(edge: Edge, index: number): void {
   edges.value = toggle(edges.value, edge, props.directed);
   emit("answer", edges.value.length === 0 ? undefined : edges.value);
+  void nextTick(() => {
+    const buttons = list.value?.querySelectorAll("button");
+    const target = buttons?.[Math.min(index, buttons.length - 1)] ?? heading.value;
+    target?.focus();
+  });
 }
 
 const percent = (value: number, whole: number) => `${(value / whole) * 100}%`;
@@ -122,13 +133,17 @@ const percent = (value: number, whole: number) => `${(value / whole) * 100}%`;
     <p aria-live="polite" class="netzbauer-status">
       {{ first === undefined ? "" : fill(chosen, { a: name(first) }) }}
     </p>
-    <p class="netzbauer-drawn">{{ drawn }}</p>
+    <p ref="heading" class="netzbauer-drawn" tabindex="-1">{{ drawn }}</p>
     <p v-if="edges.length === 0">{{ empty }}</p>
-    <ul v-else class="netzbauer-list">
-      <li v-for="edge in edges" :key="`${edge[0]}-${edge[1]}`">
+    <ul v-else ref="list" class="netzbauer-list">
+      <li v-for="(edge, index) in edges" :key="`${edge[0]}-${edge[1]}`">
         <span>{{ name(edge[0]) }} {{ sign }} {{ name(edge[1]) }}</span>
-        <button type="button" @click="drop(edge)">
-          {{ fill(remove, { a: name(edge[0]), b: name(edge[1]) }) }}
+        <button
+          type="button"
+          :aria-label="fill(removeLabel, { a: name(edge[0]), b: name(edge[1]) })"
+          @click="drop(edge, index)"
+        >
+          {{ remove }}
         </button>
       </li>
     </ul>
@@ -201,5 +216,17 @@ const percent = (value: number, whole: number) => `${(value / whole) * 100}%`;
 
 .netzbauer-list button {
   min-height: 44px;
+  padding: 0 0.75rem;
+  border: 2px solid var(--page-accent);
+  border-radius: 6px;
+  background: var(--page-background);
+  color: var(--page-accent);
+  font: inherit;
+  cursor: pointer;
+}
+
+.netzbauer-list button:focus-visible {
+  outline: 3px solid var(--page-accent);
+  outline-offset: 2px;
 }
 </style>

@@ -17,13 +17,14 @@ const friends = {
 };
 const links = { ...friends, directed: true, line: "Die Seite {a} verweist auf {b}." };
 
-test("every task has four to six edges, touches every node, and its solution passes", () => {
+test("every task has four to six edges, joins all nodes in one piece, and its solution passes", () => {
   for (const props of [friends, links]) {
     for (let seed = 1; seed <= 50; seed++) {
       const task = generate(seed, props);
       expect(task.edges.length).toBeGreaterThanOrEqual(4);
       expect(task.edges.length).toBeLessThanOrEqual(6);
       expect(new Set(task.edges.flat()).size).toBe(5);
+      expect(distances(5, task.edges, 0, false).every((d) => d >= 0)).toBe(true);
       expect(generate(seed, props)).toEqual(task);
       expect(check(task, solution(task))).toBe(true);
       expect(check(task, wrong(task))).toBe(false);

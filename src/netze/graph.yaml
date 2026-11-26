@@ -56,8 +56,8 @@ blocks:
           de: Fahre vom Bahnhof zum Markt, dann weiter. Kommst du zum Bahnhof zurück, ohne eine Linie zweimal zu fahren?
           en: Ride from the station to the market, then on. Can you get back to the station without using a line twice?
         explanation:
-          de: "Bahnhof, Markt, Schule, Park und wieder Bahnhof: Diese Fahrt führt im Kreis zurück. In einem Baum geht das nicht, denn dort hängt jeder Knoten an genau einem Knoten darüber."
-          en: "Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree, because there every node hangs from exactly one node above it."
+          de: "Bahnhof, Markt, Schule, Park und wieder Bahnhof: Diese Fahrt führt im Kreis zurück. In einem Baum geht das nicht: Dort führt von der Wurzel genau ein Weg zu jedem Knoten."
+          en: "Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree: there, exactly one path leads from the root to each node."
   - type: section
     id: idee
     title:
@@ -69,11 +69,11 @@ blocks:
           de: |
             Auf dieser Seite lernst du, Netze wie das Busnetz als **Graph** darzustellen. Den Baum kennst du schon: Er
             hat Knoten und Kanten, und von der Wurzel führt genau ein Weg zu jedem Blatt. Im Busnetz gibt es keine
-            Wurzel, und ein Weg darf zurückführen.
+            Wurzel, und manche Fahrten führen im Kreis.
           en: |
             On this page you will learn to show networks like the bus network as a **graph**. You already know the
             tree: it has nodes and edges, and exactly one path leads from the root to each leaf. In the bus network
-            there is no root, and a path may lead back.
+            there is no root, and some rides go round in a loop.
       - type: definition
         term:
           de: Graph
@@ -86,8 +86,8 @@ blocks:
           de: Weg
           en: path
         explanation:
-          de: Ein Weg führt über Kanten von einem Knoten zu einem anderen. Die Länge eines Weges ist die Anzahl seiner Kanten.
-          en: A path leads along edges from one node to another. The length of a path is the number of its edges.
+          de: Ein Weg ist eine Folge von Kanten, die aneinanderhängen. Er beginnt an einem Knoten und endet an einem Knoten. Die Länge eines Weges ist die Anzahl seiner Kanten.
+          en: A path is a sequence of edges that hang together. It starts at one node and ends at a node. The length of a path is the number of its edges.
       - type: number
         id: kuerzester-weg
         text:
@@ -112,8 +112,8 @@ blocks:
           de: Kreis
           en: cycle
         explanation:
-          de: Ein Kreis ist ein Weg, der zu seinem Startknoten zurückführt, ohne eine Kante zweimal zu nutzen.
-          en: A cycle is a path that leads back to the node it started from without using any edge twice.
+          de: Ein Kreis ist ein Weg, der an demselben Knoten endet, an dem er beginnt. Dabei nutzt er keine Kante zweimal.
+          en: A cycle is a path that ends at the same node where it starts. It uses no edge twice.
       - type: note
         title:
           de: Merke
@@ -123,10 +123,10 @@ blocks:
             text:
               de: |
                 Ein Baum ist ein Graph **ohne Kreis**. Darum führt im Baum genau ein Weg zu jedem Knoten, im Graphen oft
-                mehrere. Ein Graph in der Informatik ist kein Diagramm mit Achsen, sondern ein Netz.
+                mehrere. Achtung: Das Wort Graph meint hier kein Diagramm wie in Mathe, sondern ein Netz.
               en: |
                 A tree is a graph **with no cycle**. That is why in a tree exactly one path leads to each node, and in a
-                graph there are often several. A graph in computer science is not a chart with axes, but a network.
+                graph there are often several. Careful: the word graph here does not mean a chart like in maths, but a network.
   - type: section
     id: unplugged
     title:
@@ -153,12 +153,46 @@ blocks:
           de: "Sechs Namen: Jona, Selin, Mia, Tom, Lea und Ben. Linien verbinden Jona mit Selin, Mia und Tom, Selin mit Mia, Mia mit Lea und Tom mit Ben."
           en: "Six names: Jona, Selin, Mia, Tom, Lea and Ben. Lines connect Jona with Selin, Mia and Tom, Selin with Mia, Mia with Lea and Tom with Ben."
         caption:
-          de: So kann ein Teil eures Netzes aussehen. Jona, Selin und Mia bilden einen Kreis.
-          en: This is what part of your network might look like. Jona, Selin and Mia form a cycle.
+          de: So kann ein Teil eures Netzes aussehen. Jeder Faden ist hier eine Linie.
+          en: This is what part of your network might look like. Each piece of string is a line here.
         source:
           de: eigene Zeichnung, Oliver Jägle
           en: own drawing, Oliver Jägle
         licence: CC-BY-4.0
+      - type: multiple-choice
+        id: kreis-freunde
+        text:
+          de: Im Bild gibt es genau einen Kreis. Wer liegt darauf?
+          en: There is exactly one cycle in the picture. Who is on it?
+        options:
+          - text: { de: Jona, en: Jona }
+            correct: true
+            info:
+              de: Von Jona führt ein Faden zu Selin und einer zu Mia.
+              en: One string leads from Jona to Selin and one to Mia.
+          - text: { de: Selin, en: Selin }
+            correct: true
+            info:
+              de: Selin hängt an Jona und an Mia.
+              en: Selin is joined to Jona and to Mia.
+          - text: { de: Mia, en: Mia }
+            correct: true
+            info:
+              de: Von Mia geht es zurück zu Jona. So schließt sich der Kreis.
+              en: From Mia the way leads back to Jona. That closes the cycle.
+          - text: { de: Tom, en: Tom }
+            correct: false
+            info:
+              de: Von Tom kommst du nur über Jona zurück. Dann nutzt du die Kante Jona – Tom zweimal.
+              en: From Tom you can only get back via Jona. Then you use the edge Jona – Tom twice.
+          - text: { de: Lea, en: Lea }
+            correct: false
+            info:
+              de: Lea hat nur eine Kante, zu Mia. Ein Kreis braucht an jedem Knoten zwei Kanten.
+              en: Lea has only one edge, to Mia. A cycle needs two edges at each of its nodes.
+        explanation:
+          de: "Jona – Selin – Mia – Jona endet dort, wo der Weg beginnt, und nutzt keine Kante zweimal."
+          en: "Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice."
   - type: section
     id: bauen
     title:
@@ -168,13 +202,11 @@ blocks:
       - type: text
         text:
           de: |
-            Jetzt baust du ein Freundesnetz am Rechner. Tippe einen Namen an und dann einen zweiten: Schon spannst du
-            eine Kante zwischen den beiden. Tippst du dieselben zwei Namen noch einmal an, verschwindet die Kante. Unter
-            dem Bild stehen alle deine Kanten, jede mit einem Knopf zum Entfernen.
+            Jetzt baust du ein Freundesnetz am Rechner, nach einer Liste. Für eine Kante tippst du zwei Namen nacheinander
+            an. Wo sich zwei Linien kreuzen, ist kein Knoten: Knoten sind nur die Namen.
           en: |
-            Now you build a friendship network on the computer. Tap one name and then a second one: this puts an edge
-            between the two. If you tap the same two names again, the edge disappears. Below the picture you can see all
-            your edges, each with a button to remove it.
+            Now you build a friendship network on the computer, from a list. For an edge, you tap two names one after
+            the other. Where two lines cross there is no node: only the names are nodes.
       - type: vue-component
         id: freundesnetz-bauen
         component: Netzbauer
@@ -197,6 +229,9 @@ blocks:
             de: Noch keine Kanten.
             en: No edges yet.
           remove:
+            de: entfernen
+            en: remove
+          removeLabel:
             de: "Kante {a} – {b} entfernen"
             en: "Remove edge {a} – {b}"
           mistakes:
@@ -225,6 +260,21 @@ blocks:
         text:
           de: Wie viele Kanten hat das Busnetz?
           en: How many edges does the bus network have?
+        material:
+          - type: figure
+            image:
+              de: images/busnetz-de.svg
+              en: images/busnetz-en.svg
+            alt:
+              de: "Das Busnetz mit sechs Haltestellen: Markt, Bahnhof, Schule, Schwimmbad, Park und Rathaus."
+              en: "The bus network with six stops: Market, Station, School, Pool, Park and Town hall."
+            caption:
+              de: Jonas Busplan noch einmal.
+              en: Jona's bus map again.
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
         answer: 7
         tolerance: 0
         mistakes:
@@ -243,14 +293,17 @@ blocks:
           de: "Drei Kanten führen vom Markt weg, vier weitere verbinden Bahnhof, Park, Schule, Rathaus und Schwimmbad: zusammen 7. Ein Baum mit 6 Knoten hätte nur 5 Kanten."
           en: "Three edges lead away from the market, four more connect Station, Park, School, Town hall and Pool: 7 in total. A tree with 6 nodes would only have 5 edges."
       - type: true-false
-        id: baum-ist-graph
+        id: fuenf-kanten
         text:
-          de: Jeder Baum ist auch ein Graph.
-          en: Every tree is also a graph.
+          de: Ein Netz mit 5 Knoten und 5 Kanten kann kein Baum sein.
+          en: A network with 5 nodes and 5 edges cannot be a tree.
         answer: true
+        hint:
+          de: "Erinnere dich an den Zimmerbaum: Wie viele Kanten hat ein Baum im Vergleich zu seinen Knoten?"
+          en: "Remember the room tree: how many edges does a tree have compared with its nodes?"
         explanation:
-          de: Ein Baum besteht aus Knoten und Kanten, also ist er ein Graph. Er ist ein besonderer Graph, denn er hat keinen Kreis.
-          en: A tree is made of nodes and edges, so it is a graph. It is a special graph, because it has no cycle.
+          de: Ein Baum hat immer eine Kante weniger als Knoten, bei 5 Knoten also 4 Kanten. Mit einer fünften Kante entsteht ein Kreis.
+          en: A tree always has one edge fewer than nodes, so 4 edges for 5 nodes. A fifth edge makes a cycle.
       - type: single-choice
         id: kein-baum
         text:
@@ -263,45 +316,53 @@ blocks:
               de: "Drei Netze aus leeren Kästchen. A verzweigt sich von oben nach unten. B ist eine Zickzack-Kette. In C bilden vier Kästchen ein Viereck, an einem hängt ein fünftes."
               en: "Three networks of empty boxes. A branches out from top to bottom. B is a zigzag chain. In C, four boxes form a square, and a fifth hangs from one of them."
             caption:
-              de: Drei Netze A, B und C. Suche nach einem Weg, der zurückführt.
-              en: Three networks A, B and C. Look for a path that leads back.
+              de: Drei Netze A, B und C.
+              en: Three networks A, B and C.
             source:
               de: eigene Zeichnung, Oliver Jägle
               en: own drawing, Oliver Jägle
             licence: CC-BY-4.0
         options:
-          - text: { de: C, en: C }
-            correct: true
+          - text: { de: A, en: A }
+            correct: false
             info:
-              de: In C führt ein Weg um das Viereck herum zum Start zurück. Das ist ein Kreis.
-              en: In C, a path leads round the square back to the start. That is a cycle.
+              de: A verzweigt sich von oben nach unten und hat keinen Kreis.
+              en: A branches out from top to bottom and has no cycle.
           - text: { de: B, en: B }
             correct: false
             info:
               de: B sieht anders aus als ein Baum im Bild, hat aber keinen Kreis. Eine Kette ist ein Baum ohne Verzweigung.
               en: B looks different from the usual tree picture, but it has no cycle. A chain is a tree without branches.
-          - text: { de: A, en: A }
-            correct: false
+          - text: { de: C, en: C }
+            correct: true
             info:
-              de: A verzweigt sich wie der Zimmerbaum und hat keinen Kreis.
-              en: A branches out like the room tree and has no cycle.
+              de: In C führt ein Weg um das Viereck herum zum Start zurück. Das ist ein Kreis.
+              en: In C, a path leads round the square back to the start. That is a cycle.
         explanation:
-          de: Ein Baum ist ein Graph ohne Kreis. Wie das Netz gezeichnet ist, spielt keine Rolle. Nur C hat einen Kreis.
-          en: A tree is a graph with no cycle. How the network is drawn does not matter. Only C has a cycle.
+          de: Wie ein Netz gezeichnet ist, spielt keine Rolle. Es kommt auf die Kanten an. Nur in C führt ein Weg zum Start zurück.
+          en: How a network is drawn does not matter. What counts are the edges. Only in C does a path lead back to the start.
   - type: section
     id: galerie
     title:
       de: Die Galerie wächst
       en: The gallery grows
     blocks:
+      - type: text
+        text:
+          de: |
+            In der Galerie der Datenstrukturen sammelst du jede Struktur dieser App. Zu jeder fragst du: Wie finde ich ein
+            Element, also einen bestimmten Knoten, zum Beispiel eine Haltestelle?
+          en: |
+            In the gallery of data structures you collect every structure of this app. For each one you ask: how do I
+            find an element, that is, a certain node, for example a stop?
       - type: figure
         image: images/galerie-2.svg
         alt:
           de: Vier Bilderrahmen. Im ersten ein Baum, im zweiten ein Graph mit Kreisen. Der dritte und der vierte Rahmen sind leer, mit einem Fragezeichen.
           en: Four picture frames. The first holds a tree, the second a graph with cycles. The third and fourth frames are empty, with a question mark.
         caption:
-          de: Die Galerie der Datenstrukturen. Neu ist der Graph im zweiten Rahmen.
-          en: The gallery of data structures. The graph in the second frame is new.
+          de: "Die Galerie der Datenstrukturen. Neu ist der Graph im zweiten Rahmen. Die leeren Rahmen füllst du später."
+          en: "The gallery of data structures. The graph in the second frame is new. You will fill the empty frames later."
         source:
           de: eigene Zeichnung, Oliver Jägle
           en: own drawing, Oliver Jägle
@@ -321,10 +382,10 @@ blocks:
               }
           - - { de: Graph, en: graph }
             - {
-                de: "Von einem Knoten aus den Kanten folgen: Oft gibt es mehrere Wege. Wähle einen kurzen.",
-                en: "Follow the edges from a node: there are often several paths. Choose a short one.",
+                de: "Von einem Knoten aus den Kanten folgen. Oft gibt es mehrere Wege: Nimm den mit den wenigsten Kanten.",
+                en: "Follow the edges from a node. There are often several paths: take the one with the fewest edges.",
               }
       - type: text
         text:
-          de: "Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Dabei zeigt jede Kante in eine Richtung."
-          en: "Next, Jona, Selin and Mia link their pages. Here every edge points in one direction."
+          de: "Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis führt nur in eine Richtung, wie eine Einbahnstraße."
+          en: "Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one-way street."

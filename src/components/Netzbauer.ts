@@ -2,7 +2,7 @@
 // learner draws the graph by adding an edge for each pair. A task is the set of edges; an answer is the edges the
 // learner drew. Without direction, A – B is the same edge as B – A; with direction, A → B is not B → A. The check
 // compares the sets of edges, never the drawing: where the nodes are does not matter.
-import { type Edge, fill, keys, random, sameEdges, without } from "./Netz.ts";
+import { type Edge, distances, fill, keys, random, sameEdges, without } from "./Netz.ts";
 
 /** The props the logic needs. */
 export interface Props {
@@ -37,7 +37,7 @@ function pairs(count: number, directed: boolean): Edge[] {
 }
 
 /**
- * The task of `seed`: four to six edges, every node at one of them at least, and with direction never both A → B and
+ * The task of `seed`: four to six edges, all nodes joined in one piece, and with direction never both A → B and
  * B → A, so that an arrow drawn the wrong way round is always a mistake.
  */
 export function generate(seed: number, props: Props): Task {
@@ -56,8 +56,8 @@ export function generate(seed: number, props: Props): Task {
       if (props.directed && chosen.some((e) => e[0] === edge[1] && e[1] === edge[0])) continue;
       chosen.push(edge);
     }
-    const touched = new Set(chosen.flat());
-    if (touched.size === count || attempt > 50) {
+    const connected = distances(count, chosen, 0, false).every((d) => d >= 0);
+    if (connected || attempt > 200) {
       chosen.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
       return { edges: chosen, directed: props.directed };
     }
