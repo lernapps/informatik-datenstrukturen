@@ -60,20 +60,45 @@ Kapitel 2 `reihen` (später): Wiederholung `recap: informatik/variable`, Seite `
 - en: graph, node, edge, path, length of a path (number of edges), cycle, directed graph, arrow, hypertext, page, link,
   link text, home page.
 - Vermeiden: „Graph“ für ein Diagramm mit Achsen (wird auf `graph` abgegrenzt); „Ecke“ statt Knoten.
-- Glossar (definition-Blöcke): Graph, Weg, Kreis (`graph`); gerichteter Graph (`pfeile`); Hypertext, Verweis,
-  Startseite (`hypertext`); Quellenangabe nicht als Definition (gehört zu #505), nur als Text mit Link.
+- Glossar (definition-Blöcke): Graph, Weg, Kreis (`graph`); Verweis (Link), gerichteter Graph (`pfeile`); Hypertext,
+  Startseite (`hypertext`). Linktext und Sackgasse nur im Text (`hypertext`, `stadtfuehrer`). Quellenangabe nicht als
+  Definition (gehört zu #505), nur als Text mit Link auf die Karte (urheberrecht).
+- Weg: „eine Folge von Kanten, die aneinanderhängen; beginnt an einem Knoten und endet an einem Knoten“. Kreis: „ein
+  Weg, der an demselben Knoten endet, an dem er beginnt, ohne eine Kante zweimal zu nutzen“. So bleiben beide
+  Definitionen widerspruchsfrei.
+- Im Text der Seiten heißt es nach der Einführung meist „Link“ (so sagen es die Kinder im Chat); „Verweis (Link)“ steht
+  beim ersten Auftreten (`graph`, Galerie-Ausblick) und im Glossar.
 - Namen und Ortsnamen (Seeberg, Lindenplatz) bleiben in allen Sprachen gleich.
 
 ## Exercise patterns
 
-- Zählen am Bild: `number` mit `mistakes` (Knoten statt Kanten gezählt; Umweg über den Kreis), z. B.
-  `graph.yaml#kanten-busnetz`.
-- Erkennen: `single-choice` mit `info` je Option, z. B. `graph.yaml#kein-baum`.
-- Urteilen: `true-false` mit Begründung, z. B. `graph.yaml#baum-ist-graph`.
-- Zuordnen: `matching` mit Distraktor, z. B. `hypertext.yaml#teile-hypertext`.
-- Ordnen: `ordering` eines Klickwegs, `hypertext.yaml#klickweg`.
-- Bauen ungerichtet/gerichtet: Komponente `Netzbauer` (`graph.yaml#freundesnetz-bauen`, `pfeile.yaml#verweisnetz-bauen`).
-- Hypertext bauen: Komponente `Hypertextbaukasten` (`stadtfuehrer.yaml#stadtfuehrer-bauen`).
+- Zählen am Bild: `number` mit `mistakes` (Knoten statt Kanten, Seiten statt Klicks, Umweg), mit dem Bild als
+  `material`, wenn es weit oben steht: `graph#kanten-busnetz`, `graph#kuerzester-weg`, `pfeile#pfeile-zu-selin`,
+  `hypertext#klicks-schwimmbad`.
+- Erkennen: `single-choice` mit `info` je Option: `das-brauchst-du#weg-zu-mia`, `graph#kein-baum`,
+  `pfeile#alle-erreichen`, `hypertext#buch-oder-hypertext`, `stadtfuehrer#sackgasse`,
+  `stadtfuehrer#quellenangabe-vollstaendig`.
+- Mehrere richtig: `multiple-choice`: `graph#kreis-freunde`, `pfeile#zurueck-zu-jona`.
+- Urteilen: `true-false` mit `hint` und Begründung: `graph#busnetz-baum`, `graph#fuenf-kanten`, `pfeile#selin-zu-mia`,
+  `hypertext#link-zurueck`.
+- Zuordnen: `matching` mit Distraktor: `pfeile#pfeile-lesen`, `hypertext#teile-hypertext`,
+  `stadtfuehrer#teile-quellenangabe`.
+- Ordnen: `ordering` eines Klickwegs: `hypertext#klickweg`.
+- Bauen ungerichtet/gerichtet: Komponente `Netzbauer` (`graph#freundesnetz-bauen`, `pfeile#linknetz-bauen`).
+- Hypertext bauen: Komponente `Hypertextbaukasten` (`stadtfuehrer#stadtfuehrer-bauen`).
+
+### Komponenten
+
+- `Netz.ts`: gemeinsame Logik (Kantenschlüssel, `toggle`, `sameEdges`, `distances` per Breitensuche, Kreis-Layout,
+  `border` für Pfeilspitzen, `fill` für Platzhalter, Zufall `random`).
+- `Netzbauer` (Übung): Props `names` (@verbatim), `directed`, `task`, `line` ({a} {b}), Bedienungstexte, `mistakes`
+  [fehlt bei {a}, zu viel {a}–{b}, Pfeil falsch herum {a}→{b}]. Aufgabe je seed: 4–6 Kanten, alle 5 Knoten
+  zusammenhängend, gerichtet nie A→B und B→A zugleich. Prüft die Kantenmenge (ungerichtet A–B = B–A).
+- `Hypertextbaukasten` (Übung): Props `pages` (erste = Startseite), Regeltexte `ruleReach` ({k}), `ruleStart` ({m}),
+  `ruleBack`, `ruleMust` ({a} {b}), Bedienungstexte, `mistakes` [nicht erreichbar, zu viele Klicks, zu viele Links auf
+  der Startseite, kein Rückweg, Pflichtlink fehlt]. Aufgabe je seed: k = 1 oder k = 2 mit höchstens m = 2 Links auf der
+  Startseite, dazu ein Pflichtlink. Prüft nur die Regeln (jede Lösung, die sie einhält, ist richtig); die Rückmeldung
+  nennt die erste verletzte Regel mit der Seite. Vorschau zum Durchklicken, Sackgassen-Hinweis.
 
 ## Figures
 
@@ -82,9 +107,11 @@ Kapitel 2 `reihen` (später): Wiederholung `recap: informatik/variable`, Seite `
   Baum), Pfeilspitzen gefüllt #333 am Zielknoten. Schrift sans-serif 15.
 - Text im Bild nur Namen. Wörter (Haltestellen, Seitennamen) → `image: { de: images/x-de.svg, en: images/x-en.svg }`.
   Begriffe nie im Bild, sondern als `labelled-figure` mit Legende.
-- Bilder: `baum-zimmer.svg` (Kopie aus informatik-daten-codieren, Herkunft im Dateikopf), `busnetz-*.svg`,
-  `freunde.svg`, `pfeile.svg`, `stadtfuehrer-*.svg`, `galerie-1..3.svg`. Alle eigene Zeichnung, `licence: CC-BY-4.0`,
-  `source: eigene Zeichnung, Oliver Jägle`.
+- Bilder: `baum-zimmer.svg` (Kopie aus informatik-daten-codieren, Herkunft im Dateikopf), `busnetz-de/en.svg`,
+  `freunde.svg`, `drei-netze.svg`, `pfeile.svg`, `stadtfuehrer-de/en.svg`, `entwurf-de/en.svg` (Sackgasse Bücherei),
+  `startseite-de/en.svg` (Seite im Browser mit Linktexten), `galerie-1..3.svg`. Alle eigene Zeichnung, `licence:
+  CC-BY-4.0`, `source: eigene Zeichnung, Oliver Jägle`. Unten und rechts bleibt Rand frei, weil die Runtime dort das
+  Lizenz-Badge über das Bild legt.
 - Komponenten zeichnen im selben Stil, Farben der Bedienelemente nur über `--page-*`.
 - `alt` sagt, was das Bild zeigt; `caption` sagt, worauf man schaut; nie die Lösung einer Aufgabe.
 
@@ -108,4 +135,9 @@ Kapitel 2 `reihen` (später): Wiederholung `recap: informatik/variable`, Seite `
 
 ## Rules learned from mistakes
 
-None yet.
+- Weg und Kreis müssen zueinander passen: „von einem Knoten zu einem anderen“ widersprach dem Kreis (Lernenden-Check).
+- Eine Bauaufgabe nach Liste allein ist Abschreiben: daneben eine Frage, die das Netz deutet (Kreis finden).
+- Aufgaben der Komponenten sind zusammenhängend; ein zerfallenes Netz verwirrte, weil es nie erklärt wurde.
+- Bilder brauchen unten Rand: das Lizenz-Badge verdeckte bei 360 px Knoten und Buchstaben.
+- Bildunterschriften verraten nichts („Suche nach einem Weg, der zurückführt“ nannte fast die Lösung).
+- Texte mit Komma in `{ de: …, en: … }` in Anführungszeichen, sonst bricht der Build.

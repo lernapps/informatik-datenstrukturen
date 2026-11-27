@@ -288,7 +288,7 @@ hellblau #e8f0fb)
 - [x] Seite netze/hypertext: Stadtführer als Hypertext aus Seiten und Verweisen, Klickwege, Unterschied zum Buch, Übungen
 - [x] Seite netze/stadtfuehrer: Komponente Hypertextbaukasten mit Test, Quellenangabe, Galerie Stand 3 mit Tabelle, Rückblick, Übungen
 <!-- tasks: pages (4 added): the other pages or screens, after the pattern -->
-- [ ] Update the content guide so that it describes the app as built (`app-content-matches`).
+- [x] Update the content guide so that it describes the app as built (`app-content-matches`).
 - [ ] Run `npx --no -- lernapps check` until it passes.
 - [ ] Look at every screen and state, at 360 px and on a desktop, as "Look at the app" of skill `lernapps-cli` says.
       Compare each with its sketch.
