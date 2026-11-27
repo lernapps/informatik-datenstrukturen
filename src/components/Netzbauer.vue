@@ -19,6 +19,10 @@ const props = defineProps<{
   line: string;
   /** Shown while one node is chosen, with {a}. */
   chosen: string;
+  /** Shown after an edge was added, with {a} and {b}. */
+  added: string;
+  /** Shown after an edge was removed, with {a} and {b}. */
+  removed: string;
   /** The heading of the list of edges drawn. */
   drawn: string;
   /** Shown while no edge is drawn. */
@@ -40,6 +44,7 @@ const current = computed(() => generate(props.seed, props));
 const places = computed(() => circle(props.names.length));
 const edges = ref<Edge[]>([]);
 const first = ref<number | undefined>(undefined);
+const status = ref("");
 
 const sign = computed(() => (props.directed ? "→" : "–"));
 const name = (index: number) => props.names[index] ?? "";
@@ -56,12 +61,16 @@ function segment(edge: Edge) {
 function choose(index: number): void {
   if (first.value === undefined) {
     first.value = index;
+    status.value = fill(props.chosen, { a: name(index) });
     return;
   }
   if (first.value !== index) {
+    const before = edges.value.length;
     edges.value = toggle(edges.value, [first.value, index], props.directed);
+    const text = edges.value.length > before ? props.added : props.removed;
+    status.value = fill(text, { a: name(first.value), b: name(index) });
     emit("answer", edges.value.length === 0 ? undefined : edges.value);
-  }
+  } else status.value = "";
   first.value = undefined;
 }
 
@@ -71,6 +80,7 @@ const heading = ref<HTMLElement | null>(null);
 /** Removes an edge and keeps the keyboard focus in the list: on the next button to remove, else on its heading. */
 function drop(edge: Edge, index: number): void {
   edges.value = toggle(edges.value, edge, props.directed);
+  status.value = fill(props.removed, { a: name(edge[0]), b: name(edge[1]) });
   emit("answer", edges.value.length === 0 ? undefined : edges.value);
   void nextTick(() => {
     const buttons = list.value?.querySelectorAll("button");
@@ -131,7 +141,7 @@ const percent = (value: number, whole: number) => `${(value / whole) * 100}%`;
       </button>
     </div>
     <p aria-live="polite" class="netzbauer-status">
-      {{ first === undefined ? "" : fill(chosen, { a: name(first) }) }}
+      {{ status }}
     </p>
     <p ref="heading" class="netzbauer-drawn" tabindex="-1">{{ drawn }}</p>
     <p v-if="edges.length === 0">{{ empty }}</p>

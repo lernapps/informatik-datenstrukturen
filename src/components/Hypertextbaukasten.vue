@@ -74,6 +74,21 @@ function addLink(from: number): void {
   links.value = [...links.value, [from, to]];
   choice.value[from] = targets(from)[0] ?? 0;
   changed();
+  // the select is gone once every link of the card exists: keep the focus on the card
+  void nextTick(() => {
+    const card = cards.value[from];
+    (
+      card?.querySelector<HTMLElement>(".hypertext-add button") ?? card?.querySelector<HTMLElement>(".hypertext-title")
+    )?.focus();
+  });
+}
+
+const herePara = ref<HTMLElement | null>(null);
+
+/** Opens a page in the preview and moves the focus to the sentence that names it. */
+function read(page: number | undefined): void {
+  reading.value = page;
+  if (page !== undefined) void nextTick(() => herePara.value?.focus());
 }
 
 const cards = ref<HTMLElement[]>([]);
@@ -118,7 +133,7 @@ function segment(edge: Edge) {
           class="hypertext-card"
           :class="{ 'hypertext-home': from === 0 }"
         >
-          <p class="hypertext-title">{{ name }}</p>
+          <p class="hypertext-title" tabindex="-1">{{ name }}</p>
           <p class="hypertext-small">{{ linksOnPage }}</p>
           <p v-if="linksOf(from).length === 0" class="hypertext-small">{{ none }}</p>
           <ul v-else class="hypertext-links">
@@ -179,29 +194,29 @@ function segment(edge: Edge) {
             stroke="#333"
             stroke-width="2"
           />
-          <text :x="place.x" :y="place.y + 5" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#222">
+          <text :x="place.x" :y="place.y + 5" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#222">
             {{ page(index) }}
           </text>
         </g>
       </svg>
     </div>
     <p>
-      <button v-if="reading === undefined" type="button" class="hypertext-button" @click="reading = 0">
+      <button v-if="reading === undefined" type="button" class="hypertext-button" @click="read(0)">
         {{ preview }}
       </button>
     </p>
     <div v-if="reading !== undefined" class="hypertext-preview">
-      <p aria-live="polite">
-        <strong>{{ fill(here, { a: page(reading) }) }}</strong>
+      <p ref="herePara" aria-live="polite" tabindex="-1">
+        <strong>{{ fill(props.here, { a: page(reading) }) }}</strong>
       </p>
       <p v-if="linksOf(reading).length === 0">{{ deadEnd }}</p>
       <ul v-else class="hypertext-read">
         <li v-for="edge in linksOf(reading)" :key="edge[1]">
-          <button type="button" class="hypertext-link" @click="reading = edge[1]">{{ page(edge[1]) }}</button>
+          <button type="button" class="hypertext-link" @click="read(edge[1])">{{ page(edge[1]) }}</button>
         </li>
       </ul>
       <p class="hypertext-row">
-        <button type="button" class="hypertext-button" @click="reading = 0">{{ restart }}</button>
+        <button type="button" class="hypertext-button" @click="read(0)">{{ restart }}</button>
         <button type="button" class="hypertext-button" @click="reading = undefined">{{ close }}</button>
       </p>
     </div>
@@ -313,7 +328,7 @@ function segment(edge: Edge) {
 }
 
 .hypertext-graph {
-  flex: 1 1 16rem;
+  flex: 1 1 18rem;
   max-width: 24rem;
   border: 1px solid var(--page-border);
 }

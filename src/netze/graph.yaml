@@ -70,11 +70,11 @@ blocks:
           de: |
             Auf dieser Seite lernst du, Netze wie das Busnetz als **Graph** darzustellen. Den Baum kennst du schon: Er
             hat Knoten und Kanten, und von der Wurzel führt genau ein Weg zu jedem Blatt. Im Busnetz gibt es keine
-            Wurzel, und manche Fahrten führen im Kreis.
+            Wurzel, und manche Fahrten führen zurück zum Start.
           en: |
             On this page you will learn to show networks like the bus network as a **graph**. You already know the
             tree: it has nodes and edges, and exactly one path leads from the root to each leaf. In the bus network
-            there is no root, and some rides go round in a loop.
+            there is no root, and some rides lead back to the start.
       - type: definition
         term:
           de: Graph
@@ -175,8 +175,8 @@ blocks:
               de: "Sechs Namen: Jona, Selin, Mia, Tom, Lea und Ben. Linien verbinden Jona mit Selin, Mia und Tom, Selin mit Mia, Mia mit Lea und Tom mit Ben."
               en: "Six names: Jona, Selin, Mia, Tom, Lea and Ben. Lines connect Jona with Selin, Mia and Tom, Selin with Mia, Mia with Lea and Tom with Ben."
             caption:
-              de: So kann ein Teil eures Netzes aussehen. Jeder Faden ist hier eine Linie.
-              en: This is what part of your network might look like. Each piece of string is a line here.
+              de: So kann ein Teil eures Netzes aussehen. Tom, Lea und Ben gehen auch in die 7b. Jeder Faden ist hier eine Linie.
+              en: This is what part of your network might look like. Tom, Lea and Ben are in class 7b too. Each piece of string is a line here.
             source:
               de: eigene Zeichnung, Oliver Jägle
               en: own drawing, Oliver Jägle
@@ -239,6 +239,12 @@ blocks:
           chosen:
             de: "{a} ist ausgewählt. Tippe jetzt den zweiten Namen an."
             en: "{a} is selected. Now tap the second name."
+          added:
+            de: "Kante {a} – {b} angelegt."
+            en: "Edge {a} – {b} added."
+          removed:
+            de: "Kante {a} – {b} entfernt."
+            en: "Edge {a} – {b} removed."
           drawn:
             de: "Deine Kanten:"
             en: "Your edges:"

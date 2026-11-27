@@ -32,6 +32,13 @@ blocks:
                 **Mia:** On one page I can't go any further. There isn't a single link on it!
 
                 **Ms Berg:** That's called a dead end. Can you find it?
+      - type: definition
+        term:
+          de: Sackgasse
+          en: dead end
+        explanation:
+          de: Eine Sackgasse ist eine Seite ohne Link. Wer dort ist, kommt mit keinem Klick weiter.
+          en: A dead end is a page without a link. Anyone there cannot go on with any click.
       - type: single-choice
         id: sackgasse
         text:
@@ -69,8 +76,8 @@ blocks:
               de: Von der Schule führt ein Pfeil zur Bücherei. Du kommst also weiter.
               en: An arrow leads from School to the library. So you can go on.
         explanation:
-          de: Eine Sackgasse ist eine Seite ohne Link. Als Graph ist es ein Knoten, von dem kein Pfeil wegführt. Jona braucht einen Link auf der Seite Bücherei, zum Beispiel zur Startseite.
-          en: A dead end is a page without a link. As a graph, it is a node with no arrow leading away. Jona needs a link on the Library page, for example to the home page.
+          de: Als Graph ist eine Sackgasse ein Knoten, von dem kein Pfeil wegführt. Jona braucht einen Link auf der Seite Bücherei, zum Beispiel zur Startseite.
+          en: As a graph, a dead end is a node with no arrow leading away. Jona needs a link on the Library page, for example to the home page.
   - type: section
     id: bauen
     title:
@@ -81,12 +88,12 @@ blocks:
         text:
           de: |
             Jetzt baust du den Stadtführer selbst. Auf dieser Seite erstellst du einen Hypertext nach Regeln. Jede Karte
-            ist eine Seite. Wähle bei „Link auf“ eine andere Seite und tippe „Link anlegen“. Rechts siehst du deinen
-            Hypertext als Graph. Mit „Vorschau“ klickst du ihn durch wie später die Fünfer.
+            ist eine Seite. Wähle bei „Link auf“ eine andere Seite und tippe „Link anlegen“. Daneben oder darunter siehst du
+            deinen Hypertext als Graph. Mit „Vorschau“ klickst du ihn durch wie später die Fünfer.
           en: |
             Now you build the town guide yourself. On this page you create a hypertext that follows rules. Each card is
-            a page. Choose another page at “Link to” and tap “Add link”. On the right you can see your hypertext as a
-            graph. With “Preview” you click through it, just like the Year 5 pupils will later.
+            a page. Choose another page at “Link to” and tap “Add link”. Next to it or below it you can see your
+            hypertext as a graph. With “Preview” you click through it, just like the Year 5 pupils will later.
       - type: vue-component
         id: stadtfuehrer-bauen
         component: Hypertextbaukasten
@@ -101,11 +108,11 @@ blocks:
             de: "Lege Links an, sodass diese Regeln gelten:"
             en: "Add links so that these rules hold:"
           ruleReach:
-            de: "Von der Startseite erreichst du jede Seite mit höchstens {k} Klicks."
-            en: "From the home page you can reach every page in at most {k} clicks."
+            de: "Klicks von der Startseite bis zu jeder Seite: höchstens {k}"
+            en: "Clicks from the home page to any page: at most {k}"
           ruleStart:
-            de: "Auf der Startseite stehen höchstens {m} Links."
-            en: "The home page has at most {m} links."
+            de: "Links auf der Startseite: höchstens {m}"
+            en: "Links on the home page: at most {m}"
           ruleBack:
             de: Jede andere Seite hat einen Link zurück zur Startseite.
             en: Every other page has a link back to the home page.
@@ -137,8 +144,8 @@ blocks:
             de: Vorschau schließen
             en: Close preview
           here:
-            de: "Du bist auf der Seite {a}."
-            en: "You are on the {a} page."
+            de: "Du bist hier: {a}"
+            en: "You are here: {a}"
           deadEnd:
             de: "Sackgasse: Auf dieser Seite steht kein Link."
             en: "Dead end: there is no link on this page."
@@ -167,10 +174,10 @@ blocks:
       - type: single-choice
         id: guter-linktext
         text:
-          de: "Selin schreibt den Text der Startseite. Auf welches Wort setzt sie den Link zur Seite Bus?"
-          en: "Selin writes the text of the home page. Which words does she put the link to the Bus page on?"
+          de: "Selin schreibt den Text der Seite Schule. Auf welches Wort setzt sie den Link zur Seite Bus?"
+          en: "Selin writes the text of the School page. Which words does she put the link to the Bus page on?"
         options:
-          - text: { de: "„Busplan und Haltestellen“", en: "“bus map and stops”" }
+          - text: { de: "„Busplan“", en: "“bus map”" }
             correct: true
             info:
               de: Der Linktext sagt, was auf der Zielseite steht. So wissen die Fünfer vor dem Klick, wohin er führt.
@@ -202,13 +209,13 @@ blocks:
           - type: text
             text:
               de: |
-                **Selin:** Für die Seite Schwimmbad habe ich ein Foto im Netz gefunden: „Freibad am Morgen“ von Kim
-                Sander, mit der Lizenz CC BY 4.0.
+                **Selin:** Für die Seite Schwimmbad habe ich ein Foto im Netz gefunden, auf example.org/freibad: „Freibad
+                am Morgen“ von Kim Sander, mit der Lizenz CC BY 4.0.
 
                 **Frau Berg:** Dann gehört eine Quellenangabe unter das Bild.
               en: |
-                **Selin:** For the Pool page I found a photo on the internet: “Outdoor pool in the morning” by Kim
-                Sander, with the licence CC BY 4.0.
+                **Selin:** For the Pool page I found a photo on the internet, at example.org/pool: “Outdoor pool in the
+                morning” by Kim Sander, with the licence CC BY 4.0.
 
                 **Ms Berg:** Then a source credit belongs under the picture.
       - type: text
@@ -232,21 +239,21 @@ blocks:
               en: "“Outdoor pool in the morning”, Kim Sander, example.org/pool, CC BY 4.0"
             correct: true
             info:
-              de: Titel, Urheberin, Quelle und Lizenz sind alle da.
+              de: Titel, Urheber, Quelle und Lizenz sind alle da.
               en: Title, creator, source and licence are all there.
           - text:
               de: "Foto: aus dem Internet"
               en: "Photo: from the internet"
             correct: false
             info:
-              de: Es fehlen Titel, Urheberin und Lizenz. „Internet“ sagt nicht, auf welcher Seite das Foto steht.
+              de: Es fehlen Titel, Urheber und Lizenz. „Internet“ sagt nicht, auf welcher Seite das Foto steht.
               en: The title, creator and licence are missing. “Internet” does not say which page the photo is on.
           - text:
               de: "„Freibad am Morgen“, Kim Sander"
               en: "“Outdoor pool in the morning”, Kim Sander"
             correct: false
             info:
-              de: Titel und Urheberin stimmen, aber Quelle und Lizenz fehlen.
+              de: Titel und Urheber stimmen, aber Quelle und Lizenz fehlen.
               en: Title and creator are right, but the source and licence are missing.
         explanation:
           de: "Eine vollständige Quellenangabe hat vier Teile: Titel, Urheber, Quelle und Lizenz. Im Netz verlinkst du die Lizenz am besten."
@@ -298,13 +305,13 @@ blocks:
         rows:
           - - { de: Baum, en: tree }
             - {
-                de: "Von der Wurzel nach unten, es gibt genau einen Weg.",
-                en: "From the root downwards; there is exactly one path.",
+                de: "Von der Wurzel aus nach unten: Es gibt genau einen Weg.",
+                en: "From the root downwards: there is exactly one path.",
               }
           - - { de: Graph, en: graph }
             - {
-                de: "Den Kanten folgen, merken, wo du schon warst, und den kürzesten Weg nehmen.",
-                en: "Follow the edges, remember where you have been and take the shortest path.",
+                de: "Von einem Knoten aus den Kanten folgen und merken, wo du schon warst, sonst läufst du im Kreis. Nimm den Weg mit den wenigsten Kanten.",
+                en: "Follow the edges from a node and remember where you have been, or you will go round in a loop. Take the path with the fewest edges.",
               }
           - - { de: Hypertext, en: hypertext }
             - {

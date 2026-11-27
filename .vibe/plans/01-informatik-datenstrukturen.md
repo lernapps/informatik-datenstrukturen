@@ -4,11 +4,11 @@
 # Archetype, null until chosen in Explore. Allowed values: explainer, interactive, quiz.
 archetype: explainer
 # Current phase. Allowed values: explore, plan, code, commit.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
-failedChecks: {}
+failedChecks: { checks-pass: 1 }
 ---
 
 # Plan: informatik-datenstrukturen, first version
@@ -46,6 +46,21 @@ Leitfrage der Galerie der Datenstrukturen: Wie finde ich ein Element?
 - Kein `scope`: die App hat kein `open-task` und folgt keinem Material des Auftraggebers.
 
 ## Notes
+
+### Prüfungen und was ich behoben habe
+
+- Lernenden-Check Musterseite: Weg/Kreis widersprüchlich, Netzbauer nur Abschreiben (Kreis-Übung ergänzt), zerfallene
+  Aufgaben, Fokus nach „entfernen“, Galerie nicht eingeführt, Lizenz-Badge über Bildern, Wiederholungen.
+- Fachprüfung: Weg ohne doppelte Knoten, Baum = verbunden und ohne Kreis, „Kringel“ statt „Kreise“ bei Berners-Lee,
+  „merken, wo du schon warst“ in der Galerie, Linktext-Übung für „erstellen“, „jede andere Seite“, „Mehrere sind
+  richtig“, Lizenz verlinken.
+- Lernenden-Check ganze App: Figuren und Frau Berg auf der Wiederholung eingeführt, Tom/Lea/Ben beim Freundesnetz,
+  „eigene Seite im Schulnetz“, Linktext und Sackgasse im Glossar, Regeltexte ohne „1 Klicks“, Beispielseite mit
+  sprechenden Linktexten, Quelle der Fotoadresse im Chat, Galerie-Zeilen einheitlich, Statusmeldung im Netzbauer,
+  Fokus im Hypertextbaukasten, Kapitel 2 im Intro angekündigt.
+- Nachtrag 5: Prüfungen per Skript gegen alle Antworten (0 Abweichungen), jede Übung mit eigenem Bild.
+- Für die Vorlage gemeldet: grüner „Lösung“-Kasten bleibt nach Änderung; doppeltes „Richtig“; Recap zeigt
+  „informatik/baum“ als Code, englische Seite verlinkt die deutsche Karte.
 
 ### Strang und Bausteine
 
@@ -292,7 +307,7 @@ hellblau #e8f0fb)
 - [x] Run `npx --no -- lernapps check` until it passes.
 - [x] Look at every screen and state, at 360 px and on a desktop, as "Look at the app" of skill `lernapps-cli` says.
       Compare each with its sketch.
-- [ ] Do the whole-app check of skill `lernapps-learner-check`. Fix what it finds and write under "Notes" what you
+- [x] Do the whole-app check of skill `lernapps-learner-check`. Fix what it finds and write under "Notes" what you
       fixed.
 
 ## Commit

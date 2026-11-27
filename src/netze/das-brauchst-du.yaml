@@ -35,12 +35,16 @@ blocks:
       - type: text
         text:
           de: |
-            In diesem Kapitel baust du Netze. Sie beginnen beim Baum. Prüfe dich kurz selbst:
+            Jona, Selin und Mia sind 12 und gehen in die Klasse 7b. Frau Berg ist ihre Klassenlehrerin. Letztes Jahr,
+            in der 6b, war die Klasse auf Klassenfahrt am Seeberg. In diesem Kapitel baust du Netze. Sie beginnen beim
+            Baum. Prüfe dich kurz selbst:
 
             - **Baum als Datenstruktur:** Ich kann hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und
               Blättern darstellen.
           en: |
-            In this chapter you build networks. They start with the tree. Check yourself quickly:
+            Jona, Selin and Mia are 12 and in class 7b. Ms Berg is their class teacher. Last year, in 6b, the class went
+            on a school trip to Seeberg. In this chapter you build networks. They start with the tree. Check yourself
+            quickly:
 
             - **Trees:** I can show hierarchical information as a tree with a root, nodes, edges and leaves.
   - type: section

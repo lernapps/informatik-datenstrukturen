@@ -21,13 +21,13 @@ blocks:
           - type: text
             text:
               de: |
-                **Mia:** Auf meiner Seite im Schulnetz gibt es jetzt einen Link zu Selins Seite!
+                **Mia:** Jetzt hat jede und jeder von uns eine eigene Seite im Schulnetz. Auf meiner gibt es einen Link zu Selins Seite!
 
                 **Selin:** Danke! Auf meiner Seite habe ich nur einen Link zu Jona.
 
                 **Jona:** Und ich verlinke Selin und Tom. Tom hat noch gar keinen Link.
               en: |
-                **Mia:** My page on the school network now has a link to Selin's page!
+                **Mia:** Now each of us has our own page on the school network. Mine has a link to Selin's page!
 
                 **Selin:** Thanks! On my page I only have a link to Jona.
 
@@ -173,6 +173,12 @@ blocks:
           chosen:
             de: "{a} ist ausgewählt. Tippe jetzt die Seite an, zu der der Link führt."
             en: "{a} is selected. Now tap the page the link leads to."
+          added:
+            de: "Pfeil {a} → {b} angelegt."
+            en: "Arrow {a} → {b} added."
+          removed:
+            de: "Pfeil {a} → {b} entfernt."
+            en: "Arrow {a} → {b} removed."
           drawn:
             de: "Deine Pfeile:"
             en: "Your arrows:"
