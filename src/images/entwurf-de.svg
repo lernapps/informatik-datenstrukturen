@@ -1,8 +1,8 @@
 <!-- Entwurf des Stadtführers: von der Bücherei führt kein Pfeil weg. Eigene Zeichnung, Oliver Jägle, CC-BY-4.0. Stil wie der Baum von lernapps/informatik-daten-codieren (images/baum-zimmer.svg). -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 375" role="img">
 <defs><marker id="pfeil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#333"/></marker></defs>
 <title>Jonas Entwurf des Stadtführers</title>
-<rect width="400" height="340" fill="#fff"/>
+<rect width="400" height="375" fill="#fff"/>
 <line x1="178.7" y1="150.0" x2="97.6" y2="74.0" stroke="#333" stroke-width="2" marker-end="url(#pfeil)"/>
 <line x1="221.3" y1="150.0" x2="302.4" y2="74.0" stroke="#333" stroke-width="2" marker-end="url(#pfeil)"/>
 <line x1="72.0" y1="70.0" x2="72.0" y2="266.0" stroke="#333" stroke-width="2" marker-end="url(#pfeil)"/>
