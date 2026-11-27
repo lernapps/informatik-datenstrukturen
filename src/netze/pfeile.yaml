@@ -97,16 +97,6 @@ blocks:
               en: |
                 An arrow from A to B means: page A has a link to page B. A way back needs its own arrow from B to A, like
                 between Selin and Jona.
-      - type: text
-        text:
-          de: |
-            Die Idee ist älter als du: 1989 schlug Tim Berners-Lee am Forschungszentrum CERN vor, Notizen und Texte als
-            Netz zu verknüpfen. In seinem Vorschlag nannte er die Kreise Knoten (nodes) und die Pfeile Links. Daraus
-            entstand das World Wide Web.
-          en: |
-            The idea is older than you: in 1989, Tim Berners-Lee at the research centre CERN suggested linking notes and
-            texts together as a network. In his proposal, he called the circles nodes and the arrows links. This grew
-            into the World Wide Web.
       - type: matching
         id: pfeile-lesen
         text:
@@ -130,6 +120,16 @@ blocks:
               de: "Tim Berners-Lee: Information Management: A Proposal (1989, englisch)"
               en: "Tim Berners-Lee: Information Management: A Proposal (1989)"
             url: "https://www.w3.org/History/1989/proposal.html"
+      - type: text
+        text:
+          de: |
+            Die Idee ist älter als du: 1989 schlug Tim Berners-Lee am Forschungszentrum CERN vor, Notizen und Texte als
+            Netz zu verknüpfen. In seinem Vorschlag nannte er die Kreise Knoten (nodes) und die Pfeile Links. Daraus
+            entstand das World Wide Web.
+          en: |
+            The idea is older than you: in 1989, Tim Berners-Lee at the research centre CERN suggested linking notes and
+            texts together as a network. In his proposal, he called the circles nodes and the arrows links. This grew
+            into the World Wide Web.
   - type: section
     id: bauen
     title:

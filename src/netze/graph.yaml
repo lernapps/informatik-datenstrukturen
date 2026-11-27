@@ -53,8 +53,8 @@ blocks:
           en: Mia is right. The bus network is a tree.
         answer: false
         hint:
-          de: Fahre vom Bahnhof zum Markt, dann weiter. Kommst du zum Bahnhof zurück, ohne eine Linie zweimal zu fahren?
-          en: Ride from the station to the market, then on. Can you get back to the station without using a line twice?
+          de: Kommst du vom Bahnhof zum Bahnhof zurück, ohne eine Linie zweimal zu fahren?
+          en: Can you get from the station back to the station without using a line twice?
         explanation:
           de: "Bahnhof, Markt, Schule, Park und wieder Bahnhof: Diese Fahrt führt im Kreis zurück. In einem Baum geht das nicht: Dort führt von der Wurzel genau ein Weg zu jedem Knoten."
           en: "Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree: there, exactly one path leads from the root to each node."
@@ -105,8 +105,8 @@ blocks:
               de: Das ist ein Umweg über Park oder Schule. Es gibt einen Weg mit weniger Kanten.
               en: That is a detour via the park or the school. There is a path with fewer edges.
         explanation:
-          de: "Bahnhof – Markt – Schwimmbad sind 2 Kanten. Andere Wege, etwa über Park, Schule und Rathaus, sind 4 Kanten lang. Im Graphen gibt es oft mehrere Wege zum selben Knoten."
-          en: "Station – Market – Pool is 2 edges. Other paths, for example via Park, School and Town hall, are 4 edges long. In a graph there are often several paths to the same node."
+          de: "Bahnhof – Markt – Schwimmbad sind 2 Kanten. Die anderen Wege sind 4 Kanten lang."
+          en: "Station – Market – Pool is 2 edges. The other paths are 4 edges long."
       - type: definition
         term:
           de: Kreis
@@ -178,18 +178,18 @@ blocks:
           - text: { de: Mia, en: Mia }
             correct: true
             info:
-              de: Von Mia geht es zurück zu Jona. So schließt sich der Kreis.
-              en: From Mia the way leads back to Jona. That closes the cycle.
+              de: Von Mia geht es zurück zu Jona.
+              en: From Mia the way leads back to Jona.
           - text: { de: Tom, en: Tom }
             correct: false
             info:
-              de: Von Tom kommst du nur über Jona zurück. Dann nutzt du die Kante Jona – Tom zweimal.
-              en: From Tom you can only get back via Jona. Then you use the edge Jona – Tom twice.
+              de: Von Tom geht es nur über dieselbe Kante zurück zu Jona.
+              en: From Tom the only way back to Jona is the same edge.
           - text: { de: Lea, en: Lea }
             correct: false
             info:
-              de: Lea hat nur eine Kante, zu Mia. Ein Kreis braucht an jedem Knoten zwei Kanten.
-              en: Lea has only one edge, to Mia. A cycle needs two edges at each of its nodes.
+              de: Lea hat nur eine Kante. Ein Kreis braucht an jedem Knoten zwei.
+              en: Lea has only one edge. A cycle needs two at each node.
         explanation:
           de: "Jona – Selin – Mia – Jona endet dort, wo der Weg beginnt, und nutzt keine Kante zweimal."
           en: "Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice."
@@ -284,14 +284,14 @@ blocks:
               en: You counted the stops, which are the nodes. Count the lines.
           - answer: 8
             message:
-              de: Du hast eine Linie doppelt gezählt. Hake jede Linie ab, wenn du sie gezählt hast.
-              en: You counted one line twice. Tick off each line once you have counted it.
+              de: Du hast eine Linie doppelt gezählt.
+              en: You counted one line twice.
         hint:
           de: Zähle die Linien, die vom Markt ausgehen, dann die übrigen.
           en: Count the lines that start at the market, then the others.
         explanation:
-          de: "Drei Kanten führen vom Markt weg, vier weitere verbinden Bahnhof, Park, Schule, Rathaus und Schwimmbad: zusammen 7. Ein Baum mit 6 Knoten hätte nur 5 Kanten."
-          en: "Three edges lead away from the market, four more connect Station, Park, School, Town hall and Pool: 7 in total. A tree with 6 nodes would only have 5 edges."
+          de: "3 Kanten am Markt und 4 weitere: zusammen 7. Ein Baum mit 6 Knoten hätte nur 5."
+          en: "3 edges at the market and 4 more: 7 in total. A tree with 6 nodes would only have 5."
       - type: true-false
         id: fuenf-kanten
         text:
@@ -331,16 +331,16 @@ blocks:
           - text: { de: B, en: B }
             correct: false
             info:
-              de: B sieht anders aus als ein Baum im Bild, hat aber keinen Kreis. Eine Kette ist ein Baum ohne Verzweigung.
-              en: B looks different from the usual tree picture, but it has no cycle. A chain is a tree without branches.
+              de: B ist eine Kette ohne Kreis, also ein Baum ohne Verzweigung.
+              en: B is a chain with no cycle, so a tree without branches.
           - text: { de: C, en: C }
             correct: true
             info:
               de: In C führt ein Weg um das Viereck herum zum Start zurück. Das ist ein Kreis.
               en: In C, a path leads round the square back to the start. That is a cycle.
         explanation:
-          de: Wie ein Netz gezeichnet ist, spielt keine Rolle. Es kommt auf die Kanten an. Nur in C führt ein Weg zum Start zurück.
-          en: How a network is drawn does not matter. What counts are the edges. Only in C does a path lead back to the start.
+          de: Es kommt nicht auf die Zeichnung an, sondern auf die Kanten. Nur C hat einen Kreis.
+          en: What counts is not the drawing but the edges. Only C has a cycle.
   - type: section
     id: galerie
     title:
