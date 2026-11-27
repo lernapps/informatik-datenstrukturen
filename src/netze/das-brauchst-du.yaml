@@ -95,6 +95,19 @@ blocks:
         text:
           de: Wie viele Wege führen im Zimmerbaum von der Wurzel 6b zu Mia?
           en: How many paths lead from the root 6b to Mia in the room tree?
+        material:
+          - type: figure
+            image: images/baum-zimmer.svg
+            alt:
+              de: "Ein Baum. Oben steht 6b, darunter die Zimmer 13, 22 und 9, ganz unten die Kinder: Jona und Tom, Selin und Mia, Ben und Ali."
+              en: "A tree. 6b is at the top, below it the rooms 13, 22 and 9, at the very bottom the children: Jona and Tom, Selin and Mia, Ben and Ali."
+            caption:
+              de: "Der Zimmerbaum vom Seeberg."
+              en: "The room tree from Seeberg."
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
         options:
           - text: { de: genau einer, en: exactly one }
             correct: true

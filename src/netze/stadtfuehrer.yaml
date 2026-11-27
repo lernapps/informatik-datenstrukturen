@@ -107,8 +107,8 @@ blocks:
             de: "Auf der Startseite stehen höchstens {m} Links."
             en: "The home page has at most {m} links."
           ruleBack:
-            de: Jede Seite hat einen Link zurück zur Startseite.
-            en: Every page has a link back to the home page.
+            de: Jede andere Seite hat einen Link zurück zur Startseite.
+            en: Every other page has a link back to the home page.
           ruleMust:
             de: "Die Seite {a} hat einen Link zur Seite {b}."
             en: "The {a} page has a link to the {b} page."
@@ -164,6 +164,30 @@ blocks:
             - { answer: [[0, 4], [4, 2], [0, 1], [1, 3], [1, 0], [2, 0], [3, 0]], seed: 2 }
             - { answer: [[0, 1], [0, 2], [0, 3], [0, 4], [4, 2], [1, 0], [2, 0], [3, 0], [4, 0]], seed: 2 }
             - { answer: [[0, 1]] }
+      - type: single-choice
+        id: guter-linktext
+        text:
+          de: "Selin schreibt den Text der Startseite. Auf welches Wort setzt sie den Link zur Seite Bus?"
+          en: "Selin writes the text of the home page. Which words does she put the link to the Bus page on?"
+        options:
+          - text: { de: "„Busplan und Haltestellen“", en: "“bus map and stops”" }
+            correct: true
+            info:
+              de: Der Linktext sagt, was auf der Zielseite steht. So wissen die Fünfer vor dem Klick, wohin er führt.
+              en: The link text says what is on the target page. So the Year 5 pupils know before clicking where it leads.
+          - text: { de: "„hier klicken“", en: "“click here”" }
+            correct: false
+            info:
+              de: Das sagt nur, dass man klicken kann, aber nicht, wohin der Link führt.
+              en: This only says that you can click, but not where the link leads.
+          - text: { de: "„Link“", en: "“link”" }
+            correct: false
+            info:
+              de: Dass es ein Link ist, sieht man schon an der blauen, unterstrichenen Schrift. Wohin er führt, sagt das Wort nicht.
+              en: You can already see that it is a link from the blue, underlined text. The word does not say where it leads.
+        explanation:
+          de: Ein guter Linktext nennt das Ziel des Links. Wer nur die Linktexte liest, findet trotzdem den Weg.
+          en: Good link text names the target of the link. Anyone who only reads the link texts can still find their way.
   - type: section
     id: quelle
     title:
@@ -225,8 +249,8 @@ blocks:
               de: Titel und Urheberin stimmen, aber Quelle und Lizenz fehlen.
               en: Title and creator are right, but the source and licence are missing.
         explanation:
-          de: "Eine vollständige Quellenangabe hat vier Teile: Titel, Urheber, Quelle und Lizenz."
-          en: "A complete source credit has four parts: title, creator, source and licence."
+          de: "Eine vollständige Quellenangabe hat vier Teile: Titel, Urheber, Quelle und Lizenz. Im Netz verlinkst du die Lizenz am besten."
+          en: "A complete source credit has four parts: title, creator, source and licence. Online, it is best to link to the licence."
       - type: matching
         id: teile-quellenangabe
         text:
@@ -279,8 +303,8 @@ blocks:
               }
           - - { de: Graph, en: graph }
             - {
-                de: "Den Kanten folgen und den Weg mit den wenigsten Kanten nehmen.",
-                en: "Follow the edges and take the path with the fewest edges.",
+                de: "Den Kanten folgen, merken, wo du schon warst, und den kürzesten Weg nehmen.",
+                en: "Follow the edges, remember where you have been and take the shortest path.",
               }
           - - { de: Hypertext, en: hypertext }
             - {

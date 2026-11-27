@@ -63,9 +63,9 @@ Kapitel 2 `reihen` (später): Wiederholung `recap: informatik/variable`, Seite `
 - Glossar (definition-Blöcke): Graph, Weg, Kreis (`graph`); Verweis (Link), gerichteter Graph (`pfeile`); Hypertext,
   Startseite (`hypertext`). Linktext und Sackgasse nur im Text (`hypertext`, `stadtfuehrer`). Quellenangabe nicht als
   Definition (gehört zu #505), nur als Text mit Link auf die Karte (urheberrecht).
-- Weg: „eine Folge von Kanten, die aneinanderhängen; beginnt an einem Knoten und endet an einem Knoten“. Kreis: „ein
-  Weg, der an demselben Knoten endet, an dem er beginnt, ohne eine Kante zweimal zu nutzen“. So bleiben beide
-  Definitionen widerspruchsfrei.
+- Weg: „eine Folge von Kanten, die aneinanderhängen; beginnt an einem Knoten, endet an einem Knoten und besucht keinen
+  Knoten zweimal“. Kreis: „führt über Kanten zum Startknoten zurück, ohne eine Kante und keinen anderen Knoten zweimal zu
+  nutzen“. Baum: „ein Graph, in dem alle Knoten verbunden sind und es keinen Kreis gibt“ (Fachprüfung).
 - Im Text der Seiten heißt es nach der Einführung meist „Link“ (so sagen es die Kinder im Chat); „Verweis (Link)“ steht
   beim ersten Auftreten (`graph`, Galerie-Ausblick) und im Glossar.
 - Namen und Ortsnamen (Seeberg, Lindenplatz) bleiben in allen Sprachen gleich.
@@ -78,7 +78,9 @@ Kapitel 2 `reihen` (später): Wiederholung `recap: informatik/variable`, Seite `
 - Erkennen: `single-choice` mit `info` je Option: `das-brauchst-du#weg-zu-mia`, `graph#kein-baum`,
   `pfeile#alle-erreichen`, `hypertext#buch-oder-hypertext`, `stadtfuehrer#sackgasse`,
   `stadtfuehrer#quellenangabe-vollstaendig`.
-- Mehrere richtig: `multiple-choice`: `graph#kreis-freunde`, `pfeile#zurueck-zu-jona`.
+- Mehrere richtig: `multiple-choice`, die Frage sagt „Mehrere sind richtig“: `graph#kreis-freunde`,
+  `pfeile#zurueck-zu-jona`.
+- Guter Linktext (Hypertext erstellen): `stadtfuehrer#guter-linktext`.
 - Urteilen: `true-false` mit `hint` und Begründung: `graph#busnetz-baum`, `graph#fuenf-kanten`, `pfeile#selin-zu-mia`,
   `hypertext#link-zurueck`.
 - Zuordnen: `matching` mit Distraktor: `pfeile#pfeile-lesen`, `hypertext#teile-hypertext`,
@@ -143,3 +145,8 @@ Kapitel 2 `reihen` (später): Wiederholung `recap: informatik/variable`, Seite `
 - Bilder brauchen unten Rand: das Lizenz-Badge verdeckte bei 360 px Knoten und Buchstaben.
 - Bildunterschriften verraten nichts („Suche nach einem Weg, der zurückführt“ nannte fast die Lösung).
 - Texte mit Komma in `{ de: …, en: … }` in Anführungszeichen, sonst bricht der Build.
+- Jede Übung allein verständlich (Selbsteinschätzung, Tutor): kein „oben“, „im Bild“; braucht sie ein Bild, steht es als
+  `material` in der Frage. Steht die Frage direkt unter ihrem Bild, wandert das Bild ganz in die Frage (keine Dopplung).
+- Die Prüfungen der Komponenten sind per Skript gegen alle möglichen Antworten getestet (Netzbauer: alle Kantenmengen;
+  Hypertextbaukasten: alle 24 Aufgabenarten × 2^20 Graphen gegen eine unabhängige Regelprüfung, 0 Abweichungen).
+  Nach jeder Änderung der Logik wiederholen.

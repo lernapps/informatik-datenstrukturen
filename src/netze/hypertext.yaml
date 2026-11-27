@@ -32,25 +32,26 @@ blocks:
                 **Selin:** I'll do the pages about the bus and the pool!
 
                 **Mia:** I've already drawn who links to whom.
-      - type: figure
-        image:
-          de: images/stadtfuehrer-de.svg
-          en: images/stadtfuehrer-en.svg
-        alt:
-          de: "Fünf Kästchen. In der Mitte die Startseite, hellblau. Pfeile führen von der Startseite zu Schule und Bus, von Schule zu Bücherei, von Bus zu Schwimmbad, von Bücherei und von Schwimmbad zurück zur Startseite."
-          en: "Five boxes. In the middle the home page, light blue. Arrows lead from the home page to School and Bus, from School to Library, from Bus to Pool, and from Library and from Pool back to the home page."
-        caption:
-          de: Mias Plan des Stadtführers. Jedes Kästchen ist eine Seite, jeder Pfeil ein Link.
-          en: "Mia's plan of the town guide. Each box is a page, each arrow is a link."
-        source:
-          de: eigene Zeichnung, Oliver Jägle
-          en: own drawing, Oliver Jägle
-        licence: CC-BY-4.0
       - type: number
         id: klicks-schwimmbad
         text:
           de: Du bist auf der Startseite. Wie viele Klicks brauchst du mindestens bis zur Seite Schwimmbad?
           en: You are on the home page. What is the smallest number of clicks you need to get to the Pool page?
+        material:
+          - type: figure
+            image:
+              de: images/stadtfuehrer-de.svg
+              en: images/stadtfuehrer-en.svg
+            alt:
+              de: "Fünf Kästchen. In der Mitte die Startseite, hellblau. Pfeile führen von der Startseite zu Schule und Bus, von Schule zu Bücherei, von Bus zu Schwimmbad, von Bücherei und von Schwimmbad zurück zur Startseite."
+              en: "Five boxes. In the middle the home page, light blue. Arrows lead from the home page to School and Bus, from School to Library, from Bus to Pool, and from Library and from Pool back to the home page."
+            caption:
+              de: Mias Plan des Stadtführers. Jedes Kästchen ist eine Seite, jeder Pfeil ein Link.
+              en: "Mia's plan of the town guide. Each box is a page, each arrow is a link."
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
         answer: 2
         tolerance: 0
         mistakes:
@@ -91,8 +92,8 @@ blocks:
           de: Startseite
           en: home page
         explanation:
-          de: Die Startseite ist die Seite, auf der man einen Hypertext zu lesen beginnt. Von ihr führen Links zu den anderen Seiten.
-          en: The home page is the page where you start reading a hypertext. Links lead from it to the other pages.
+          de: Die Startseite ist die Seite, auf der man einen Hypertext zu lesen beginnt. Von ihr aus erreichst du über Links die anderen Seiten.
+          en: The home page is the page where you start reading a hypertext. From it you can reach the other pages through links.
       - type: figure
         image:
           de: images/startseite-de.svg
@@ -145,13 +146,28 @@ blocks:
         text:
           de: Lea will von der Startseite zur Bücherei. Bringe die Seiten in die Reihenfolge, in der sie sie öffnet.
           en: Lea wants to get from the home page to the library. Put the pages in the order she opens them.
+        material:
+          - type: figure
+            image:
+              de: images/stadtfuehrer-de.svg
+              en: images/stadtfuehrer-en.svg
+            alt:
+              de: "Fünf Kästchen, in der Mitte die Startseite. Pfeile führen von der Startseite zu Schule und Bus, von Schule zu Bücherei, von Bus zu Schwimmbad, von Bücherei und Schwimmbad zur Startseite."
+              en: "Five boxes, the home page in the middle. Arrows lead from the home page to School and Bus, from School to Library, from Bus to Pool, and from Library and Pool to the home page."
+            caption:
+              de: "Mias Plan des Stadtführers."
+              en: "Mia's plan of the town guide."
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
         items:
           - { de: Startseite, en: home page }
           - { de: Schule, en: School }
           - { de: Bücherei, en: Library }
         hint:
-          de: Suche im Plan den Pfeil, der auf die Bücherei zeigt. Wo beginnt er?
-          en: Find the arrow in the plan that points to the library. Where does it start?
+          de: Suche den Pfeil, der auf die Bücherei zeigt. Wo beginnt er?
+          en: Find the arrow that points to the library. Where does it start?
         explanation:
           de: Zur Bücherei führt nur ein Pfeil, und zwar von der Schule. Zur Schule kommt Lea von der Startseite.
           en: Only one arrow leads to the library, from School. Lea gets to School from the home page.
@@ -160,6 +176,21 @@ blocks:
         text:
           de: Die Seite Bus hat einen Link zum Schwimmbad. Darum kommt man vom Schwimmbad mit einem Klick zum Bus.
           en: The Bus page has a link to the pool. So you can get from the pool to the bus page in one click.
+        material:
+          - type: figure
+            image:
+              de: images/stadtfuehrer-de.svg
+              en: images/stadtfuehrer-en.svg
+            alt:
+              de: "Fünf Kästchen, in der Mitte die Startseite. Pfeile führen von der Startseite zu Schule und Bus, von Schule zu Bücherei, von Bus zu Schwimmbad, von Bücherei und Schwimmbad zur Startseite."
+              en: "Five boxes, the home page in the middle. Arrows lead from the home page to School and Bus, from School to Library, from Bus to Pool, and from Library and Pool to the home page."
+            caption:
+              de: "Mias Plan des Stadtführers."
+              en: "Mia's plan of the town guide."
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
         answer: false
         hint:
           de: Auf welcher Seite steht der Link? Ein Pfeil gilt nur in eine Richtung.
