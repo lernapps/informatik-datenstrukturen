@@ -277,12 +277,13 @@ hellblau #e8f0fb)
       `references/language-tasks.md` in the same folder. A component in the plan: also `references/components.md`.
 - [x] Decide whether the app needs `scope`, as "`scope`" in
       `.agents/skills/lernapps-explainer/references/structure.md` says. Write the choice under "Key decisions".
-- [ ] Musterseite netze/graph in de und en: Klassenchat, Busnetz-Bild, Fäden-Anleitung, Graph/Weg/Kreis, Galerie Stand 2, Komponente Netzbauer (ungerichtet) mit Netz.ts und Test, alle Übungen
+- [x] Musterseite netze/graph in de und en: Klassenchat, Busnetz-Bild, Fäden-Anleitung, Graph/Weg/Kreis, Galerie Stand 2, Komponente Netzbauer (ungerichtet) mit Netz.ts und Test, alle Übungen
 <!-- tasks: pattern (1 added): the one page or screen that is the pattern for the others -->
-- [ ] **Checkpoint:** the pattern page. Load skill `lernapps-learner-check` and do its learner check on the page. Fix
+- [x] **Checkpoint:** the pattern page. Load skill `lernapps-learner-check` and do its learner check on the page. Fix
       what it finds. Then show the creator the page and ask whether the others may follow it. Stop and wait. A
       change: change the pattern first.
-- [ ] Wiederholung netze/das-brauchst-du: Chat, Selbstcheck baum, baum-zimmer.svg (Kopie #491), Galerie Stand 1, eine Prüffrage
+      Creator: Ja, die übrigen Seiten folgen diesem Muster. Gut, dass der Netzbauer jetzt mehr verlangt als Abschreiben.
+- [x] Wiederholung netze/das-brauchst-du: Chat, Selbstcheck baum, baum-zimmer.svg (Kopie #491), Galerie Stand 1, eine Prüffrage
 - [ ] Seite netze/pfeile: gerichteter Graph, Pfeil, Berners-Lee 1989, Netzbauer gerichtet aus Verweistabelle, Übungen
 - [ ] Seite netze/hypertext: Stadtführer als Hypertext aus Seiten und Verweisen, Klickwege, Unterschied zum Buch, Übungen
 - [ ] Seite netze/stadtfuehrer: Komponente Hypertextbaukasten mit Test, Quellenangabe, Galerie Stand 3 mit Tabelle, Rückblick, Übungen
