@@ -57,7 +57,7 @@ Der Graph als Netz aus Knoten und Kanten: Busnetz, Freundesnetz aus Fäden, Weg,
 
 Auf dieser Seite lernst du, Netze wie das Busnetz als **Graph** darzustellen. Den Baum kennst du schon: Er
 hat Knoten und Kanten, und von der Wurzel führt genau ein Weg zu jedem Blatt. Im Busnetz gibt es keine
-Wurzel, und manche Fahrten führen im Kreis.
+Wurzel, und manche Fahrten führen zurück zum Start.
 
 - **Graph**: Ein Graph besteht aus Knoten und Kanten. Eine Kante verbindet zwei Knoten. Jeder Knoten darf mit jedem anderen verbunden sein.
 

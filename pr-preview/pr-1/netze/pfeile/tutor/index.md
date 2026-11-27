@@ -45,7 +45,7 @@ Der gerichtete Graph: verlinkte Seiten als Knoten, Verweise als Pfeile. Wege fol
 
 **Merke: Klassenchat 7b**
 
-**Mia:** Auf meiner Seite im Schulnetz gibt es jetzt einen Link zu Selins Seite!
+**Mia:** Jetzt hat jede und jeder von uns eine eigene Seite im Schulnetz. Auf meiner gibt es einen Link zu Selins Seite!
 
 **Selin:** Danke! Auf meiner Seite habe ich nur einen Link zu Jona.
 

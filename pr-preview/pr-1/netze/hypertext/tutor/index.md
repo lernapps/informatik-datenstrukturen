@@ -62,10 +62,11 @@ Auf der Seite davor hast du Links als Pfeile gezeichnet. Auf dieser Seite lernst
 
 - **Startseite**: Die Startseite ist die Seite, auf der man einen Hypertext zu lesen beginnt. Von ihr aus erreichst du über Links die anderen Seiten.
 
-Bild: Die Startseite „Unser Viertel“. Text: Hallo, liebe Fünfer! Wir zeigen euch, wie ihr zur Schule kommt und wo der Bus fährt. Die Wörter Schule und Bus sind blau und unterstrichen. Bildunterschrift: So sieht die Startseite im Browser aus. Die blauen, unterstrichenen Wörter sind die Linktexte.
+Bild: Die Startseite „Unser Viertel“. Text: Hallo, liebe Fünfer! Hier findet ihr den Weg zur Schule und den Busplan. Die Wörter Weg zur Schule und Busplan sind blau und unterstrichen. Bildunterschrift: So sieht die Startseite im Browser aus. Die blauen, unterstrichenen Wörter sind die Linktexte.
 
-Das Wort, das du anklickst, heißt **Linktext**. Er sagt dir, wohin der Link führt. Ein Buch liest du von
-vorn nach hinten. In einem Hypertext wählst du selbst, welchem Link du folgst.
+- **Linktext**: Der Linktext ist das Wort, das du anklickst. Er sagt dir, wohin der Link führt.
+
+Ein Buch liest du von vorn nach hinten. In einem Hypertext wählst du selbst, welchem Link du folgst.
 
 ### Übung
 
@@ -100,10 +101,10 @@ Jetzt seid ihr dran: Auf der nächsten Seite baut die 7b ihren eigenen Stadtfüh
 
 ### Aufgabe klickweg
 
-- Aufgabe: Lea will von der Startseite zur Bücherei. Bringe die Seiten in die Reihenfolge, in der sie sie öffnet.
+- Aufgabe: Tom will von der Startseite zur Bücherei. Bringe die Seiten in die Reihenfolge, in der er sie öffnet.
 - Antwortformat: die Einträge in die richtige Reihenfolge bringen (die App zeigt sie gemischt)
 - Lösung: 1. Startseite, 2. Schule, 3. Bücherei
-- Erklärung: Zur Bücherei führt nur ein Pfeil, und zwar von der Schule. Zur Schule kommt Lea von der Startseite.
+- Erklärung: Zur Bücherei führt nur ein Pfeil, und zwar von der Schule. Zur Schule kommt Tom von der Startseite.
 - Tipp der App: Suche den Pfeil, der auf die Bücherei zeigt. Wo beginnt er?
 - Link: [../?via=tutor#klickweg](../?via=tutor#klickweg)
 

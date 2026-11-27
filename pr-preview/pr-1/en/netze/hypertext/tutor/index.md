@@ -62,10 +62,11 @@ built.
 
 - **home page**: The home page is the page where you start reading a hypertext. From it you can reach the other pages through links.
 
-Picture: The home page “Our area”. Text: Hello, Year 5! We show you how to get to school and where the bus goes. The words school and bus are blue and underlined. Caption: This is what the home page looks like in the browser. The blue, underlined words are the link texts.
+Picture: The home page “Our area”. Text: Hello, Year 5! Here you will find the way to school and the bus map. The words way to school and bus map are blue and underlined. Caption: This is what the home page looks like in the browser. The blue, underlined words are the link texts.
 
-The word you click on is called the **link text**. It tells you where the link leads. You read a book from
-front to back. In a hypertext, you choose for yourself which link to follow.
+- **link text**: The link text is the word you click on. It tells you where the link leads.
+
+You read a book from front to back. In a hypertext, you choose for yourself which link to follow.
 
 ### Practice
 
@@ -100,10 +101,10 @@ Now it's your turn: on the next page, class 7b builds its own town guide.
 
 ### Exercise klickweg
 
-- Task: Lea wants to get from the home page to the library. Put the pages in the order she opens them.
+- Task: Tom wants to get from the home page to the library. Put the pages in the order he opens them.
 - Answer format: put the items in the right order (the app shows them shuffled)
 - Solution: 1. home page, 2. School, 3. Library
-- Explanation: Only one arrow leads to the library, from School. Lea gets to School from the home page.
+- Explanation: Only one arrow leads to the library, from School. Tom gets to School from the home page.
 - The app's hint: Find the arrow that points to the library. Where does it start?
 - Link: [../?via=tutor#klickweg](../?via=tutor#klickweg)
 

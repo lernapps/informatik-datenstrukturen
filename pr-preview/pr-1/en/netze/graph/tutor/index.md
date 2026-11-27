@@ -57,7 +57,7 @@ The graph as a network of nodes and edges: a bus network, a friendship network m
 
 On this page you will learn to show networks like the bus network as a **graph**. You already know the
 tree: it has nodes and edges, and exactly one path leads from the root to each leaf. In the bus network
-there is no root, and some rides go round in a loop.
+there is no root, and some rides lead back to the start.
 
 - **graph**: A graph is made of nodes and edges. An edge connects two nodes. Any node may be connected to any other node.
 

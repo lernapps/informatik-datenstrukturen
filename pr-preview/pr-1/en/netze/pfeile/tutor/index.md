@@ -45,7 +45,7 @@ The directed graph: linked pages as nodes, links as arrows. Paths follow the dir
 
 **Remember: Class 7b chat**
 
-**Mia:** My page on the school network now has a link to Selin's page!
+**Mia:** Now each of us has our own page on the school network. Mine has a link to Selin's page!
 
 **Selin:** Thanks! On my page I only have a link to Jona.
 

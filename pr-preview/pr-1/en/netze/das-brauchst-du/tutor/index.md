@@ -53,7 +53,9 @@ A short recap: the tree as a data structure with root, nodes, edges and leaves. 
 
 **Selin:** I bet we'll need that again.
 
-In this chapter you build networks. They start with the tree. Check yourself quickly:
+Jona, Selin and Mia are 12 and in class 7b. Ms Berg is their class teacher. Last year, in 6b, the class went
+on a school trip to Seeberg. In this chapter you build networks. They start with the tree. Check yourself
+quickly:
 
 - **Trees:** I can show hierarchical information as a tree with a root, nodes, edges and leaves.
 

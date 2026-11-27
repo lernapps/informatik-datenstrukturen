@@ -53,7 +53,9 @@ Kurz wiederholt: der Baum als Datenstruktur mit Wurzel, Knoten, Kanten und Blät
 
 **Selin:** Den brauchen wir bestimmt noch.
 
-In diesem Kapitel baust du Netze. Sie beginnen beim Baum. Prüfe dich kurz selbst:
+Jona, Selin und Mia sind 12 und gehen in die Klasse 7b. Frau Berg ist ihre Klassenlehrerin. Letztes Jahr,
+in der 6b, war die Klasse auf Klassenfahrt am Seeberg. In diesem Kapitel baust du Netze. Sie beginnen beim
+Baum. Prüfe dich kurz selbst:
 
 - **Baum als Datenstruktur:** Ich kann hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und
   Blättern darstellen.
