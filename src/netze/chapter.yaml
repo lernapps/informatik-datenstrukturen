@@ -6,3 +6,18 @@ summary:
   de: Darf ein Zweig zurückführen, wird der Baum zum Graphen. Ein Hypertext ist ein Graph aus Seiten und Verweisen.
   en: If a branch may lead back, the tree becomes a graph. A hypertext is a graph made of pages and links.
 pages: [das-brauchst-du, graph, pfeile, hypertext, stadtfuehrer]
+selfAssessment:
+  pages:
+    - exercises:
+        - /netze/graph/#freundesnetz-bauen
+        - /netze/graph/#kanten-busnetz
+        - /netze/graph/#kein-baum
+    - exercises:
+        - /netze/pfeile/#linknetz-bauen
+        - /netze/pfeile/#linknetz-bauen
+        - /netze/hypertext/#teile-hypertext
+    - exercises:
+        - /netze/hypertext/#buch-oder-hypertext
+        - /netze/stadtfuehrer/#sackgasse
+        - /netze/stadtfuehrer/#stadtfuehrer-bauen
+        - /netze/stadtfuehrer/#quellenangabe-vollstaendig

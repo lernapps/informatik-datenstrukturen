@@ -131,6 +131,8 @@ Kapitel 2 `reihen` (später): Wiederholung `recap: informatik/variable`, Seite `
    eintragen (Kapitel 2: `reihen` nach `netze`).
 3. Seiten nach „Content structure“: Chat-Einstieg, Begriff, unplugged-Anleitung, Bauen, Übung, Galerie Stand n.
 4. Übungen aus den Mustern oben; jede Seite mindestens vier, jeder typische Fehler mit eigenem Hinweis.
+   1 bis 3 ihrer Übungen in `selfAssessment` des `chapter.yaml` aufnehmen, wie Skill
+   `lernapps-explainer-self-assessment` sagt (Kapitel `netze`: drei Schritte, zehn Übungen, beide Komponenten dabei).
 5. Englisch vollständig mitschreiben; `npx vp build`, `npx --no -- lernapps check`, Commit.
 
 ## Rules learned from mistakes
