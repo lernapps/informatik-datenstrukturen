@@ -51,8 +51,6 @@ The directed graph: linked pages as nodes, links as arrows. Paths follow the dir
 
 **Jona:** And I link to Selin and Tom. Tom doesn't have any link yet.
 
-Picture: Four boxes: Mia, Selin, Jona and Tom. Arrows lead from Mia to Selin, from Selin to Jona, from Jona to Selin and from Jona to Tom. Caption: Each box is one child's page. An arrow points from the page with the link to the page the link leads to.
-
 - Exercise `selin-zu-mia` (below)
 
 ### Arrows instead of lines
@@ -72,7 +70,7 @@ between Selin and Jona.
 - Exercise `pfeile-lesen` (below)
 
 The idea is older than you: in 1989, Tim Berners-Lee at the research centre CERN suggested linking notes and
-texts together as a network. In his proposal, he called the circles nodes and the arrows links. This grew
+texts together as a network. He drew rings and arrows and called the rings nodes and the arrows links. This grew
 into the World Wide Web.
 
 ### A network of links on the computer
@@ -103,7 +101,7 @@ Next, Ms Berg presents a project: a whole town guide made of pages and links.
 
 ### Exercise pfeile-lesen
 
-- Task: What does each arrow in the picture above mean?
+- Task: What does each arrow mean?
 - Answer format: match each item on the left with one on the right
 - Solution: arrow from Mia to Selin – Mia's page has a link to Selin's page.; arrow from Selin to Jona – Selin's page has a link to Jona's page.; arrow from Jona to Tom – Jona's page has a link to Tom's page.
 - Explanation: The arrow starts at the page the link is on and points to the page it leads to. Tom has no link yet.
@@ -195,7 +193,7 @@ No. | Liste | Solution | F1 | F2 | F3
 
 ### Exercise pfeile-zu-selin
 
-- Task: How many arrows in the picture above point to Selin's page?
+- Task: How many arrows point to Selin's page?
 - Answer format: type a number
 - Solution: 2
 - Explanation: Two arrow heads end at Selin: from Mia and from Jona. The arrow from Selin to Jona points away from her.
@@ -206,7 +204,7 @@ No. | Liste | Solution | F1 | F2 | F3
 
 ### Exercise alle-erreichen
 
-- Task: From which page can you reach all the other pages in the picture by following links?
+- Task: From which page can you reach all the other pages by following links?
 - Answer format: choose one answer
 - Choices (✓ right, ✗ wrong, with the app's message):
   - ✓ Mia – Mia → Selin → Jona → Tom: that way you get to all three other pages.
@@ -219,7 +217,7 @@ No. | Liste | Solution | F1 | F2 | F3
 
 ### Exercise zurueck-zu-jona
 
-- Task: Tom adds a new link. Which link would then get you from Tom's page to Jona's page?
+- Task: Tom adds a new link. Which links would then get you from Tom's page to Jona's page? More than one is right.
 - Answer format: choose all right answers
 - Choices (✓ right, ✗ wrong, with the app's message):
   - ✓ a link from Tom to Jona – The new arrow Tom → Jona leads straight to Jona.

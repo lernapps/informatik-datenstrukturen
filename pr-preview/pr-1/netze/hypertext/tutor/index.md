@@ -51,8 +51,6 @@ Der Hypertext: Seiten und Verweise, Startseite und Linktext, Klickwege. Anders l
 
 **Mia:** Ich habe schon mal aufgezeichnet, wer auf wen verlinkt.
 
-Bild: Fünf Kästchen. In der Mitte die Startseite, hellblau. Pfeile führen von der Startseite zu Schule und Bus, von Schule zu Bücherei, von Bus zu Schwimmbad, von Bücherei und von Schwimmbad zurück zur Startseite. Bildunterschrift: Mias Plan des Stadtführers. Jedes Kästchen ist eine Seite, jeder Pfeil ein Link.
-
 - Aufgabe `klicks-schwimmbad` (unten)
 
 ### Seiten und Links
@@ -62,7 +60,7 @@ Auf der Seite davor hast du Links als Pfeile gezeichnet. Auf dieser Seite lernst
 
 - **Hypertext**: Ein Hypertext besteht aus Seiten, die durch Links verbunden sind. Als Graph sind die Seiten Knoten und die Links Pfeile.
 
-- **Startseite**: Die Startseite ist die Seite, auf der man einen Hypertext zu lesen beginnt. Von ihr führen Links zu den anderen Seiten.
+- **Startseite**: Die Startseite ist die Seite, auf der man einen Hypertext zu lesen beginnt. Von ihr aus erreichst du über Links die anderen Seiten.
 
 Bild: Die Startseite „Unser Viertel“. Text: Hallo, liebe Fünfer! Wir zeigen euch, wie ihr zur Schule kommt und wo der Bus fährt. Die Wörter Schule und Bus sind blau und unterstrichen. Bildunterschrift: So sieht die Startseite im Browser aus. Die blauen, unterstrichenen Wörter sind die Linktexte.
 
@@ -106,7 +104,7 @@ Jetzt seid ihr dran: Auf der nächsten Seite baut die 7b ihren eigenen Stadtfüh
 - Antwortformat: die Einträge in die richtige Reihenfolge bringen (die App zeigt sie gemischt)
 - Lösung: 1. Startseite, 2. Schule, 3. Bücherei
 - Erklärung: Zur Bücherei führt nur ein Pfeil, und zwar von der Schule. Zur Schule kommt Lea von der Startseite.
-- Tipp der App: Suche im Plan den Pfeil, der auf die Bücherei zeigt. Wo beginnt er?
+- Tipp der App: Suche den Pfeil, der auf die Bücherei zeigt. Wo beginnt er?
 - Link: [../?via=tutor#klickweg](../?via=tutor#klickweg)
 
 ### Aufgabe link-zurueck

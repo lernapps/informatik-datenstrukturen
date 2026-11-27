@@ -51,8 +51,6 @@ Der gerichtete Graph: verlinkte Seiten als Knoten, Verweise als Pfeile. Wege fol
 
 **Jona:** Und ich verlinke Selin und Tom. Tom hat noch gar keinen Link.
 
-Bild: Vier Kästchen: Mia, Selin, Jona und Tom. Pfeile führen von Mia zu Selin, von Selin zu Jona, von Jona zu Selin und von Jona zu Tom. Bildunterschrift: Jedes Kästchen ist die Seite eines Kindes. Ein Pfeil zeigt von der Seite mit dem Link zur Seite, zu der der Link führt.
-
 - Aufgabe `selin-zu-mia` (unten)
 
 ### Pfeile statt Linien
@@ -72,7 +70,7 @@ eigenen Pfeil von B nach A, wie zwischen Selin und Jona.
 - Aufgabe `pfeile-lesen` (unten)
 
 Die Idee ist älter als du: 1989 schlug Tim Berners-Lee am Forschungszentrum CERN vor, Notizen und Texte als
-Netz zu verknüpfen. In seinem Vorschlag nannte er die Kreise Knoten (nodes) und die Pfeile Links. Daraus
+Netz zu verknüpfen. Er zeichnete Kringel und Pfeile und nannte die Kringel Knoten (nodes) und die Pfeile Links. Daraus
 entstand das World Wide Web.
 
 ### Ein Linknetz am Rechner
@@ -103,7 +101,7 @@ Als Nächstes stellt Frau Berg ein Projekt vor: einen ganzen Stadtführer aus Se
 
 ### Aufgabe pfeile-lesen
 
-- Aufgabe: Was bedeutet jeder Pfeil im Bild oben?
+- Aufgabe: Was bedeutet jeder Pfeil?
 - Antwortformat: jedem Eintrag links den passenden rechts zuordnen
 - Lösung: Pfeil von Mia zu Selin – Auf Mias Seite steht ein Link zu Selins Seite.; Pfeil von Selin zu Jona – Auf Selins Seite steht ein Link zu Jonas Seite.; Pfeil von Jona zu Tom – Auf Jonas Seite steht ein Link zu Toms Seite.
 - Erklärung: Der Pfeil beginnt an der Seite, auf der der Link steht, und zeigt auf die Seite, zu der er führt. Tom hat noch keinen Link.
@@ -195,7 +193,7 @@ Nr. | Liste | Lösung | F1 | F2 | F3
 
 ### Aufgabe pfeile-zu-selin
 
-- Aufgabe: Wie viele Pfeile zeigen im Bild oben auf Selins Seite?
+- Aufgabe: Wie viele Pfeile zeigen auf Selins Seite?
 - Antwortformat: eine Zahl eintippen
 - Lösung: 2
 - Erklärung: Zwei Pfeilspitzen enden bei Selin: von Mia und von Jona. Der Pfeil von Selin zu Jona zeigt weg von ihr.
@@ -206,7 +204,7 @@ Nr. | Liste | Lösung | F1 | F2 | F3
 
 ### Aufgabe alle-erreichen
 
-- Aufgabe: Von welcher Seite aus erreichst du über Links alle anderen Seiten im Bild?
+- Aufgabe: Von welcher Seite aus erreichst du über Links alle anderen Seiten?
 - Antwortformat: eine Antwort wählen
 - Antworten zur Wahl (✓ richtig, ✗ falsch, mit der Meldung der App):
   - ✓ Mia – Mia → Selin → Jona → Tom: So kommst du zu allen drei anderen Seiten.
@@ -219,7 +217,7 @@ Nr. | Liste | Lösung | F1 | F2 | F3
 
 ### Aufgabe zurueck-zu-jona
 
-- Aufgabe: Tom setzt einen neuen Link. Mit welchem Link kommt man danach von Toms Seite zu Jonas Seite?
+- Aufgabe: Tom setzt einen neuen Link. Mit welchen Links käme man danach von Toms Seite zu Jonas Seite? Mehrere sind richtig.
 - Antwortformat: alle richtigen Antworten wählen
 - Antworten zur Wahl (✓ richtig, ✗ falsch, mit der Meldung der App):
   - ✓ ein Link von Tom zu Jona – Der neue Pfeil Tom → Jona führt direkt zu Jona.

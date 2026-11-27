@@ -51,8 +51,6 @@ The graph as a network of nodes and edges: a bus network, a friendship network m
 
 **Mia:** Looks like our room tree from Seeberg!
 
-Picture: Six boxes for stops: Market at the top, below it Station, School and Pool, at the bottom Park and Town hall. Lines connect Market with Station, School and Pool, Station with Park, Park with School, School with Town hall and Town hall with Pool. Caption: Jona's bus map. Each box is a stop, each line is a direct ride.
-
 - Exercise `busnetz-baum` (below)
 
 ### Nodes, edges, paths
@@ -63,15 +61,15 @@ there is no root, and some rides go round in a loop.
 
 - **graph**: A graph is made of nodes and edges. An edge connects two nodes. Any node may be connected to any other node.
 
-- **path**: A path is a sequence of edges that hang together. It starts at one node and ends at a node. The length of a path is the number of its edges.
+- **path**: A path is a sequence of edges that join up. It starts at one node, ends at a node and visits no node twice. The length of a path is the number of its edges.
 
 - Exercise `kuerzester-weg` (below)
 
-- **cycle**: A cycle is a path that ends at the same node where it starts. It uses no edge twice.
+- **cycle**: A cycle leads along edges back to the node it started from. It uses no edge and no other node twice.
 
 **Remember: Remember**
 
-A tree is a graph **with no cycle**. That is why in a tree exactly one path leads to each node, and in a
+A tree is a graph in which all nodes are joined up and there is **no cycle**. That is why in a tree exactly one path leads to each node, and in a
 graph there are often several. Careful: the word graph here does not mean a chart like in maths, but a network.
 
 ### A friendship network made of string
@@ -81,8 +79,6 @@ Lay out a network in class, without a computer. You need cards, a pen and a ball
 1. Everyone writes their own name on a card and holds it in front of them. The card is a node.
 2. If you are friends with someone, stretch a piece of string to that person. Each piece of string is an edge.
 3. Look for a cycle: follow the strings until you get back to the first card.
-
-Picture: Six names: Jona, Selin, Mia, Tom, Lea and Ben. Lines connect Jona with Selin, Mia and Tom, Selin with Mia, Mia with Lea and Tom with Ben. Caption: This is what part of your network might look like. Each piece of string is a line here.
 
 - Exercise `kreis-freunde` (below)
 
@@ -111,7 +107,7 @@ Picture: Four picture frames. The first holds a tree, the second a graph with cy
 How do I find an element?:
 - Structure | How you find an element
 - tree | From the root downwards: there is exactly one path.
-- graph | Follow the edges from a node. There are often several paths: take the one with the fewest edges.
+- graph | Follow the edges from a node and remember where you have been, or you will go round in a loop. Take the path with the fewest edges.
 
 Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one-way street.
 
@@ -137,7 +133,7 @@ Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one
 
 ### Exercise kreis-freunde
 
-- Task: There is exactly one cycle in the picture. Who is on it?
+- Task: There is exactly one cycle in the friendship network. Who is on it?
 - Answer format: choose all right answers
 - Choices (✓ right, ✗ wrong, with the app's message):
   - ✓ Jona – One string leads from Jona to Selin and one to Mia.

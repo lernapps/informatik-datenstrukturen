@@ -51,8 +51,6 @@ Hypertext: pages and links, home page and link text, click paths. Reading differ
 
 **Mia:** I've already drawn who links to whom.
 
-Picture: Five boxes. In the middle the home page, light blue. Arrows lead from the home page to School and Bus, from School to Library, from Bus to Pool, and from Library and from Pool back to the home page. Caption: Mia's plan of the town guide. Each box is a page, each arrow is a link.
-
 - Exercise `klicks-schwimmbad` (below)
 
 ### Pages and links
@@ -62,7 +60,7 @@ built.
 
 - **hypertext**: A hypertext is made of pages that are joined by links. As a graph, the pages are nodes and the links are arrows.
 
-- **home page**: The home page is the page where you start reading a hypertext. Links lead from it to the other pages.
+- **home page**: The home page is the page where you start reading a hypertext. From it you can reach the other pages through links.
 
 Picture: The home page “Our area”. Text: Hello, Year 5! We show you how to get to school and where the bus goes. The words school and bus are blue and underlined. Caption: This is what the home page looks like in the browser. The blue, underlined words are the link texts.
 
@@ -106,7 +104,7 @@ Now it's your turn: on the next page, class 7b builds its own town guide.
 - Answer format: put the items in the right order (the app shows them shuffled)
 - Solution: 1. home page, 2. School, 3. Library
 - Explanation: Only one arrow leads to the library, from School. Lea gets to School from the home page.
-- The app's hint: Find the arrow in the plan that points to the library. Where does it start?
+- The app's hint: Find the arrow that points to the library. Where does it start?
 - Link: [../?via=tutor#klickweg](../?via=tutor#klickweg)
 
 ### Exercise link-zurueck

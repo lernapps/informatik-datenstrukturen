@@ -51,8 +51,6 @@ Der Graph als Netz aus Knoten und Kanten: Busnetz, Freundesnetz aus Fäden, Weg,
 
 **Mia:** Sieht aus wie unser Zimmerbaum vom Seeberg!
 
-Bild: Sechs Kästchen für Haltestellen: Markt oben, darunter Bahnhof, Schule und Schwimmbad, unten Park und Rathaus. Linien verbinden Markt mit Bahnhof, Schule und Schwimmbad, Bahnhof mit Park, Park mit Schule, Schule mit Rathaus und Rathaus mit Schwimmbad. Bildunterschrift: Jonas Busplan. Jedes Kästchen ist eine Haltestelle, jede Linie eine direkte Fahrt.
-
 - Aufgabe `busnetz-baum` (unten)
 
 ### Knoten, Kanten, Wege
@@ -63,15 +61,15 @@ Wurzel, und manche Fahrten führen im Kreis.
 
 - **Graph**: Ein Graph besteht aus Knoten und Kanten. Eine Kante verbindet zwei Knoten. Jeder Knoten darf mit jedem anderen verbunden sein.
 
-- **Weg**: Ein Weg ist eine Folge von Kanten, die aneinanderhängen. Er beginnt an einem Knoten und endet an einem Knoten. Die Länge eines Weges ist die Anzahl seiner Kanten.
+- **Weg**: Ein Weg ist eine Folge von Kanten, die aneinanderhängen. Er beginnt an einem Knoten, endet an einem Knoten und besucht keinen Knoten zweimal. Die Länge eines Weges ist die Anzahl seiner Kanten.
 
 - Aufgabe `kuerzester-weg` (unten)
 
-- **Kreis**: Ein Kreis ist ein Weg, der an demselben Knoten endet, an dem er beginnt. Dabei nutzt er keine Kante zweimal.
+- **Kreis**: Ein Kreis führt über Kanten zu seinem Startknoten zurück. Dabei nutzt er keine Kante und keinen anderen Knoten zweimal.
 
 **Merke: Merke**
 
-Ein Baum ist ein Graph **ohne Kreis**. Darum führt im Baum genau ein Weg zu jedem Knoten, im Graphen oft
+Ein Baum ist ein Graph, in dem alle Knoten verbunden sind und es **keinen Kreis** gibt. Darum führt im Baum genau ein Weg zu jedem Knoten, im Graphen oft
 mehrere. Achtung: Das Wort Graph meint hier kein Diagramm wie in Mathe, sondern ein Netz.
 
 ### Ein Freundesnetz aus Fäden
@@ -81,8 +79,6 @@ Legt in der Klasse ein Netz, ohne Rechner. Ihr braucht Karten, einen Stift und e
 1. Jede und jeder schreibt den eigenen Namen auf eine Karte und hält sie vor sich. Die Karte ist ein Knoten.
 2. Wer mit jemandem befreundet ist, spannt einen Faden zu dieser Person. Jeder Faden ist eine Kante.
 3. Sucht einen Kreis: Folgt den Fäden, bis ihr wieder bei der ersten Karte ankommt.
-
-Bild: Sechs Namen: Jona, Selin, Mia, Tom, Lea und Ben. Linien verbinden Jona mit Selin, Mia und Tom, Selin mit Mia, Mia mit Lea und Tom mit Ben. Bildunterschrift: So kann ein Teil eures Netzes aussehen. Jeder Faden ist hier eine Linie.
 
 - Aufgabe `kreis-freunde` (unten)
 
@@ -111,7 +107,7 @@ Bild: Vier Bilderrahmen. Im ersten ein Baum, im zweiten ein Graph mit Kreisen. D
 Wie finde ich ein Element?:
 - Struktur | So findest du ein Element
 - Baum | Von der Wurzel aus nach unten: Es gibt genau einen Weg.
-- Graph | Von einem Knoten aus den Kanten folgen. Oft gibt es mehrere Wege: Nimm den mit den wenigsten Kanten.
+- Graph | Von einem Knoten aus den Kanten folgen und merken, wo du schon warst, sonst läufst du im Kreis. Nimm den Weg mit den wenigsten Kanten.
 
 Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis (Link) führt nur in eine Richtung, wie eine Einbahnstraße.
 
@@ -137,7 +133,7 @@ Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis (Link) füh
 
 ### Aufgabe kreis-freunde
 
-- Aufgabe: Im Bild gibt es genau einen Kreis. Wer liegt darauf?
+- Aufgabe: Im Freundesnetz gibt es genau einen Kreis. Wer liegt darauf?
 - Antwortformat: alle richtigen Antworten wählen
 - Antworten zur Wahl (✓ richtig, ✗ falsch, mit der Meldung der App):
   - ✓ Jona – Von Jona führt ein Faden zu Selin und einer zu Mia.
