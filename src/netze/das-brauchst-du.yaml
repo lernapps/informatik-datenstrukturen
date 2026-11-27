@@ -1,0 +1,161 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title:
+  de: Das brauchst du hier
+  en: What you need here
+description:
+  de: "Kurz wiederholt: der Baum als Datenstruktur mit Wurzel, Knoten, Kanten und Blättern. Der Anfang der Galerie der Datenstrukturen."
+  en: "A short recap: the tree as a data structure with root, nodes, edges and leaves. The start of the gallery of data structures."
+recap: informatik/baum
+blocks:
+  - type: section
+    id: einstieg
+    title:
+      de: Kannst du das schon?
+      en: Can you do this already?
+    blocks:
+      - type: note
+        title:
+          de: Klassenchat 7b
+          en: Class 7b chat
+        blocks:
+          - type: text
+            text:
+              de: |
+                **Jona:** Schaut mal, was ich gefunden habe: Frau Bergs Zimmerplan vom Seeberg, letztes Jahr in der 6b!
+
+                **Mia:** Haha, der Baum! Zimmer 22, Selin und ich.
+
+                **Selin:** Den brauchen wir bestimmt noch.
+              en: |
+                **Jona:** Look what I found: Ms Berg's room plan from Seeberg, last year in 6b!
+
+                **Mia:** Haha, the tree! Room 22, Selin and me.
+
+                **Selin:** I bet we'll need that again.
+      - type: text
+        text:
+          de: |
+            Jona, Selin und Mia sind 12 und gehen in die Klasse 7b. Frau Berg ist ihre Klassenlehrerin. Letztes Jahr,
+            in der 6b, war die Klasse auf Klassenfahrt am Seeberg. In diesem Kapitel baust du Netze. Sie beginnen beim
+            Baum. Prüfe dich kurz selbst:
+
+            - **Baum als Datenstruktur:** Ich kann hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und
+              Blättern darstellen.
+          en: |
+            Jona, Selin and Mia are 12 and in class 7b. Ms Berg is their class teacher. Last year, in 6b, the class went
+            on a school trip to Seeberg. In this chapter you build networks. They start with the tree. Check yourself
+            quickly:
+
+            - **Trees:** I can show hierarchical information as a tree with a root, nodes, edges and leaves.
+  - type: section
+    id: beispiel
+    title:
+      de: Der Zimmerbaum vom Seeberg
+      en: The room tree from Seeberg
+    blocks:
+      - type: labelled-figure
+        image: images/baum-zimmer.svg
+        alt:
+          de: "Ein Baum. Oben steht 6b. Drei Linien führen nach unten zu den Zimmern 13, 22 und 9. Unter Zimmer 13 stehen Jona und Tom, unter 22 Selin und Mia, unter 9 Ben und Ali. Die Kästchen ganz unten haben einen gestrichelten Rand."
+          en: "A tree. At the top it says 6b. Three lines lead down to the rooms 13, 22 and 9. Below room 13 are Jona and Tom, below 22 Selin and Mia, below 9 Ben and Ali. The boxes at the very bottom have a dashed border."
+        caption:
+          de: Frau Bergs Zimmerplan als Baum. Die Zahlen 1 bis 4 zeigen die Teile des Baums.
+          en: Ms Berg's room plan as a tree. The numbers 1 to 4 show the parts of the tree.
+        labels:
+          - x: 66
+            y: 12
+            text:
+              de: "Wurzel: der oberste Knoten, hellblau"
+              en: "root: the top node, light blue"
+          - x: 67
+            y: 27
+            text:
+              de: "Kante: eine Linie zwischen zwei Knoten"
+              en: "edge: a line between two nodes"
+          - x: 5
+            y: 38
+            text:
+              de: "Knoten: ein Kästchen im Baum"
+              en: "node: a box in the tree"
+          - x: 97
+            y: 69
+            text:
+              de: "Blatt: ein Knoten ohne Knoten darunter, gestrichelt"
+              en: "leaf: a node with no nodes below it, dashed"
+        source:
+          de: "eigene Zeichnung, Oliver Jägle (aus „Daten darstellen und codieren“)"
+          en: "own drawing, Oliver Jägle (from “Representing and encoding data”)"
+        licence: CC-BY-4.0
+      - type: text
+        text:
+          de: |
+            Jeder Knoten außer der Wurzel hängt an genau einem Knoten darüber. Darum führt von der Wurzel genau **ein**
+            Weg zu jedem Knoten, und ein Baum hat immer eine Kante weniger als Knoten.
+          en: |
+            Every node except the root hangs from exactly one node above it. That is why exactly **one** path leads from
+            the root to each node, and a tree always has one edge fewer than nodes.
+      - type: single-choice
+        id: weg-zu-mia
+        text:
+          de: Wie viele Wege führen im Zimmerbaum von der Wurzel 6b zu Mia?
+          en: How many paths lead from the root 6b to Mia in the room tree?
+        material:
+          - type: figure
+            image: images/baum-zimmer.svg
+            alt:
+              de: "Ein Baum. Oben steht 6b, darunter die Zimmer 13, 22 und 9, ganz unten die Kinder: Jona und Tom, Selin und Mia, Ben und Ali."
+              en: "A tree. 6b is at the top, below it the rooms 13, 22 and 9, at the very bottom the children: Jona and Tom, Selin and Mia, Ben and Ali."
+            caption:
+              de: "Der Zimmerbaum vom Seeberg."
+              en: "The room tree from Seeberg."
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
+        options:
+          - text: { de: genau einer, en: exactly one }
+            correct: true
+            info:
+              de: "Von 6b zu Zimmer 22, von dort zu Mia. Einen anderen Weg gibt es nicht."
+              en: "From 6b to room 22, and from there to Mia. There is no other path."
+          - text: { de: zwei, en: two }
+            correct: false
+            info:
+              de: Mia hängt nur an Zimmer 22, und Zimmer 22 nur an 6b. Ein zweiter Weg bräuchte eine weitere Kante.
+              en: Mia only hangs from room 22, and room 22 only from 6b. A second path would need another edge.
+          - text: { de: drei, en: three }
+            correct: false
+            info:
+              de: Drei Kanten gehen von 6b weg, aber nur eine führt zu Zimmer 22 und damit zu Mia.
+              en: Three edges leave 6b, but only one leads to room 22 and so to Mia.
+        explanation:
+          de: Im Baum hängt jeder Knoten an genau einem Knoten darüber. Darum gibt es von der Wurzel zu jedem Knoten genau einen Weg.
+          en: In a tree, every node hangs from exactly one node above it. That is why there is exactly one path from the root to each node.
+  - type: section
+    id: galerie
+    title:
+      de: Die Galerie beginnt
+      en: The gallery begins
+    blocks:
+      - type: figure
+        image: images/galerie-1.svg
+        alt:
+          de: Vier Bilderrahmen. Im ersten ein kleiner Baum mit hellblauer Wurzel und gestrichelten Blättern. Die anderen drei Rahmen sind leer, mit einem Fragezeichen.
+          en: Four picture frames. The first holds a small tree with a light blue root and dashed leaves. The other three frames are empty, with a question mark.
+        caption:
+          de: Die Galerie der Datenstrukturen. Der Baum hängt schon, die leeren Rahmen füllst du in dieser App.
+          en: The gallery of data structures. The tree is already hanging; you will fill the empty frames in this app.
+        source:
+          de: eigene Zeichnung, Oliver Jägle
+          en: own drawing, Oliver Jägle
+        licence: CC-BY-4.0
+      - type: text
+        text:
+          de: |
+            Zu jeder Struktur der Galerie fragst du: **Wie finde ich ein Element?** Im Baum ist das leicht: Du gehst von
+            der Wurzel aus nach unten, es gibt nur einen Weg. Aber was ist, wenn ein Weg im Kreis zurückführt? Das zeigt
+            dir der Busplan auf der nächsten Seite.
+          en: |
+            For each structure in the gallery you ask: **how do I find an element?** In a tree that is easy: you go
+            down from the root, and there is only one path. But what if a path leads back round in a loop? The bus map
+            on the next page shows you.

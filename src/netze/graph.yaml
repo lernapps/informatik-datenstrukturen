@@ -1,0 +1,414 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title:
+  de: Vom Baum zum Graphen
+  en: From tree to graph
+description:
+  de: "Der Graph als Netz aus Knoten und Kanten: Busnetz, Freundesnetz aus Fäden, Weg, Länge eines Weges und Kreis."
+  en: "The graph as a network of nodes and edges: a bus network, a friendship network made of string, path, length of a path and cycle."
+competencies: [graph]
+blocks:
+  - type: section
+    id: einstieg
+    title:
+      de: Ist das Busnetz ein Baum?
+      en: Is the bus network a tree?
+    blocks:
+      - type: note
+        title:
+          de: Klassenchat 7b
+          en: Class 7b chat
+        blocks:
+          - type: text
+            text:
+              de: |
+                **Selin:** Samstag ins Schwimmbad? Wir treffen uns am Bahnhof.
+
+                **Jona:** Hier ist der Busplan. Jede Linie ist eine direkte Fahrt ohne Halt dazwischen.
+
+                **Mia:** Sieht aus wie unser Zimmerbaum vom Seeberg!
+              en: |
+                **Selin:** Swimming pool on Saturday? Let's meet at the station.
+
+                **Jona:** Here is the bus map. Each line is a direct ride with no stop in between.
+
+                **Mia:** Looks like our room tree from Seeberg!
+      - type: true-false
+        id: busnetz-baum
+        text:
+          de: Mia hat recht. Das Busnetz ist ein Baum.
+          en: Mia is right. The bus network is a tree.
+        material:
+          - type: figure
+            image:
+              de: images/busnetz-de.svg
+              en: images/busnetz-en.svg
+            alt:
+              de: "Sechs Kästchen für Haltestellen: Markt oben, darunter Bahnhof, Schule und Schwimmbad, unten Park und Rathaus. Linien verbinden Markt mit Bahnhof, Schule und Schwimmbad, Bahnhof mit Park, Park mit Schule, Schule mit Rathaus und Rathaus mit Schwimmbad."
+              en: "Six boxes for stops: Market at the top, below it Station, School and Pool, at the bottom Park and Town hall. Lines connect Market with Station, School and Pool, Station with Park, Park with School, School with Town hall and Town hall with Pool."
+            caption:
+              de: Jonas Busplan. Jedes Kästchen ist eine Haltestelle, jede Linie eine direkte Fahrt.
+              en: Jona's bus map. Each box is a stop, each line is a direct ride.
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
+        answer: false
+        hint:
+          de: Kommst du vom Bahnhof zum Bahnhof zurück, ohne eine Linie zweimal zu fahren?
+          en: Can you get from the station back to the station without using a line twice?
+        explanation:
+          de: "Bahnhof, Markt, Schule, Park und wieder Bahnhof: Diese Fahrt führt im Kreis zurück. In einem Baum geht das nicht: Dort führt von der Wurzel genau ein Weg zu jedem Knoten."
+          en: "Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree: there, exactly one path leads from the root to each node."
+  - type: section
+    id: idee
+    title:
+      de: Knoten, Kanten, Wege
+      en: Nodes, edges, paths
+    blocks:
+      - type: text
+        text:
+          de: |
+            Auf dieser Seite lernst du, Netze wie das Busnetz als **Graph** darzustellen. Den Baum kennst du schon: Er
+            hat Knoten und Kanten, und von der Wurzel führt genau ein Weg zu jedem Blatt. Im Busnetz gibt es keine
+            Wurzel, und manche Fahrten führen zurück zum Start.
+          en: |
+            On this page you will learn to show networks like the bus network as a **graph**. You already know the
+            tree: it has nodes and edges, and exactly one path leads from the root to each leaf. In the bus network
+            there is no root, and some rides lead back to the start.
+      - type: definition
+        term:
+          de: Graph
+          en: graph
+        explanation:
+          de: Ein Graph besteht aus Knoten und Kanten. Eine Kante verbindet zwei Knoten. Jeder Knoten darf mit jedem anderen verbunden sein.
+          en: A graph is made of nodes and edges. An edge connects two nodes. Any node may be connected to any other node.
+      - type: definition
+        term:
+          de: Weg
+          en: path
+        explanation:
+          de: Ein Weg ist eine Folge von Kanten, die aneinanderhängen. Er beginnt an einem Knoten, endet an einem Knoten und besucht keinen Knoten zweimal. Die Länge eines Weges ist die Anzahl seiner Kanten.
+          en: A path is a sequence of edges that join up. It starts at one node, ends at a node and visits no node twice. The length of a path is the number of its edges.
+      - type: number
+        id: kuerzester-weg
+        text:
+          de: "Selin fährt vom Bahnhof zum Schwimmbad. Wie lang ist der kürzeste Weg? Gib die Anzahl der Kanten an."
+          en: "Selin rides from the station to the pool. How long is the shortest path? Give the number of edges."
+        material:
+          - type: figure
+            image:
+              de: images/busnetz-de.svg
+              en: images/busnetz-en.svg
+            alt:
+              de: "Das Busnetz mit sechs Haltestellen. Linien verbinden Markt mit Bahnhof, Schule und Schwimmbad, Bahnhof mit Park, Park mit Schule, Schule mit Rathaus und Rathaus mit Schwimmbad."
+              en: "The bus network with six stops. Lines connect Market with Station, School and Pool, Station with Park, Park with School, School with Town hall and Town hall with Pool."
+            caption:
+              de: "Jonas Busplan."
+              en: "Jona's bus map."
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
+        answer: 2
+        tolerance: 0
+        mistakes:
+          - answer: 3
+            message:
+              de: Du hast die Haltestellen auf dem Weg gezählt. Die Länge eines Weges ist die Anzahl der Kanten.
+              en: You counted the stops on the path. The length of a path is the number of edges.
+          - answer: 4
+            message:
+              de: Das ist ein Umweg über Park oder Schule. Es gibt einen Weg mit weniger Kanten.
+              en: That is a detour via the park or the school. There is a path with fewer edges.
+        explanation:
+          de: "Bahnhof – Markt – Schwimmbad sind 2 Kanten. Die anderen Wege sind 4 Kanten lang."
+          en: "Station – Market – Pool is 2 edges. The other paths are 4 edges long."
+      - type: definition
+        term:
+          de: Kreis
+          en: cycle
+        explanation:
+          de: Ein Kreis führt über Kanten zu seinem Startknoten zurück. Dabei nutzt er keine Kante und keinen anderen Knoten zweimal.
+          en: A cycle leads along edges back to the node it started from. It uses no edge and no other node twice.
+      - type: note
+        title:
+          de: Merke
+          en: Remember
+        blocks:
+          - type: text
+            text:
+              de: |
+                Ein Baum ist ein Graph, in dem alle Knoten verbunden sind und es **keinen Kreis** gibt. Darum führt im Baum genau ein Weg zu jedem Knoten, im Graphen oft
+                mehrere. Achtung: Das Wort Graph meint hier kein Diagramm wie in Mathe, sondern ein Netz.
+              en: |
+                A tree is a graph in which all nodes are joined up and there is **no cycle**. That is why in a tree exactly one path leads to each node, and in a
+                graph there are often several. Careful: the word graph here does not mean a chart like in maths, but a network.
+  - type: section
+    id: unplugged
+    title:
+      de: Ein Freundesnetz aus Fäden
+      en: A friendship network made of string
+    blocks:
+      - type: text
+        text:
+          de: |
+            Legt in der Klasse ein Netz, ohne Rechner. Ihr braucht Karten, einen Stift und ein Wollknäuel.
+
+            1. Jede und jeder schreibt den eigenen Namen auf eine Karte und hält sie vor sich. Die Karte ist ein Knoten.
+            2. Wer mit jemandem befreundet ist, spannt einen Faden zu dieser Person. Jeder Faden ist eine Kante.
+            3. Sucht einen Kreis: Folgt den Fäden, bis ihr wieder bei der ersten Karte ankommt.
+          en: |
+            Lay out a network in class, without a computer. You need cards, a pen and a ball of wool.
+
+            1. Everyone writes their own name on a card and holds it in front of them. The card is a node.
+            2. If you are friends with someone, stretch a piece of string to that person. Each piece of string is an edge.
+            3. Look for a cycle: follow the strings until you get back to the first card.
+      - type: multiple-choice
+        id: kreis-freunde
+        text:
+          de: Im Freundesnetz gibt es genau einen Kreis. Wer liegt darauf?
+          en: There is exactly one cycle in the friendship network. Who is on it?
+        material:
+          - type: figure
+            image: images/freunde.svg
+            alt:
+              de: "Sechs Namen: Jona, Selin, Mia, Tom, Lea und Ben. Linien verbinden Jona mit Selin, Mia und Tom, Selin mit Mia, Mia mit Lea und Tom mit Ben."
+              en: "Six names: Jona, Selin, Mia, Tom, Lea and Ben. Lines connect Jona with Selin, Mia and Tom, Selin with Mia, Mia with Lea and Tom with Ben."
+            caption:
+              de: So kann ein Teil eures Netzes aussehen. Tom, Lea und Ben gehen auch in die 7b. Jeder Faden ist hier eine Linie.
+              en: This is what part of your network might look like. Tom, Lea and Ben are in class 7b too. Each piece of string is a line here.
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
+        options:
+          - text: { de: Jona, en: Jona }
+            correct: true
+            info:
+              de: Von Jona führt ein Faden zu Selin und einer zu Mia.
+              en: One string leads from Jona to Selin and one to Mia.
+          - text: { de: Selin, en: Selin }
+            correct: true
+            info:
+              de: Selin hängt an Jona und an Mia.
+              en: Selin is joined to Jona and to Mia.
+          - text: { de: Mia, en: Mia }
+            correct: true
+            info:
+              de: Von Mia geht es zurück zu Jona.
+              en: From Mia the way leads back to Jona.
+          - text: { de: Tom, en: Tom }
+            correct: false
+            info:
+              de: Von Tom geht es nur über dieselbe Kante zurück zu Jona.
+              en: From Tom the only way back to Jona is the same edge.
+          - text: { de: Lea, en: Lea }
+            correct: false
+            info:
+              de: Lea hat nur eine Kante. Ein Kreis braucht an jedem Knoten zwei.
+              en: Lea has only one edge. A cycle needs two at each node.
+        explanation:
+          de: "Jona – Selin – Mia – Jona endet dort, wo der Weg beginnt, und nutzt keine Kante zweimal."
+          en: "Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice."
+  - type: section
+    id: bauen
+    title:
+      de: Das Freundesnetz am Rechner
+      en: The friendship network on the computer
+    blocks:
+      - type: text
+        text:
+          de: |
+            Jetzt baust du ein Freundesnetz am Rechner, nach einer Liste. Für eine Kante tippst du zwei Namen nacheinander
+            an. Wo sich zwei Linien kreuzen, ist kein Knoten: Knoten sind nur die Namen.
+          en: |
+            Now you build a friendship network on the computer, from a list. For an edge, you tap two names one after
+            the other. Where two lines cross there is no node: only the names are nodes.
+      - type: vue-component
+        id: freundesnetz-bauen
+        component: Netzbauer
+        props:
+          names: [Jona, Selin, Mia, Tom, Lea]
+          directed: false
+          task:
+            de: "Lege für jede Freundschaft eine Kante an:"
+            en: "Add an edge for each friendship:"
+          line:
+            de: "{a} ist mit {b} befreundet."
+            en: "{a} and {b} are friends."
+          chosen:
+            de: "{a} ist ausgewählt. Tippe jetzt den zweiten Namen an."
+            en: "{a} is selected. Now tap the second name."
+          added:
+            de: "Kante {a} – {b} angelegt."
+            en: "Edge {a} – {b} added."
+          removed:
+            de: "Kante {a} – {b} entfernt."
+            en: "Edge {a} – {b} removed."
+          drawn:
+            de: "Deine Kanten:"
+            en: "Your edges:"
+          empty:
+            de: Noch keine Kanten.
+            en: No edges yet.
+          remove:
+            de: entfernen
+            en: remove
+          removeLabel:
+            de: "Kante {a} – {b} entfernen"
+            en: "Remove edge {a} – {b}"
+          mistakes:
+            - de: "Bei {a} fehlt noch eine Kante. Lies alle Zeilen der Liste, in denen {a} vorkommt."
+              en: "An edge at {a} is still missing. Read every line of the list that has {a} in it."
+            - de: "Die Kante {a} – {b} steht nicht in der Liste. Entferne sie."
+              en: "The edge {a} – {b} is not in the list. Remove it."
+            - de: "Ein Pfeil zeigt falsch herum."
+              en: "An arrow points the wrong way."
+        examples:
+          accepted:
+            - { answer: [[0, 2], [0, 3], [0, 4], [1, 3], [2, 3], [2, 4]], seed: 1 }
+            - { answer: [[4, 2], [3, 2], [3, 1], [4, 0], [3, 0], [2, 0]], seed: 1 }
+          rejected:
+            - { answer: [[0, 2], [0, 3], [0, 4], [1, 3], [2, 3]], seed: 1 }
+            - { answer: [[0, 2], [0, 3], [0, 4], [1, 3], [2, 3], [2, 4], [0, 1]], seed: 1 }
+            - { answer: [[0, 4]] }
+  - type: section
+    id: uebung
+    title:
+      de: Übung
+      en: Practice
+    blocks:
+      - type: number
+        id: kanten-busnetz
+        text:
+          de: Wie viele Kanten hat das Busnetz?
+          en: How many edges does the bus network have?
+        material:
+          - type: figure
+            image:
+              de: images/busnetz-de.svg
+              en: images/busnetz-en.svg
+            alt:
+              de: "Das Busnetz mit sechs Haltestellen: Markt, Bahnhof, Schule, Schwimmbad, Park und Rathaus."
+              en: "The bus network with six stops: Market, Station, School, Pool, Park and Town hall."
+            caption:
+              de: Jonas Busplan noch einmal.
+              en: Jona's bus map again.
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
+        answer: 7
+        tolerance: 0
+        mistakes:
+          - answer: 6
+            message:
+              de: Du hast die Haltestellen gezählt, das sind die Knoten. Zähle die Linien.
+              en: You counted the stops, which are the nodes. Count the lines.
+          - answer: 8
+            message:
+              de: Du hast eine Linie doppelt gezählt.
+              en: You counted one line twice.
+        hint:
+          de: Zähle die Linien, die vom Markt ausgehen, dann die übrigen.
+          en: Count the lines that start at the market, then the others.
+        explanation:
+          de: "3 Kanten am Markt und 4 weitere: zusammen 7. Ein Baum mit 6 Knoten hätte nur 5."
+          en: "3 edges at the market and 4 more: 7 in total. A tree with 6 nodes would only have 5."
+      - type: true-false
+        id: fuenf-kanten
+        text:
+          de: Ein Netz mit 5 Knoten und 5 Kanten kann kein Baum sein.
+          en: A network with 5 nodes and 5 edges cannot be a tree.
+        answer: true
+        hint:
+          de: "Erinnere dich an den Zimmerbaum: Wie viele Kanten hat ein Baum im Vergleich zu seinen Knoten?"
+          en: "Remember the room tree: how many edges does a tree have compared with its nodes?"
+        explanation:
+          de: Ein Baum hat immer eine Kante weniger als Knoten, bei 5 Knoten also 4 Kanten. Mit einer fünften Kante entsteht ein Kreis.
+          en: A tree always has one edge fewer than nodes, so 4 edges for 5 nodes. A fifth edge makes a cycle.
+      - type: single-choice
+        id: kein-baum
+        text:
+          de: Welches Netz ist kein Baum?
+          en: Which network is not a tree?
+        material:
+          - type: figure
+            image: images/drei-netze.svg
+            alt:
+              de: "Drei Netze aus leeren Kästchen. A verzweigt sich von oben nach unten. B ist eine Zickzack-Kette. In C bilden vier Kästchen ein Viereck, an einem hängt ein fünftes."
+              en: "Three networks of empty boxes. A branches out from top to bottom. B is a zigzag chain. In C, four boxes form a square, and a fifth hangs from one of them."
+            caption:
+              de: Drei Netze A, B und C.
+              en: Three networks A, B and C.
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
+        options:
+          - text: { de: A, en: A }
+            correct: false
+            info:
+              de: A verzweigt sich von oben nach unten und hat keinen Kreis.
+              en: A branches out from top to bottom and has no cycle.
+          - text: { de: B, en: B }
+            correct: false
+            info:
+              de: B ist eine Kette ohne Kreis, also ein Baum ohne Verzweigung.
+              en: B is a chain with no cycle, so a tree without branches.
+          - text: { de: C, en: C }
+            correct: true
+            info:
+              de: In C führt ein Weg um das Viereck herum zum Start zurück. Das ist ein Kreis.
+              en: In C, a path leads round the square back to the start. That is a cycle.
+        explanation:
+          de: Es kommt nicht auf die Zeichnung an, sondern auf die Kanten. Nur C hat einen Kreis.
+          en: What counts is not the drawing but the edges. Only C has a cycle.
+  - type: section
+    id: galerie
+    title:
+      de: Die Galerie wächst
+      en: The gallery grows
+    blocks:
+      - type: text
+        text:
+          de: |
+            In der Galerie der Datenstrukturen sammelst du jede Struktur dieser App. Zu jeder fragst du: Wie finde ich ein
+            Element, also einen bestimmten Knoten, zum Beispiel eine Haltestelle?
+          en: |
+            In the gallery of data structures you collect every structure of this app. For each one you ask: how do I
+            find an element, that is, a certain node, for example a stop?
+      - type: figure
+        image: images/galerie-2.svg
+        alt:
+          de: Vier Bilderrahmen. Im ersten ein Baum, im zweiten ein Graph mit Kreisen. Der dritte und der vierte Rahmen sind leer, mit einem Fragezeichen.
+          en: Four picture frames. The first holds a tree, the second a graph with cycles. The third and fourth frames are empty, with a question mark.
+        caption:
+          de: "Die Galerie der Datenstrukturen. Neu ist der Graph im zweiten Rahmen. Die leeren Rahmen füllst du später."
+          en: "The gallery of data structures. The graph in the second frame is new. You will fill the empty frames later."
+        source:
+          de: eigene Zeichnung, Oliver Jägle
+          en: own drawing, Oliver Jägle
+        licence: CC-BY-4.0
+      - type: table
+        caption:
+          de: Wie finde ich ein Element?
+          en: How do I find an element?
+        header:
+          - { de: Struktur, en: Structure }
+          - { de: So findest du ein Element, en: How you find an element }
+        rows:
+          - - { de: Baum, en: tree }
+            - {
+                de: "Von der Wurzel aus nach unten: Es gibt genau einen Weg.",
+                en: "From the root downwards: there is exactly one path.",
+              }
+          - - { de: Graph, en: graph }
+            - {
+                de: "Von einem Knoten aus den Kanten folgen und merken, wo du schon warst, sonst läufst du im Kreis. Nimm den Weg mit den wenigsten Kanten.",
+                en: "Follow the edges from a node and remember where you have been, or you will go round in a loop. Take the path with the fewest edges.",
+              }
+      - type: text
+        text:
+          de: "Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis (Link) führt nur in eine Richtung, wie eine Einbahnstraße."
+          en: "Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one-way street."
