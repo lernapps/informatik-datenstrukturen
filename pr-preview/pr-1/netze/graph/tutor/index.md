@@ -113,7 +113,7 @@ Wie finde ich ein Element?:
 - Baum | Von der Wurzel aus nach unten: Es gibt genau einen Weg.
 - Graph | Von einem Knoten aus den Kanten folgen. Oft gibt es mehrere Wege: Nimm den mit den wenigsten Kanten.
 
-Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis führt nur in eine Richtung, wie eine Einbahnstraße.
+Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis (Link) führt nur in eine Richtung, wie eine Einbahnstraße.
 
 ### Aufgabe busnetz-baum
 
@@ -121,7 +121,7 @@ Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis führt nur 
 - Antwortformat: „Stimmt“ oder „Stimmt nicht“ wählen
 - Lösung: Die Aussage stimmt nicht.
 - Erklärung: Bahnhof, Markt, Schule, Park und wieder Bahnhof: Diese Fahrt führt im Kreis zurück. In einem Baum geht das nicht: Dort führt von der Wurzel genau ein Weg zu jedem Knoten.
-- Tipp der App: Fahre vom Bahnhof zum Markt, dann weiter. Kommst du zum Bahnhof zurück, ohne eine Linie zweimal zu fahren?
+- Tipp der App: Kommst du vom Bahnhof zum Bahnhof zurück, ohne eine Linie zweimal zu fahren?
 - Link: [../?via=tutor#busnetz-baum](../?via=tutor#busnetz-baum)
 
 ### Aufgabe kuerzester-weg
@@ -129,7 +129,7 @@ Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis führt nur 
 - Aufgabe: Selin fährt vom Bahnhof zum Schwimmbad. Wie lang ist der kürzeste Weg? Gib die Anzahl der Kanten an.
 - Antwortformat: eine Zahl eintippen
 - Lösung: 2
-- Erklärung: Bahnhof – Markt – Schwimmbad sind 2 Kanten. Andere Wege, etwa über Park, Schule und Rathaus, sind 4 Kanten lang. Im Graphen gibt es oft mehrere Wege zum selben Knoten.
+- Erklärung: Bahnhof – Markt – Schwimmbad sind 2 Kanten. Die anderen Wege sind 4 Kanten lang.
 - Typische Fehler und was die App sagt:
   - 3: Du hast die Haltestellen auf dem Weg gezählt. Die Länge eines Weges ist die Anzahl der Kanten.
   - 4: Das ist ein Umweg über Park oder Schule. Es gibt einen Weg mit weniger Kanten.
@@ -142,9 +142,9 @@ Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis führt nur 
 - Antworten zur Wahl (✓ richtig, ✗ falsch, mit der Meldung der App):
   - ✓ Jona – Von Jona führt ein Faden zu Selin und einer zu Mia.
   - ✓ Selin – Selin hängt an Jona und an Mia.
-  - ✓ Mia – Von Mia geht es zurück zu Jona. So schließt sich der Kreis.
-  - ✗ Tom – Von Tom kommst du nur über Jona zurück. Dann nutzt du die Kante Jona – Tom zweimal.
-  - ✗ Lea – Lea hat nur eine Kante, zu Mia. Ein Kreis braucht an jedem Knoten zwei Kanten.
+  - ✓ Mia – Von Mia geht es zurück zu Jona.
+  - ✗ Tom – Von Tom geht es nur über dieselbe Kante zurück zu Jona.
+  - ✗ Lea – Lea hat nur eine Kante. Ein Kreis braucht an jedem Knoten zwei.
 - Lösung: Jona; Selin; Mia
 - Erklärung: Jona – Selin – Mia – Jona endet dort, wo der Weg beginnt, und nutzt keine Kante zweimal.
 - Link: [../?via=tutor#kreis-freunde](../?via=tutor#kreis-freunde)
@@ -238,11 +238,11 @@ Nr. | Liste | Lösung | F1 | F2
 - Aufgabe: Wie viele Kanten hat das Busnetz?
 - Antwortformat: eine Zahl eintippen
 - Lösung: 7
-- Erklärung: Drei Kanten führen vom Markt weg, vier weitere verbinden Bahnhof, Park, Schule, Rathaus und Schwimmbad: zusammen 7. Ein Baum mit 6 Knoten hätte nur 5 Kanten.
+- Erklärung: 3 Kanten am Markt und 4 weitere: zusammen 7. Ein Baum mit 6 Knoten hätte nur 5.
 - Tipp der App: Zähle die Linien, die vom Markt ausgehen, dann die übrigen.
 - Typische Fehler und was die App sagt:
   - 6: Du hast die Haltestellen gezählt, das sind die Knoten. Zähle die Linien.
-  - 8: Du hast eine Linie doppelt gezählt. Hake jede Linie ab, wenn du sie gezählt hast.
+  - 8: Du hast eine Linie doppelt gezählt.
 - Link: [../?via=tutor#kanten-busnetz](../?via=tutor#kanten-busnetz)
 
 ### Aufgabe fuenf-kanten
@@ -260,8 +260,8 @@ Nr. | Liste | Lösung | F1 | F2
 - Antwortformat: eine Antwort wählen
 - Antworten zur Wahl (✓ richtig, ✗ falsch, mit der Meldung der App):
   - ✗ A – A verzweigt sich von oben nach unten und hat keinen Kreis.
-  - ✗ B – B sieht anders aus als ein Baum im Bild, hat aber keinen Kreis. Eine Kette ist ein Baum ohne Verzweigung.
+  - ✗ B – B ist eine Kette ohne Kreis, also ein Baum ohne Verzweigung.
   - ✓ C – In C führt ein Weg um das Viereck herum zum Start zurück. Das ist ein Kreis.
 - Lösung: C
-- Erklärung: Wie ein Netz gezeichnet ist, spielt keine Rolle. Es kommt auf die Kanten an. Nur in C führt ein Weg zum Start zurück.
+- Erklärung: Es kommt nicht auf die Zeichnung an, sondern auf die Kanten. Nur C hat einen Kreis.
 - Link: [../?via=tutor#kein-baum](../?via=tutor#kein-baum)

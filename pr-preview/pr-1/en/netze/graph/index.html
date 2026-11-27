@@ -11,7 +11,7 @@
     <meta name="lernapps-archetype" content="explainer" />
     <link rel="alternate" hreflang="de" href="../../../netze/graph/" />
     <link rel="alternate" hreflang="en" href="../../../en/netze/graph/" />
-    <script type="module" crossorigin src="../../../assets/islands-DGI7KQJ5.js"></script>
+    <script type="module" crossorigin src="../../../assets/islands-BEs-l895.js"></script>
     <meta name="robots" content="noindex" />
   </head>
   <body>
@@ -51,7 +51,7 @@
 <div class="explainer-block" data-block="einstieg/2" data-block-id="e591bccb" data-block-type="figure" data-block-order="3">
 <figure class="block-figure"><div class="block-image-credit block-image-fill"><img src="../../../images/busnetz-en.svg" alt="Six boxes for stops: Market at the top, below it Station, School and Pool, at the bottom Park and Town hall. Lines connect Market with Station, School and Pool, Station with Park, Park with School, School with Town hall and Town hall with Pool." loading="lazy" decoding="async"><span class="block-credit" tabindex="0" role="img" data-info="Source: own drawing, Oliver Jägle. Licence: CC-BY-4.0." aria-label="Source: own drawing, Oliver Jägle. Licence: CC-BY-4.0.">© CC-BY-4.0</span></div><figcaption><p>Jona&#39;s bus map. Each box is a stop, each line is a direct ride.</p></figcaption></figure>
 </div>
-<div class="explainer-block" data-block="einstieg/3" data-block-id="da1fcf13" data-block-type="true-false" data-block-order="4">
+<div class="explainer-block" data-block="einstieg/3" data-block-id="0377d411" data-block-type="true-false" data-block-order="4">
 <div class="explainer-exercise explainer-question" id="busnetz-baum">
 <p class="explainer-exercise-label">Exercise</p>
 <div class="question" id="frage-busnetz-baum" data-id="busnetz-baum" data-type="true-false">
@@ -73,7 +73,7 @@
 <p><strong>Right answer:</strong> The statement is false.</p>
 <p class="question-explanation">Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree: there, exactly one path leads from the root to each node.</p>
 </details>
-<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"busnetz-baum","text":"Mia is right. The bus network is a tree.","explanation":"Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree: there, exactly one path leads from the root to each node.","links":[],"hint":"Ride from the station to the market, then on. Can you get back to the station without using a line twice?","type":"true-false","answer":false},"rendered":{}}</script>
+<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"busnetz-baum","text":"Mia is right. The bus network is a tree.","explanation":"Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree: there, exactly one path leads from the root to each node.","links":[],"hint":"Can you get from the station back to the station without using a line twice?","type":"true-false","answer":false},"rendered":{}}</script>
 </div>
 </div>
 </section>
@@ -90,7 +90,7 @@ there is no root, and some rides go round in a loop.</p></div>
 <div class="explainer-block" data-block="idee/3" data-block-id="e316012e" data-block-type="definition" data-block-order="7">
 <dl class="explainer-definition"><dt><dfn id="begriff-weg"><a href="../../../en/glossar/#weg">path</a></dfn></dt><dd><p>A path is a sequence of edges that hang together. It starts at one node and ends at a node. The length of a path is the number of its edges.</p></dd></dl>
 </div>
-<div class="explainer-block" data-block="idee/4" data-block-id="980515a4" data-block-type="number" data-block-order="8">
+<div class="explainer-block" data-block="idee/4" data-block-id="c8cbd493" data-block-type="number" data-block-order="8">
 <div class="explainer-exercise explainer-question" id="kuerzester-weg">
 <p class="explainer-exercise-label">Exercise</p>
 <div class="question" id="frage-kuerzester-weg" data-id="kuerzester-weg" data-type="number">
@@ -102,16 +102,16 @@ there is no root, and some rides go round in a loop.</p></div>
 <div class="question-feedback-row"><div class="question-feedback" role="status"></div></div>
 <div class="question-reveal" hidden>
 <p><strong>Right answer:</strong> 2</p>
-<p class="question-explanation">Station – Market – Pool is 2 edges. Other paths, for example via Park, School and Town hall, are 4 edges long. In a graph there are often several paths to the same node.</p>
+<p class="question-explanation">Station – Market – Pool is 2 edges. The other paths are 4 edges long.</p>
 </div>
 <p class="question-actions" hidden><button type="submit" class="question-check">Check</button></p>
 </form>
 </div>
 <details class="explainer-solution"><summary>Solution</summary>
 <p><strong>Right answer:</strong> 2</p>
-<p class="question-explanation">Station – Market – Pool is 2 edges. Other paths, for example via Park, School and Town hall, are 4 edges long. In a graph there are often several paths to the same node.</p>
+<p class="question-explanation">Station – Market – Pool is 2 edges. The other paths are 4 edges long.</p>
 </details>
-<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"kuerzester-weg","text":"Selin rides from the station to the pool. How long is the shortest path? Give the number of edges.","explanation":"Station – Market – Pool is 2 edges. Other paths, for example via Park, School and Town hall, are 4 edges long. In a graph there are often several paths to the same node.","links":[],"type":"number","answer":2,"tolerance":0,"mistakes":[{"answer":3,"message":"You counted the stops on the path. The length of a path is the number of edges."},{"answer":4,"message":"That is a detour via the park or the school. There is a path with fewer edges."}]},"rendered":{}}</script>
+<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"kuerzester-weg","text":"Selin rides from the station to the pool. How long is the shortest path? Give the number of edges.","explanation":"Station – Market – Pool is 2 edges. The other paths are 4 edges long.","links":[],"type":"number","answer":2,"tolerance":0,"mistakes":[{"answer":3,"message":"You counted the stops on the path. The length of a path is the number of edges."},{"answer":4,"message":"That is a detour via the park or the school. There is a path with fewer edges."}]},"rendered":{}}</script>
 </div>
 </div>
 <div class="explainer-block" data-block="idee/5" data-block-id="040b3a35" data-block-type="definition" data-block-order="9">
@@ -140,7 +140,7 @@ graph there are often several. Careful: the word graph here does not mean a char
 <div class="explainer-block" data-block="unplugged/2" data-block-id="5ea1e3dd" data-block-type="figure" data-block-order="13">
 <figure class="block-figure"><div class="block-image-credit block-image-fill"><img src="../../../images/freunde.svg" alt="Six names: Jona, Selin, Mia, Tom, Lea and Ben. Lines connect Jona with Selin, Mia and Tom, Selin with Mia, Mia with Lea and Tom with Ben." loading="lazy" decoding="async"><span class="block-credit" tabindex="0" role="img" data-info="Source: own drawing, Oliver Jägle. Licence: CC-BY-4.0." aria-label="Source: own drawing, Oliver Jägle. Licence: CC-BY-4.0.">© CC-BY-4.0</span></div><figcaption><p>This is what part of your network might look like. Each piece of string is a line here.</p></figcaption></figure>
 </div>
-<div class="explainer-block" data-block="unplugged/3" data-block-id="9a2bd9e9" data-block-type="multiple-choice" data-block-order="14">
+<div class="explainer-block" data-block="unplugged/3" data-block-id="d63fccd6" data-block-type="multiple-choice" data-block-order="14">
 <div class="explainer-exercise explainer-question" id="kreis-freunde">
 <p class="explainer-exercise-label">Exercise</p>
 <div class="question" id="frage-kreis-freunde" data-id="kreis-freunde" data-type="multiple-choice">
@@ -158,9 +158,9 @@ graph there are often several. Careful: the word graph here does not mean a char
 <ul class="question-infos">
 <li class="question-info question-info-right" data-option="0"><p class="question-info-head"><strong>Jona</strong> <span class="question-badge question-badge-right">right answer</span></p><p>One string leads from Jona to Selin and one to Mia.</p></li>
 <li class="question-info question-info-right" data-option="1"><p class="question-info-head"><strong>Selin</strong> <span class="question-badge question-badge-right">right answer</span></p><p>Selin is joined to Jona and to Mia.</p></li>
-<li class="question-info question-info-right" data-option="2"><p class="question-info-head"><strong>Mia</strong> <span class="question-badge question-badge-right">right answer</span></p><p>From Mia the way leads back to Jona. That closes the cycle.</p></li>
-<li class="question-info" data-option="3"><p class="question-info-head"><strong>Tom</strong></p><p>From Tom you can only get back via Jona. Then you use the edge Jona – Tom twice.</p></li>
-<li class="question-info" data-option="4"><p class="question-info-head"><strong>Lea</strong></p><p>Lea has only one edge, to Mia. A cycle needs two edges at each of its nodes.</p></li>
+<li class="question-info question-info-right" data-option="2"><p class="question-info-head"><strong>Mia</strong> <span class="question-badge question-badge-right">right answer</span></p><p>From Mia the way leads back to Jona.</p></li>
+<li class="question-info" data-option="3"><p class="question-info-head"><strong>Tom</strong></p><p>From Tom the only way back to Jona is the same edge.</p></li>
+<li class="question-info" data-option="4"><p class="question-info-head"><strong>Lea</strong></p><p>Lea has only one edge. A cycle needs two at each node.</p></li>
 </ul>
 <p class="question-explanation">Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice.</p>
 </div>
@@ -171,13 +171,13 @@ graph there are often several. Careful: the word graph here does not mean a char
 <ul class="question-infos">
 <li class="question-info question-info-right" data-option="0"><p class="question-info-head"><strong>Jona</strong> <span class="question-badge question-badge-right">right answer</span></p><p>One string leads from Jona to Selin and one to Mia.</p></li>
 <li class="question-info question-info-right" data-option="1"><p class="question-info-head"><strong>Selin</strong> <span class="question-badge question-badge-right">right answer</span></p><p>Selin is joined to Jona and to Mia.</p></li>
-<li class="question-info question-info-right" data-option="2"><p class="question-info-head"><strong>Mia</strong> <span class="question-badge question-badge-right">right answer</span></p><p>From Mia the way leads back to Jona. That closes the cycle.</p></li>
-<li class="question-info" data-option="3"><p class="question-info-head"><strong>Tom</strong></p><p>From Tom you can only get back via Jona. Then you use the edge Jona – Tom twice.</p></li>
-<li class="question-info" data-option="4"><p class="question-info-head"><strong>Lea</strong></p><p>Lea has only one edge, to Mia. A cycle needs two edges at each of its nodes.</p></li>
+<li class="question-info question-info-right" data-option="2"><p class="question-info-head"><strong>Mia</strong> <span class="question-badge question-badge-right">right answer</span></p><p>From Mia the way leads back to Jona.</p></li>
+<li class="question-info" data-option="3"><p class="question-info-head"><strong>Tom</strong></p><p>From Tom the only way back to Jona is the same edge.</p></li>
+<li class="question-info" data-option="4"><p class="question-info-head"><strong>Lea</strong></p><p>Lea has only one edge. A cycle needs two at each node.</p></li>
 </ul>
 <p class="question-explanation">Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice.</p>
 </details>
-<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"kreis-freunde","text":"There is exactly one cycle in the picture. Who is on it?","explanation":"Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice.","links":[],"type":"multiple-choice","options":[{"text":"Jona","correct":true,"info":"One string leads from Jona to Selin and one to Mia."},{"text":"Selin","correct":true,"info":"Selin is joined to Jona and to Mia."},{"text":"Mia","correct":true,"info":"From Mia the way leads back to Jona. That closes the cycle."},{"text":"Tom","correct":false,"info":"From Tom you can only get back via Jona. Then you use the edge Jona – Tom twice."},{"text":"Lea","correct":false,"info":"Lea has only one edge, to Mia. A cycle needs two edges at each of its nodes."}]},"rendered":{}}</script>
+<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"kreis-freunde","text":"There is exactly one cycle in the picture. Who is on it?","explanation":"Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice.","links":[],"type":"multiple-choice","options":[{"text":"Jona","correct":true,"info":"One string leads from Jona to Selin and one to Mia."},{"text":"Selin","correct":true,"info":"Selin is joined to Jona and to Mia."},{"text":"Mia","correct":true,"info":"From Mia the way leads back to Jona."},{"text":"Tom","correct":false,"info":"From Tom the only way back to Jona is the same edge."},{"text":"Lea","correct":false,"info":"Lea has only one edge. A cycle needs two at each node."}]},"rendered":{}}</script>
 </div>
 </div>
 </section>
@@ -210,7 +210,7 @@ the other. Where two lines cross there is no node: only the names are nodes.</p>
 </section>
 <section class="explainer-section">
 <h2 id="uebung">Practice</h2>
-<div class="explainer-block" data-block="uebung/1" data-block-id="b5036cd8" data-block-type="number" data-block-order="17">
+<div class="explainer-block" data-block="uebung/1" data-block-id="e9a45319" data-block-type="number" data-block-order="17">
 <div class="explainer-exercise explainer-question" id="kanten-busnetz">
 <p class="explainer-exercise-label">Exercise</p>
 <div class="question" id="frage-kanten-busnetz" data-id="kanten-busnetz" data-type="number">
@@ -223,16 +223,16 @@ the other. Where two lines cross there is no node: only the names are nodes.</p>
 <div class="question-feedback-row"><div class="question-feedback" role="status"></div></div>
 <div class="question-reveal" hidden>
 <p><strong>Right answer:</strong> 7</p>
-<p class="question-explanation">Three edges lead away from the market, four more connect Station, Park, School, Town hall and Pool: 7 in total. A tree with 6 nodes would only have 5 edges.</p>
+<p class="question-explanation">3 edges at the market and 4 more: 7 in total. A tree with 6 nodes would only have 5.</p>
 </div>
 <p class="question-actions" hidden><button type="submit" class="question-check">Check</button></p>
 </form>
 </div>
 <details class="explainer-solution"><summary>Solution</summary>
 <p><strong>Right answer:</strong> 7</p>
-<p class="question-explanation">Three edges lead away from the market, four more connect Station, Park, School, Town hall and Pool: 7 in total. A tree with 6 nodes would only have 5 edges.</p>
+<p class="question-explanation">3 edges at the market and 4 more: 7 in total. A tree with 6 nodes would only have 5.</p>
 </details>
-<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"kanten-busnetz","text":"How many edges does the bus network have?","explanation":"Three edges lead away from the market, four more connect Station, Park, School, Town hall and Pool: 7 in total. A tree with 6 nodes would only have 5 edges.","links":[],"hint":"Count the lines that start at the market, then the others.","material":[{"type":"figure","image":"images/busnetz-en.svg","alt":"The bus network with six stops: Market, Station, School, Pool, Park and Town hall.","caption":"Jona's bus map again.","source":"own drawing, Oliver Jägle","licence":"CC-BY-4.0"}],"type":"number","answer":7,"tolerance":0,"mistakes":[{"answer":6,"message":"You counted the stops, which are the nodes. Count the lines."},{"answer":8,"message":"You counted one line twice. Tick off each line once you have counted it."}]},"rendered":{}}</script>
+<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"kanten-busnetz","text":"How many edges does the bus network have?","explanation":"3 edges at the market and 4 more: 7 in total. A tree with 6 nodes would only have 5.","links":[],"hint":"Count the lines that start at the market, then the others.","material":[{"type":"figure","image":"images/busnetz-en.svg","alt":"The bus network with six stops: Market, Station, School, Pool, Park and Town hall.","caption":"Jona's bus map again.","source":"own drawing, Oliver Jägle","licence":"CC-BY-4.0"}],"type":"number","answer":7,"tolerance":0,"mistakes":[{"answer":6,"message":"You counted the stops, which are the nodes. Count the lines."},{"answer":8,"message":"You counted one line twice."}]},"rendered":{}}</script>
 </div>
 </div>
 <div class="explainer-block" data-block="uebung/2" data-block-id="504a1f20" data-block-type="true-false" data-block-order="18">
@@ -260,7 +260,7 @@ the other. Where two lines cross there is no node: only the names are nodes.</p>
 <script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"fuenf-kanten","text":"A network with 5 nodes and 5 edges cannot be a tree.","explanation":"A tree always has one edge fewer than nodes, so 4 edges for 5 nodes. A fifth edge makes a cycle.","links":[],"hint":"Remember the room tree: how many edges does a tree have compared with its nodes?","type":"true-false","answer":true},"rendered":{}}</script>
 </div>
 </div>
-<div class="explainer-block" data-block="uebung/3" data-block-id="2e6d4f43" data-block-type="single-choice" data-block-order="19">
+<div class="explainer-block" data-block="uebung/3" data-block-id="f183913c" data-block-type="single-choice" data-block-order="19">
 <div class="explainer-exercise explainer-question" id="kein-baum">
 <p class="explainer-exercise-label">Exercise</p>
 <div class="question" id="frage-kein-baum" data-id="kein-baum" data-type="single-choice">
@@ -276,10 +276,10 @@ the other. Where two lines cross there is no node: only the names are nodes.</p>
 <div class="question-reveal" hidden>
 <ul class="question-infos">
 <li class="question-info" data-option="0"><p class="question-info-head"><strong>A</strong></p><p>A branches out from top to bottom and has no cycle.</p></li>
-<li class="question-info" data-option="1"><p class="question-info-head"><strong>B</strong></p><p>B looks different from the usual tree picture, but it has no cycle. A chain is a tree without branches.</p></li>
+<li class="question-info" data-option="1"><p class="question-info-head"><strong>B</strong></p><p>B is a chain with no cycle, so a tree without branches.</p></li>
 <li class="question-info question-info-right" data-option="2"><p class="question-info-head"><strong>C</strong> <span class="question-badge question-badge-right">right answer</span></p><p>In C, a path leads round the square back to the start. That is a cycle.</p></li>
 </ul>
-<p class="question-explanation">How a network is drawn does not matter. What counts are the edges. Only in C does a path lead back to the start.</p>
+<p class="question-explanation">What counts is not the drawing but the edges. Only C has a cycle.</p>
 </div>
 <p class="question-actions" hidden><button type="submit" class="question-check">Check</button></p>
 </form>
@@ -287,12 +287,12 @@ the other. Where two lines cross there is no node: only the names are nodes.</p>
 <details class="explainer-solution"><summary>Solution</summary>
 <ul class="question-infos">
 <li class="question-info" data-option="0"><p class="question-info-head"><strong>A</strong></p><p>A branches out from top to bottom and has no cycle.</p></li>
-<li class="question-info" data-option="1"><p class="question-info-head"><strong>B</strong></p><p>B looks different from the usual tree picture, but it has no cycle. A chain is a tree without branches.</p></li>
+<li class="question-info" data-option="1"><p class="question-info-head"><strong>B</strong></p><p>B is a chain with no cycle, so a tree without branches.</p></li>
 <li class="question-info question-info-right" data-option="2"><p class="question-info-head"><strong>C</strong> <span class="question-badge question-badge-right">right answer</span></p><p>In C, a path leads round the square back to the start. That is a cycle.</p></li>
 </ul>
-<p class="question-explanation">How a network is drawn does not matter. What counts are the edges. Only in C does a path lead back to the start.</p>
+<p class="question-explanation">What counts is not the drawing but the edges. Only C has a cycle.</p>
 </details>
-<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"kein-baum","text":"Which network is not a tree?","explanation":"How a network is drawn does not matter. What counts are the edges. Only in C does a path lead back to the start.","links":[],"material":[{"type":"figure","image":"images/drei-netze.svg","alt":"Three networks of empty boxes. A branches out from top to bottom. B is a zigzag chain. In C, four boxes form a square, and a fifth hangs from one of them.","caption":"Three networks A, B and C.","source":"own drawing, Oliver Jägle","licence":"CC-BY-4.0"}],"type":"single-choice","options":[{"text":"A","correct":false,"info":"A branches out from top to bottom and has no cycle."},{"text":"B","correct":false,"info":"B looks different from the usual tree picture, but it has no cycle. A chain is a tree without branches."},{"text":"C","correct":true,"info":"In C, a path leads round the square back to the start. That is a cycle."}]},"rendered":{}}</script>
+<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"en","question":{"id":"kein-baum","text":"Which network is not a tree?","explanation":"What counts is not the drawing but the edges. Only C has a cycle.","links":[],"material":[{"type":"figure","image":"images/drei-netze.svg","alt":"Three networks of empty boxes. A branches out from top to bottom. B is a zigzag chain. In C, four boxes form a square, and a fifth hangs from one of them.","caption":"Three networks A, B and C.","source":"own drawing, Oliver Jägle","licence":"CC-BY-4.0"}],"type":"single-choice","options":[{"text":"A","correct":false,"info":"A branches out from top to bottom and has no cycle."},{"text":"B","correct":false,"info":"B is a chain with no cycle, so a tree without branches."},{"text":"C","correct":true,"info":"In C, a path leads round the square back to the start. That is a cycle."}]},"rendered":{}}</script>
 </div>
 </div>
 </section>
@@ -308,7 +308,7 @@ find an element, that is, a certain node, for example a stop?</p></div>
 <div class="explainer-block" data-block="galerie/3" data-block-id="45aee097" data-block-type="table" data-block-order="22">
 <div class="block-table" role="region" aria-label="How do I find an element?" tabindex="0"><table><caption>How do I find an element?</caption><thead><tr><th scope="col">Structure</th><th scope="col">How you find an element</th></tr></thead><tbody><tr><td>tree</td><td>From the root downwards: there is exactly one path.</td></tr><tr><td>graph</td><td>Follow the edges from a node. There are often several paths: take the one with the fewest edges.</td></tr></tbody></table></div>
 </div>
-<div class="explainer-block" data-block="galerie/4" data-block-id="4893532e" data-block-type="text" data-block-order="23">
+<div class="explainer-block" data-block="galerie/4" data-block-id="0ddd5533" data-block-type="text" data-block-order="23">
 <div class="block-text"><p>Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one-way street.</p></div>
 </div>
 </section>
@@ -350,10 +350,10 @@ find an element, that is, a certain node, for example a stop?</p></div>
 <span class="explainer-feedback-local">Kept in this browser only</span>
 <button type="button" class="explainer-feedback-off">End</button>
 </div>
-<script type="application/json" class="explainer-feedback-data">{"storage":"informatik-datenstrukturen","app":"Networks and rows of data","root":"../../../en/","repository":"lernapps/informatik-datenstrukturen","revision":"ba67a4d","page":{"title":"From tree to graph","order":0}}</script>
+<script type="application/json" class="explainer-feedback-data">{"storage":"informatik-datenstrukturen","app":"Networks and rows of data","root":"../../../en/","repository":"lernapps/informatik-datenstrukturen","revision":"39cd635","page":{"title":"From tree to graph","order":1}}</script>
 </aside>
 </template>
-<nav class="explainer-pager" aria-label="Page through"></nav>
+<nav class="explainer-pager" aria-label="Page through"><a rel="prev" href="../../../en/netze/das-brauchst-du/">Back: What you need here</a><a rel="next" href="../../../en/netze/pfeile/">Next: Edges with a direction</a></nav>
 <footer class="page-footer"><p>An explainer on lernapps.net · <a href="https://lernapps.net/imprint/">Imprint</a> · <a href="https://lernapps.net/privacy/">Privacy</a></p></footer>
   </body>
 </html>

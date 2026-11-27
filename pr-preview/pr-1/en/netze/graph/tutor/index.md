@@ -121,7 +121,7 @@ Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one
 - Answer format: choose “true” or “false”
 - Solution: The statement is false.
 - Explanation: Station, Market, School, Park and back to Station: this ride goes round in a loop. That is not possible in a tree: there, exactly one path leads from the root to each node.
-- The app's hint: Ride from the station to the market, then on. Can you get back to the station without using a line twice?
+- The app's hint: Can you get from the station back to the station without using a line twice?
 - Link: [../?via=tutor#busnetz-baum](../?via=tutor#busnetz-baum)
 
 ### Exercise kuerzester-weg
@@ -129,7 +129,7 @@ Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one
 - Task: Selin rides from the station to the pool. How long is the shortest path? Give the number of edges.
 - Answer format: type a number
 - Solution: 2
-- Explanation: Station – Market – Pool is 2 edges. Other paths, for example via Park, School and Town hall, are 4 edges long. In a graph there are often several paths to the same node.
+- Explanation: Station – Market – Pool is 2 edges. The other paths are 4 edges long.
 - Typical mistakes and what the app says:
   - 3: You counted the stops on the path. The length of a path is the number of edges.
   - 4: That is a detour via the park or the school. There is a path with fewer edges.
@@ -142,9 +142,9 @@ Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one
 - Choices (✓ right, ✗ wrong, with the app's message):
   - ✓ Jona – One string leads from Jona to Selin and one to Mia.
   - ✓ Selin – Selin is joined to Jona and to Mia.
-  - ✓ Mia – From Mia the way leads back to Jona. That closes the cycle.
-  - ✗ Tom – From Tom you can only get back via Jona. Then you use the edge Jona – Tom twice.
-  - ✗ Lea – Lea has only one edge, to Mia. A cycle needs two edges at each of its nodes.
+  - ✓ Mia – From Mia the way leads back to Jona.
+  - ✗ Tom – From Tom the only way back to Jona is the same edge.
+  - ✗ Lea – Lea has only one edge. A cycle needs two at each node.
 - Solution: Jona; Selin; Mia
 - Explanation: Jona – Selin – Mia – Jona ends where the path starts and uses no edge twice.
 - Link: [../?via=tutor#kreis-freunde](../?via=tutor#kreis-freunde)
@@ -238,11 +238,11 @@ No. | Liste | Solution | F1 | F2
 - Task: How many edges does the bus network have?
 - Answer format: type a number
 - Solution: 7
-- Explanation: Three edges lead away from the market, four more connect Station, Park, School, Town hall and Pool: 7 in total. A tree with 6 nodes would only have 5 edges.
+- Explanation: 3 edges at the market and 4 more: 7 in total. A tree with 6 nodes would only have 5.
 - The app's hint: Count the lines that start at the market, then the others.
 - Typical mistakes and what the app says:
   - 6: You counted the stops, which are the nodes. Count the lines.
-  - 8: You counted one line twice. Tick off each line once you have counted it.
+  - 8: You counted one line twice.
 - Link: [../?via=tutor#kanten-busnetz](../?via=tutor#kanten-busnetz)
 
 ### Exercise fuenf-kanten
@@ -260,8 +260,8 @@ No. | Liste | Solution | F1 | F2
 - Answer format: choose one answer
 - Choices (✓ right, ✗ wrong, with the app's message):
   - ✗ A – A branches out from top to bottom and has no cycle.
-  - ✗ B – B looks different from the usual tree picture, but it has no cycle. A chain is a tree without branches.
+  - ✗ B – B is a chain with no cycle, so a tree without branches.
   - ✓ C – In C, a path leads round the square back to the start. That is a cycle.
 - Solution: C
-- Explanation: How a network is drawn does not matter. What counts are the edges. Only in C does a path lead back to the start.
+- Explanation: What counts is not the drawing but the edges. Only C has a cycle.
 - Link: [../?via=tutor#kein-baum](../?via=tutor#kein-baum)
