@@ -1,0 +1,299 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title:
+  de: Der Stadtführer der 7b
+  en: Class 7b's town guide
+description:
+  de: "Einen Hypertext bauen: Seiten verlinken, Sackgassen vermeiden, durchklicken. Fremde Bilder mit Quellenangabe."
+  en: "Building a hypertext: linking pages, avoiding dead ends, clicking through. Pictures by others with a source credit."
+competencies: [hypertext]
+blocks:
+  - type: section
+    id: einstieg
+    title:
+      de: Wo geht es nicht weiter?
+      en: Where can't you go on?
+    blocks:
+      - type: note
+        title:
+          de: Klassenchat 7b
+          en: Class 7b chat
+        blocks:
+          - type: text
+            text:
+              de: |
+                **Jona:** Hier ist mein Entwurf für unseren Stadtführer.
+
+                **Mia:** Auf einer Seite komme ich nicht mehr weiter. Da steht kein einziger Link!
+
+                **Frau Berg:** Das nennt man eine Sackgasse. Findet ihr sie?
+              en: |
+                **Jona:** Here is my draft for our town guide.
+
+                **Mia:** On one page I can't go any further. There isn't a single link on it!
+
+                **Ms Berg:** That's called a dead end. Can you find it?
+      - type: single-choice
+        id: sackgasse
+        text:
+          de: Welche Seite in Jonas Entwurf ist eine Sackgasse?
+          en: Which page in Jona's draft is a dead end?
+        material:
+          - type: figure
+            image:
+              de: images/entwurf-de.svg
+              en: images/entwurf-en.svg
+            alt:
+              de: "Fünf Kästchen, in der Mitte die Startseite. Pfeile führen von der Startseite zu Schule und Bus, von Schule zu Bücherei, von Bus zu Schwimmbad, vom Schwimmbad zur Startseite und zum Bus."
+              en: "Five boxes, the home page in the middle. Arrows lead from the home page to School and Bus, from School to Library, from Bus to Pool, and from Pool to the home page and to Bus."
+            caption:
+              de: Jonas Entwurf. Jeder Pfeil ist ein Link.
+              en: "Jona's draft. Each arrow is a link."
+            source:
+              de: eigene Zeichnung, Oliver Jägle
+              en: own drawing, Oliver Jägle
+            licence: CC-BY-4.0
+        options:
+          - text: { de: Bücherei, en: Library }
+            correct: true
+            info:
+              de: Ein Pfeil führt zur Bücherei, aber keiner weg. Wer dort ist, kommt mit keinem Link weiter.
+              en: One arrow leads to the library, but none leads away. Anyone there cannot go on with any link.
+          - text: { de: Schwimmbad, en: Pool }
+            correct: false
+            info:
+              de: Vom Schwimmbad führen zwei Pfeile weg, zur Startseite und zum Bus.
+              en: Two arrows lead away from the pool, to the home page and to Bus.
+          - text: { de: Schule, en: School }
+            correct: false
+            info:
+              de: Von der Schule führt ein Pfeil zur Bücherei. Du kommst also weiter.
+              en: An arrow leads from School to the library. So you can go on.
+        explanation:
+          de: Eine Sackgasse ist eine Seite ohne Link. Als Graph ist es ein Knoten, von dem kein Pfeil wegführt. Jona braucht einen Link auf der Seite Bücherei, zum Beispiel zur Startseite.
+          en: A dead end is a page without a link. As a graph, it is a node with no arrow leading away. Jona needs a link on the Library page, for example to the home page.
+  - type: section
+    id: bauen
+    title:
+      de: Baue den Stadtführer
+      en: Build the town guide
+    blocks:
+      - type: text
+        text:
+          de: |
+            Jetzt baust du den Stadtführer selbst. Auf dieser Seite erstellst du einen Hypertext nach Regeln. Jede Karte
+            ist eine Seite. Wähle bei „Link auf“ eine andere Seite und tippe „Link anlegen“. Rechts siehst du deinen
+            Hypertext als Graph. Mit „Vorschau“ klickst du ihn durch wie später die Fünfer.
+          en: |
+            Now you build the town guide yourself. On this page you create a hypertext that follows rules. Each card is
+            a page. Choose another page at “Link to” and tap “Add link”. On the right you can see your hypertext as a
+            graph. With “Preview” you click through it, just like the Year 5 pupils will later.
+      - type: vue-component
+        id: stadtfuehrer-bauen
+        component: Hypertextbaukasten
+        props:
+          pages:
+            - { de: Startseite, en: Home page }
+            - { de: Schule, en: School }
+            - { de: Bus, en: Bus }
+            - { de: Schwimmbad, en: Pool }
+            - { de: Bücherei, en: Library }
+          task:
+            de: "Lege Links an, sodass diese Regeln gelten:"
+            en: "Add links so that these rules hold:"
+          ruleReach:
+            de: "Von der Startseite erreichst du jede Seite mit höchstens {k} Klicks."
+            en: "From the home page you can reach every page in at most {k} clicks."
+          ruleStart:
+            de: "Auf der Startseite stehen höchstens {m} Links."
+            en: "The home page has at most {m} links."
+          ruleBack:
+            de: Jede Seite hat einen Link zurück zur Startseite.
+            en: Every page has a link back to the home page.
+          ruleMust:
+            de: "Die Seite {a} hat einen Link zur Seite {b}."
+            en: "The {a} page has a link to the {b} page."
+          linksOnPage:
+            de: "Links auf dieser Seite:"
+            en: "Links on this page:"
+          none:
+            de: noch keine
+            en: none yet
+          linkTo:
+            de: Link auf
+            en: Link to
+          add:
+            de: Link anlegen
+            en: Add link
+          remove:
+            de: entfernen
+            en: remove
+          removeLabel:
+            de: "Link von {a} zu {b} entfernen"
+            en: "Remove link from {a} to {b}"
+          preview:
+            de: Vorschau
+            en: Preview
+          close:
+            de: Vorschau schließen
+            en: Close preview
+          here:
+            de: "Du bist auf der Seite {a}."
+            en: "You are on the {a} page."
+          deadEnd:
+            de: "Sackgasse: Auf dieser Seite steht kein Link."
+            en: "Dead end: there is no link on this page."
+          restart:
+            de: Neu bei der Startseite beginnen
+            en: Start again at the home page
+          mistakes:
+            - de: "Die Seite {a} erreichst du von der Startseite aus nicht. Lege einen Link an, der zu ihr führt."
+              en: "You cannot reach the {a} page from the home page. Add a link that leads to it."
+            - de: "Bis zur Seite {a} brauchst du {n} Klicks. Erlaubt sind höchstens {k}."
+              en: "You need {n} clicks to get to the {a} page. At most {k} are allowed."
+            - de: "Auf der Startseite stehen {n} Links. Erlaubt sind höchstens {m}. Lass andere Seiten weiterverlinken."
+              en: "The home page has {n} links. At most {m} are allowed. Let other pages link on."
+            - de: "Von der Seite {a} führt kein Link zurück zur Startseite."
+              en: "There is no link from the {a} page back to the home page."
+            - de: "Es fehlt der Link von der Seite {a} zur Seite {b}."
+              en: "The link from the {a} page to the {b} page is missing."
+        examples:
+          accepted:
+            - { answer: [[0, 4], [4, 2], [0, 1], [1, 3], [1, 0], [2, 0], [3, 0], [4, 0]], seed: 2 }
+            - { answer: [[0, 4], [4, 2], [0, 3], [3, 1], [1, 0], [2, 0], [3, 0], [4, 0], [2, 4]], seed: 2 }
+          rejected:
+            - { answer: [[0, 4], [4, 2], [0, 1], [1, 3], [1, 0], [2, 0], [3, 0]], seed: 2 }
+            - { answer: [[0, 1], [0, 2], [0, 3], [0, 4], [4, 2], [1, 0], [2, 0], [3, 0], [4, 0]], seed: 2 }
+            - { answer: [[0, 1]] }
+  - type: section
+    id: quelle
+    title:
+      de: Ein fremdes Bild im Stadtführer
+      en: A picture by someone else in the town guide
+    blocks:
+      - type: note
+        title:
+          de: Klassenchat 7b
+          en: Class 7b chat
+        blocks:
+          - type: text
+            text:
+              de: |
+                **Selin:** Für die Seite Schwimmbad habe ich ein Foto im Netz gefunden: „Freibad am Morgen“ von Kim
+                Sander, mit der Lizenz CC BY 4.0.
+
+                **Frau Berg:** Dann gehört eine Quellenangabe unter das Bild.
+              en: |
+                **Selin:** For the Pool page I found a photo on the internet: “Outdoor pool in the morning” by Kim
+                Sander, with the licence CC BY 4.0.
+
+                **Ms Berg:** Then a source credit belongs under the picture.
+      - type: text
+        text:
+          de: |
+            Fremde Bilder und Texte darfst du nur mit Erlaubnis oder freier Lizenz nutzen, und immer mit
+            [Quellenangabe](https://lernapps.net/apps/map/informatik/c/urheberrecht/). Sie hat vier Teile: **Titel**,
+            **Urheber**, **Quelle** (die Seite, auf der das Bild steht) und **Lizenz**.
+          en: |
+            You may only use pictures and texts by others with permission or a free licence, and always with a
+            [source credit](https://lernapps.net/apps/en/map/informatik/c/urheberrecht/). It has four parts: **title**,
+            **creator**, **source** (the page the picture is on) and **licence**.
+      - type: single-choice
+        id: quellenangabe-vollstaendig
+        text:
+          de: Welche Quellenangabe schreibt Selin unter das Foto?
+          en: Which source credit does Selin write under the photo?
+        options:
+          - text:
+              de: "„Freibad am Morgen“, Kim Sander, example.org/freibad, CC BY 4.0"
+              en: "“Outdoor pool in the morning”, Kim Sander, example.org/pool, CC BY 4.0"
+            correct: true
+            info:
+              de: Titel, Urheberin, Quelle und Lizenz sind alle da.
+              en: Title, creator, source and licence are all there.
+          - text:
+              de: "Foto: aus dem Internet"
+              en: "Photo: from the internet"
+            correct: false
+            info:
+              de: Es fehlen Titel, Urheberin und Lizenz. „Internet“ sagt nicht, auf welcher Seite das Foto steht.
+              en: The title, creator and licence are missing. “Internet” does not say which page the photo is on.
+          - text:
+              de: "„Freibad am Morgen“, Kim Sander"
+              en: "“Outdoor pool in the morning”, Kim Sander"
+            correct: false
+            info:
+              de: Titel und Urheberin stimmen, aber Quelle und Lizenz fehlen.
+              en: Title and creator are right, but the source and licence are missing.
+        explanation:
+          de: "Eine vollständige Quellenangabe hat vier Teile: Titel, Urheber, Quelle und Lizenz."
+          en: "A complete source credit has four parts: title, creator, source and licence."
+      - type: matching
+        id: teile-quellenangabe
+        text:
+          de: Ordne jedem Teil der Quellenangabe Selins Angabe zu.
+          en: Match each part of the source credit to Selin's information.
+        pairs:
+          - left: { de: Titel, en: title }
+            right: { de: Freibad am Morgen, en: Outdoor pool in the morning }
+          - left: { de: Urheber, en: creator }
+            right: { de: Kim Sander, en: Kim Sander }
+          - left: { de: Quelle, en: source }
+            right: { de: example.org/freibad, en: example.org/pool }
+          - left: { de: Lizenz, en: licence }
+            right: { de: CC BY 4.0, en: CC BY 4.0 }
+        distractors:
+          - { de: Schwimmbad, en: Pool }
+        explanation:
+          de: "„Schwimmbad“ ist die Seite des Stadtführers, auf der das Bild steht, nicht die Quelle. Die Quelle ist die Seite im Netz, von der das Bild kommt."
+          en: "“Pool” is the page of the town guide the picture is on, not the source. The source is the page on the internet the picture comes from."
+  - type: section
+    id: galerie
+    title:
+      de: Die Galerie wächst weiter
+      en: The gallery keeps growing
+    blocks:
+      - type: figure
+        image: images/galerie-3.svg
+        alt:
+          de: "Vier Bilderrahmen: ein Baum, ein Graph mit Kreisen, ein Hypertext aus drei Seiten mit Pfeilen. Der vierte Rahmen ist leer, mit einem Fragezeichen."
+          en: "Four picture frames: a tree, a graph with cycles, a hypertext of three pages with arrows. The fourth frame is empty, with a question mark."
+        caption:
+          de: Die Galerie der Datenstrukturen. Neu ist der Hypertext im dritten Rahmen.
+          en: The gallery of data structures. The hypertext in the third frame is new.
+        source:
+          de: eigene Zeichnung, Oliver Jägle
+          en: own drawing, Oliver Jägle
+        licence: CC-BY-4.0
+      - type: table
+        caption:
+          de: Wie finde ich ein Element?
+          en: How do I find an element?
+        header:
+          - { de: Struktur, en: Structure }
+          - { de: So findest du ein Element, en: How you find an element }
+        rows:
+          - - { de: Baum, en: tree }
+            - {
+                de: "Von der Wurzel nach unten, es gibt genau einen Weg.",
+                en: "From the root downwards; there is exactly one path.",
+              }
+          - - { de: Graph, en: graph }
+            - {
+                de: "Den Kanten folgen und den Weg mit den wenigsten Kanten nehmen.",
+                en: "Follow the edges and take the path with the fewest edges.",
+              }
+          - - { de: Hypertext, en: hypertext }
+            - {
+                de: "Bei der Startseite beginnen und den Links in ihrer Richtung folgen.",
+                en: "Start at the home page and follow the links in their direction.",
+              }
+      - type: text
+        text:
+          de: |
+            Rückblick auf das Kapitel: Du hast aus dem Baum einen Graphen gemacht, Kanten Richtungen gegeben und einen
+            Stadtführer als Hypertext gebaut. Der vierte Rahmen bleibt noch leer. Später kommt dort eine Reihe von
+            Fächern hinein, in der jedes Element eine Nummer hat.
+          en: |
+            Looking back on the chapter: you turned the tree into a graph, gave edges a direction and built a town guide
+            as a hypertext. The fourth frame stays empty for now. Later, a row of boxes goes in there, where every
+            element has a number.
