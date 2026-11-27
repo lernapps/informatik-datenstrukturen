@@ -387,5 +387,5 @@ blocks:
               }
       - type: text
         text:
-          de: "Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis führt nur in eine Richtung, wie eine Einbahnstraße."
+          de: "Als Nächstes verlinken Jona, Selin und Mia ihre Seiten. Ein Verweis (Link) führt nur in eine Richtung, wie eine Einbahnstraße."
           en: "Next, Jona, Selin and Mia link their pages. A link only goes one way, like a one-way street."

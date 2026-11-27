@@ -284,7 +284,7 @@ hellblau #e8f0fb)
       change: change the pattern first.
       Creator: Ja, die übrigen Seiten folgen diesem Muster. Gut, dass der Netzbauer jetzt mehr verlangt als Abschreiben.
 - [x] Wiederholung netze/das-brauchst-du: Chat, Selbstcheck baum, baum-zimmer.svg (Kopie #491), Galerie Stand 1, eine Prüffrage
-- [ ] Seite netze/pfeile: gerichteter Graph, Pfeil, Berners-Lee 1989, Netzbauer gerichtet aus Verweistabelle, Übungen
+- [x] Seite netze/pfeile: gerichteter Graph, Pfeil, Berners-Lee 1989, Netzbauer gerichtet aus Verweistabelle, Übungen
 - [ ] Seite netze/hypertext: Stadtführer als Hypertext aus Seiten und Verweisen, Klickwege, Unterschied zum Buch, Übungen
 - [ ] Seite netze/stadtfuehrer: Komponente Hypertextbaukasten mit Test, Quellenangabe, Galerie Stand 3 mit Tabelle, Rückblick, Übungen
 <!-- tasks: pages (4 added): the other pages or screens, after the pattern -->

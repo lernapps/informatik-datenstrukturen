@@ -1,0 +1,275 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title:
+  de: Kanten mit Richtung
+  en: Edges with a direction
+description:
+  de: "Der gerichtete Graph: verlinkte Seiten als Knoten, Verweise als Pfeile. Wege folgen der Richtung der Pfeile."
+  en: "The directed graph: linked pages as nodes, links as arrows. Paths follow the direction of the arrows."
+competencies: [graph]
+blocks:
+  - type: section
+    id: einstieg
+    title:
+      de: Kommt Selin zu Mia?
+      en: Can Selin get to Mia?
+    blocks:
+      - type: note
+        title:
+          de: Klassenchat 7b
+          en: Class 7b chat
+        blocks:
+          - type: text
+            text:
+              de: |
+                **Mia:** Auf meiner Seite im Schulnetz gibt es jetzt einen Link zu Selins Seite!
+
+                **Selin:** Danke! Auf meiner Seite habe ich nur einen Link zu Jona.
+
+                **Jona:** Und ich verlinke Selin und Tom. Tom hat noch gar keinen Link.
+              en: |
+                **Mia:** My page on the school network now has a link to Selin's page!
+
+                **Selin:** Thanks! On my page I only have a link to Jona.
+
+                **Jona:** And I link to Selin and Tom. Tom doesn't have any link yet.
+      - type: figure
+        image: images/pfeile.svg
+        alt:
+          de: "Vier Kästchen: Mia, Selin, Jona und Tom. Pfeile führen von Mia zu Selin, von Selin zu Jona, von Jona zu Selin und von Jona zu Tom."
+          en: "Four boxes: Mia, Selin, Jona and Tom. Arrows lead from Mia to Selin, from Selin to Jona, from Jona to Selin and from Jona to Tom."
+        caption:
+          de: Jedes Kästchen ist die Seite eines Kindes. Ein Pfeil zeigt von der Seite mit dem Link zur Seite, zu der der Link führt.
+          en: Each box is one child's page. An arrow points from the page with the link to the page the link leads to.
+        source:
+          de: eigene Zeichnung, Oliver Jägle
+          en: own drawing, Oliver Jägle
+        licence: CC-BY-4.0
+      - type: true-false
+        id: selin-zu-mia
+        text:
+          de: Selin kann von ihrer Seite über Links zu Mias Seite klicken.
+          en: Selin can click from her page to Mia's page by following links.
+        answer: false
+        hint:
+          de: Folge nur den Pfeilspitzen. Zeigt irgendein Pfeil auf Mia?
+          en: Only follow the arrow heads. Does any arrow point to Mia?
+        explanation:
+          de: Kein Pfeil zeigt auf Mia. Mia verlinkt Selin, aber kein Link führt zu Mia zurück. Ein Link gilt nur in eine Richtung.
+          en: No arrow points to Mia. Mia links to Selin, but no link leads back to Mia. A link only works in one direction.
+  - type: section
+    id: idee
+    title:
+      de: Pfeile statt Linien
+      en: Arrows instead of lines
+    blocks:
+      - type: text
+        text:
+          de: |
+            Auf der Seite davor hattest du Kanten ohne Richtung: Eine Busstrecke fährt man hin und zurück. Auf dieser Seite
+            lernst du Kanten mit Richtung kennen. So stellst du verlinkte Seiten als Graph dar.
+          en: |
+            On the page before, you had edges without a direction: you can take a bus route there and back. On this page
+            you will get to know edges with a direction. This is how you show linked pages as a graph.
+      - type: definition
+        term:
+          de: Verweis (Link)
+          en: link
+        explanation:
+          de: Ein Verweis, auch Link genannt, ist eine Stelle auf einer Seite, die zu einer anderen Seite führt. Er steht nur auf der einen Seite.
+          en: A link is a place on a page that leads to another page. It is only on one of the two pages.
+      - type: definition
+        term:
+          de: gerichteter Graph
+          en: directed graph
+        explanation:
+          de: In einem gerichteten Graphen hat jede Kante eine Richtung. Man zeichnet sie als Pfeil. Ein Weg darf Pfeile nur in ihrer Richtung nutzen.
+          en: In a directed graph, every edge has a direction. You draw it as an arrow. A path may only use arrows in their direction.
+      - type: note
+        title:
+          de: Merke
+          en: Remember
+        blocks:
+          - type: text
+            text:
+              de: |
+                Ein Pfeil von A nach B heißt: Auf Seite A steht ein Verweis auf Seite B. Ein Weg zurück braucht einen
+                eigenen Pfeil von B nach A, wie zwischen Selin und Jona.
+              en: |
+                An arrow from A to B means: page A has a link to page B. A way back needs its own arrow from B to A, like
+                between Selin and Jona.
+      - type: text
+        text:
+          de: |
+            Die Idee ist älter als du: 1989 schlug Tim Berners-Lee am Forschungszentrum CERN vor, Notizen und Texte als
+            Netz zu verknüpfen. In seinem Vorschlag nannte er die Kreise Knoten (nodes) und die Pfeile Links. Daraus
+            entstand das World Wide Web.
+          en: |
+            The idea is older than you: in 1989, Tim Berners-Lee at the research centre CERN suggested linking notes and
+            texts together as a network. In his proposal, he called the circles nodes and the arrows links. This grew
+            into the World Wide Web.
+      - type: matching
+        id: pfeile-lesen
+        text:
+          de: Was bedeutet jeder Pfeil im Bild oben?
+          en: What does each arrow in the picture above mean?
+        pairs:
+          - left: { de: Pfeil von Mia zu Selin, en: arrow from Mia to Selin }
+            right: { de: Auf Mias Seite steht ein Link zu Selins Seite., en: "Mia's page has a link to Selin's page." }
+          - left: { de: Pfeil von Selin zu Jona, en: arrow from Selin to Jona }
+            right:
+              { de: Auf Selins Seite steht ein Link zu Jonas Seite., en: "Selin's page has a link to Jona's page." }
+          - left: { de: Pfeil von Jona zu Tom, en: arrow from Jona to Tom }
+            right: { de: Auf Jonas Seite steht ein Link zu Toms Seite., en: "Jona's page has a link to Tom's page." }
+        distractors:
+          - { de: Auf Toms Seite steht ein Link zu Jonas Seite., en: "Tom's page has a link to Jona's page." }
+        explanation:
+          de: Der Pfeil beginnt an der Seite, auf der der Link steht, und zeigt auf die Seite, zu der er führt. Tom hat noch keinen Link.
+          en: The arrow starts at the page the link is on and points to the page it leads to. Tom has no link yet.
+        links:
+          - title:
+              de: "Tim Berners-Lee: Information Management: A Proposal (1989, englisch)"
+              en: "Tim Berners-Lee: Information Management: A Proposal (1989)"
+            url: "https://www.w3.org/History/1989/proposal.html"
+  - type: section
+    id: bauen
+    title:
+      de: Ein Linknetz am Rechner
+      en: A network of links on the computer
+    blocks:
+      - type: text
+        text:
+          de: |
+            Jetzt zeichnest du Links als Pfeile, nach einer Liste. Tippe zuerst die Seite an, auf der der Link steht, dann
+            die Seite, zu der er führt. Der Pfeil zeigt vom ersten zum zweiten Namen.
+          en: |
+            Now you draw links as arrows, from a list. First tap the page the link is on, then the page it leads to. The
+            arrow points from the first name to the second.
+      - type: vue-component
+        id: linknetz-bauen
+        component: Netzbauer
+        props:
+          names: [Jona, Selin, Mia, Tom, Lea]
+          directed: true
+          task:
+            de: "Lege für jeden Link einen Pfeil an:"
+            en: "Add an arrow for each link:"
+          line:
+            de: "Die Seite von {a} hat einen Link zur Seite von {b}."
+            en: "{a}'s page has a link to {b}'s page."
+          chosen:
+            de: "{a} ist ausgewählt. Tippe jetzt die Seite an, zu der der Link führt."
+            en: "{a} is selected. Now tap the page the link leads to."
+          drawn:
+            de: "Deine Pfeile:"
+            en: "Your arrows:"
+          empty:
+            de: Noch keine Pfeile.
+            en: No arrows yet.
+          remove:
+            de: entfernen
+            en: remove
+          removeLabel:
+            de: "Pfeil {a} → {b} entfernen"
+            en: "Remove arrow {a} → {b}"
+          mistakes:
+            - de: "Bei {a} fehlt noch ein Pfeil. Lies alle Zeilen der Liste, in denen {a} vorkommt."
+              en: "An arrow at {a} is still missing. Read every line of the list that has {a} in it."
+            - de: "Den Pfeil {a} → {b} gibt es in der Liste nicht. Entferne ihn."
+              en: "The arrow {a} → {b} is not in the list. Remove it."
+            - de: "Der Pfeil zwischen {a} und {b} zeigt falsch herum. Er beginnt an der Seite, auf der der Link steht."
+              en: "The arrow between {a} and {b} points the wrong way. It starts at the page the link is on."
+        examples:
+          accepted:
+            - { answer: [[0, 2], [0, 3], [0, 4], [1, 3], [1, 4], [2, 4]], seed: 1 }
+            - { answer: [[2, 4], [1, 4], [1, 3], [0, 4], [0, 3], [0, 2]], seed: 1 }
+          rejected:
+            - { answer: [[2, 0], [0, 3], [0, 4], [1, 3], [1, 4], [2, 4]], seed: 1 }
+            - { answer: [[0, 2], [0, 3], [0, 4], [1, 3], [1, 4]], seed: 1 }
+            - { answer: [[0, 1]] }
+  - type: section
+    id: uebung
+    title:
+      de: Übung
+      en: Practice
+    blocks:
+      - type: number
+        id: pfeile-zu-selin
+        text:
+          de: Wie viele Pfeile zeigen im Bild oben auf Selins Seite?
+          en: How many arrows in the picture above point to Selin's page?
+        answer: 2
+        tolerance: 0
+        mistakes:
+          - answer: 1
+            message:
+              de: Du hast den Pfeil gezählt, der von Selin weggeht. Zähle nur die Pfeilspitzen, die bei Selin enden.
+              en: You counted the arrow that leaves Selin. Only count the arrow heads that end at Selin.
+          - answer: 3
+            message:
+              de: Du hast alle Pfeile an Selins Kästchen gezählt. Einer davon geht von Selin weg.
+              en: You counted all the arrows at Selin's box. One of them leaves Selin.
+        explanation:
+          de: "Zwei Pfeilspitzen enden bei Selin: von Mia und von Jona. Der Pfeil von Selin zu Jona zeigt weg von ihr."
+          en: "Two arrow heads end at Selin: from Mia and from Jona. The arrow from Selin to Jona points away from her."
+      - type: single-choice
+        id: alle-erreichen
+        text:
+          de: Von welcher Seite aus erreichst du über Links alle anderen Seiten im Bild?
+          en: From which page can you reach all the other pages in the picture by following links?
+        options:
+          - text: { de: Mia, en: Mia }
+            correct: true
+            info:
+              de: "Mia → Selin → Jona → Tom: So kommst du zu allen drei anderen Seiten."
+              en: "Mia → Selin → Jona → Tom: that way you get to all three other pages."
+          - text: { de: Jona, en: Jona }
+            correct: false
+            info:
+              de: Von Jona kommst du zu Selin und Tom, aber kein Pfeil führt zu Mia.
+              en: From Jona you get to Selin and Tom, but no arrow leads to Mia.
+          - text: { de: Selin, en: Selin }
+            correct: false
+            info:
+              de: Von Selin kommst du über Jona zu Tom, aber nicht zu Mia.
+              en: From Selin you get to Tom via Jona, but not to Mia.
+          - text: { de: Tom, en: Tom }
+            correct: false
+            info:
+              de: Auf Toms Seite steht noch kein Link. Von dort kommst du nirgendwohin.
+              en: Tom's page has no link yet. From there you cannot get anywhere.
+        explanation:
+          de: Nur von Mia aus führt für jede andere Seite ein Weg in Pfeilrichtung dorthin.
+          en: Only from Mia does a path in the direction of the arrows lead to every other page.
+      - type: multiple-choice
+        id: zurueck-zu-jona
+        text:
+          de: Tom setzt einen neuen Link. Mit welchem Link kommt man danach von Toms Seite zu Jonas Seite?
+          en: Tom adds a new link. Which link would then get you from Tom's page to Jona's page?
+        options:
+          - text: { de: ein Link von Tom zu Jona, en: a link from Tom to Jona }
+            correct: true
+            info:
+              de: Der neue Pfeil Tom → Jona führt direkt zu Jona.
+              en: The new arrow Tom → Jona leads straight to Jona.
+          - text: { de: ein Link von Tom zu Selin, en: a link from Tom to Selin }
+            correct: true
+            info:
+              de: Tom → Selin, dann Selin → Jona. Das ist ein Weg der Länge 2.
+              en: Tom → Selin, then Selin → Jona. That is a path of length 2.
+          - text: { de: ein Link von Jona zu Tom, en: a link from Jona to Tom }
+            correct: false
+            info:
+              de: Diesen Link gibt es schon. Er führt von Jona zu Tom, nicht zurück.
+              en: This link already exists. It leads from Jona to Tom, not back.
+          - text: { de: ein Link von Selin zu Tom, en: a link from Selin to Tom }
+            correct: false
+            info:
+              de: Dieser Pfeil zeigt auf Tom. Von Toms Seite kämst du damit immer noch nicht weg.
+              en: This arrow points to Tom. You still could not leave Tom's page with it.
+        explanation:
+          de: Ein Weg von Tom aus braucht einen Pfeil, der bei Tom beginnt. Er kann direkt zu Jona führen oder über Selin.
+          en: A path from Tom needs an arrow that starts at Tom. It can lead straight to Jona or go via Selin.
+      - type: text
+        text:
+          de: "Als Nächstes stellt Frau Berg ein Projekt vor: einen ganzen Stadtführer aus Seiten und Links."
+          en: "Next, Ms Berg presents a project: a whole town guide made of pages and links."
